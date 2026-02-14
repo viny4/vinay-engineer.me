@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MP5PZ4TB');</script>
+        <!-- End GoogleTagManager-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>M7 Digital</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/static/Assets/Img/logo_bg.png">
+        <link rel="apple-touch-icon" href="/static/Assets/Img/logo_bg.png">
+        <meta name="theme-color" content="#1A237E">
+
+        <!-- Open Graph / WhatsApp / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://m7.digital/">
+        <meta property="og:title" content="M7 Digital">
+        <meta property="og:description" content="Empowering digital transformation with AI, web, and automation solutions.">
+        <meta property="og:image" content="https://m7.digitalAssets/Img/index_preview.jpeg" />
+        <meta property="og:image:secure_url" content="https://m7.digitalAssets/Img/index_preview.jpeg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:alt" content="M7 Digital - AI and Automation Solutions" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="https://m7.digital/">
+        <meta name="twitter:title" content="M7 Digital">
+        <meta name="twitter:description" content="Empowering digital transformation with AI, web, and automation solutions.">
+        <meta name="twitter:image" content="https://m7.digitalAssets/Img/index_preview.jpeg" />
+
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!-- Common JS in Head -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+        <!-- M7 Base Styles -->
+        <link rel="stylesheet" href="/static/Assets/style/styles.css">
+        <link rel="stylesheet" href="/static/Assets/style/responsive.css">
+
+        <link rel="manifest" href="/manifest.json">
+
+        <!-- Page Specific CSS Block -->
+        
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('Assets/pwa/serviceworker.js')
+        .then(function(registration) {
+          console.log('ServiceWorker registered: ', registration);
+        }).catch(function(error) {
+          console.log('ServiceWorker registration failed: ', error);
+        });
+      }
+    </script>
+
+
+
+    <script>
+    const VAPID_PUBLIC_KEY = "BBQU7FRpVcxi30pdHiHhTdZHWmlQg9N4a-s-HFvzHcdpPmLJUfMxoa7LTfqE4dAUbvyGsy_4hev9GPY4i1SFmIQ";
+
+    function urlBase64ToUint8Array(base64String) {
+      const padding = '='.repeat((4 - base64String.length % 4) % 4);
+      const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+      const rawData = window.atob(base64);
+      return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+    }
+
+    async function subscribeToPush() {
+      if ('serviceWorker' in navigator && 'PushManager' in window) {
+        try {
+          const reg = await navigator.serviceWorker.ready;
+
+          const existingSubscription = await reg.pushManager.getSubscription();
+          if (existingSubscription) {
+            console.log("Already subscribed.");
+            return;
+          }
+
+          const subscription = await reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY),
+          });
+
+          console.log("Subscribed to push:", subscription);
+
+          await fetch('/save-subscription/', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-CSRFToken': 'rBmvtc6Fh6corXOLbB2rQVwIUgFr2UvPFlPMQn1QYUQZfnUxnW2kZEIJqDC5tRG5',
+            },
+            body: JSON.stringify(subscription),
+          });
+        } catch (err) {
+          console.error("Push subscription failed:", err);
+        }
+      } else {
+        console.warn("Push messaging not supported");
+      }
+    }
+
+    subscribeToPush();
+    </script>
+
+
+
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/67b9a1c5b3dad8190aae279a/1ikmhvrkf';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+
+    <style>
+        .m7-footer-contact {
+            justify-content:flex-start;
+        }
+        .ml{
+            margin-left:10px;
+        }
+    </style>
+    </head>
+<body>
+
+    <!-- Nav -->
+    <header>
+        <nav>
+            <div class="">
+                <a href="/">
+                    <img src="/static/Assets/Img/logo_trans_m7.png" alt="logo" style="width: 150px; height: auto;">
+                    <!-- M7 <span>Digital.</span> -->
+                </a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/products/">Products</a></li>
+                <li><a href="/service/">Services</a></li>  
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="install-toast" style="position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 15px 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); display: none; z-index: 9999;">
+          <span>✨ Install our app for a better experience</span>
+          <button id="install-now" style="margin-left: 15px;" class="btn btn-primary btn-sm">Install</button>
+        </div>
+    <!-- Main Content -->
+   
+        
+<style>
+    .service-link { display: block; color: inherit; text-decoration: none; }
+    .service-link .service-item { height: 100%; }
+
+
+</style>
+    
+
+    
+        <!-- home section -->
+        <section id="home">
+            <div class="hero">              
+                <h1>M7 Corporation</h1>
+                <p>We are The Top IT Service Provider in Chennai <br> Explore Our Creations</p>
+                <a href="#services" class="cta-button">Get Started                  
+                </a>
+                
+            </div>
+            <!-- 3D - Design  -->
+            <div id="hero-3d"></div>
+        </section>
+          <!--Profile clients list -->
+          <!-- Client Brands Section - Static Layout -->
+        <section class="m7c-trusted-brands py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                    <div class="m7c-section-header text-center mb-5">
+                        <h2 class="m7c-section-title">BRANDS THAT TRUST US</h2>
+                        <div class="m7c-title-underline mx-auto"></div>
+                    </div>
+                    </div>
+                </div>
+            
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                    <div class="m7c-brands-container">
+                        <!-- First row of brands -->
+                        <div class="row justify-content-center align-items-center m7c-brands-row">
+                        <!-- Brand 1 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                                <img src="/static/Assets/Img/THAAGAM LOGO.webp" alt="IIFL Finance" class="m7c-brand-logo" style="
+                                background: aliceblue;
+                                border-radius: 8px;
+                            ">
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                                <img src="/static/Assets/Img/hrms.jpg" alt="IIFL Finance" class="m7c-brand-logo" style="
+                                background: aliceblue;
+                                border-radius: 8px;
+                            ">
+                            </div>
+                        </div>
+                        
+                        <!-- Brand 2 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                            <img src="https://m7-studios.com/static/studio/assets/img/logo.png" alt="SpiceJet" class="m7c-brand-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Brand 3 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                            <img src="https://karunaikarangalindia.org/static/website/assets/images/logo/Logo.webp" alt="L'Oreal" class="m7c-brand-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Brand 4 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                                <img src="https://www.tuluworld.org.in/static/tulu/assets/img/logo/LOGO-BLACK.png" alt="Amazon" class="m7c-brand-logo" style="
+                                background: aliceblue;
+                                border-radius: 8px;
+                            ">
+                            </div>
+                        </div>
+                        
+                        <!-- Brand 5 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                            <img src="https://cncllp.in/static/dashboard/assets/images/logo.png" alt="Tata Play" class="m7c-brand-logo">
+                            </div>
+                        </div>
+                        
+                        <!-- Brand 6 -->
+                        <div class="col-6 col-md-4 col-lg-2">
+                            <div class="m7c-brand-item">
+                            <img src="/static/Assets/Img/CUSTOMSONG_logo2.png" alt="a_custom_song" class="m7c-brand-logo">
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            
+                <div class="row mt-4">
+                    <div class="col-12 text-center">
+                    <a href="/projectdetails" class="m7c-stories-link">
+                        CUSTOMER STORIES <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New -->
+         <!-- About Section with Improved Design -->
+         <section class="m7c-about-section py-5">
+            <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                <div class="m7c-section-header text-center mb-5">
+                    <h2 class="m7c-section-title">Who We Are</h2>
+                    <div class="m7c-title-underline mx-auto"></div>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row m7c-content-wrapper position-relative">
+                <!-- Background Logo -->
+                <div class="m7c-bg-logo-container"></div>
+                
+                <!-- About Content -->
+                <div class="col-lg-12">
+                <div class="m7c-about-card">
+                    <div class="row g-4">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="m7c-about-item h-100">
+                        <div class="m7c-about-item-inner p-4 h-100">
+                            <div class="m7c-icon-wrapper mb-4">
+                            <i class="fas fa-lightbulb m7c-icon"></i>
+                            </div>
+                            <h3 class="m7c-item-title h4 mb-3">Innovative Solutions</h3>
+                            <p class="m7c-item-text">
+                            M7 Corporation is a leading infotech company dedicated to delivering innovative solutions that empower businesses to thrive in the digital age. Positioned as the IT backbone of Chennai's digital growth, we offer expert tech support, custom software development, cloud solutions, digital marketing, cybersecurity, and result-driven advertising services.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="m7c-about-item h-100">
+                        <div class="m7c-about-item-inner p-4 h-100">
+                            <div class="m7c-icon-wrapper mb-4">
+                            <i class="fas fa-cogs m7c-icon"></i>
+                            </div>
+                            <h3 class="m7c-item-title h4 mb-3">Expert Technology Team</h3>
+                            <p class="m7c-item-text">
+                            With a team of experts and cutting-edge technologies, M7 Corporation assists clients in navigating the complex world of IT to achieve their goals. Our services extend to software development, web development, mobile app development (both Android and iOS), UI/UX design, and IT infrastructure.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 mt-4">
+                        <div class="m7c-about-item">
+                        <div class="m7c-about-item-inner p-4">
+                            <div class="m7c-icon-wrapper mb-4">
+                            <i class="fas fa-handshake m7c-icon"></i>
+                            </div>
+                            <h3 class="m7c-item-title h4 mb-3">Client-Focused Approach</h3>
+                            <p class="m7c-item-text">
+                            Believing that technology should be accessible, straightforward, and transformative, M7 Corporation partners with clients to ensure tailored solutions that fit unique needs and objectives. Committed to transforming ideas into cutting-edge digital solutions, we strive to be the driving force behind business innovation and success.
+                            </p>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            
+            <!-- Stats Section -->
+            <div class="row mt-5 pt-3">
+                <div class="col-12">
+                <div class="m7c-stats-container p-4">
+                    <div class="row text-center g-4">
+                    <div class="col-6 col-md-3">
+                        <div class="m7c-stat-item p-3">
+                        <div class="m7c-stat-number fw-bold">500+</div>
+                        <div class="m7c-stat-label">Clients Served</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="m7c-stat-item p-3">
+                        <div class="m7c-stat-number fw-bold">200+</div>
+                        <div class="m7c-stat-label">Projects Completed</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="m7c-stat-item p-3">
+                        <div class="m7c-stat-number fw-bold">15+</div>
+                        <div class="m7c-stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="m7c-stat-item p-3">
+                        <div class="m7c-stat-number fw-bold">50+</div>
+                        <div class="m7c-stat-label">IT Experts</div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <section class="ai-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mt-5">
+                        <h2 class="ai-heading">Powering the Future with AI</h2>
+                        <p class="ai-description">
+                            Experience the next-generation AI solutions that drive innovation and efficiency.
+                            Our intelligent systems adapt and evolve, making technology smarter for your needs.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <img src="/static/Assets/Img/ai.jpg" alt="AI Illustration" class="ai-svg">
+                    </div>
+                </div>
+            </div>
+        </section>    
+
+        <!-- Project section -->
+        <section class="web_projects_section">
+              <div class="container">
+                  <div class="row align-items-center" style="padding: 30px;">
+                      <!-- Web Content Section -->
+                        <div class="col-lg-12">
+                            <div class="m7c-section-header text-center mb-5">
+                                <h2 class="m7c-section-title">INNOVATION BY M7 AI</h2>
+                                <div class="m7c-title-underline mx-auto"></div>
+                            </div>
+                        </div>
+                      <div class="col-12">
+                          <!-- <h2 class="Web-section-title" style="margin: 55px 0;">INNOVATION BY M7 AI</h2> -->
+                          <p class="web-section-text">"
+                            Explore our diverse portfolio of web projects, crafted with precision and innovation By M7 Ai. From dynamic websites to seamless user experiences, our work speaks for itself.We build mobile apps that are fast, intuitive, and user-friendly. From startups to enterprises, our apps are designed to enhance user experience and drive engagement."
+                          </p>
+                           
+                          <a href="/projectdetails" style="text-decoration: none;">
+                          <button class="exp_button">
+                            Explore More
+                            <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                              <path
+                                clip-rule="evenodd"
+                                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                                fill-rule="evenodd"
+                              ></path>
+                            </svg>
+                           </button>
+                         </a>
+                          
+                      </div>
+              
+                      <!-- Web Projects Section -->
+                      <div class="col-12 ">
+                          <div class="img-grid">
+                              <div class="image"><img src="/static/Assets/Img/m7corporation.png" alt="image1"></div>
+                              <div class="image"><img src="/static/Assets/Img/m7_studio.png" alt="image2"></div>
+                              <div class="image"><img src="/static/Assets/Img/m7_corp_client01.png" alt="image3"></div>
+                              <div class="image"><img src="/static/Assets/Img/Thaagam.png" alt="image4"></div>
+                              <div class="image"><img src="/static/Assets/Img/Acustom_song.png" alt="image5"></div>
+                              <div class="image"><img src="/static/Assets/Img/m7_corp_client02.png" alt="image6"></div>
+                              <div class="image"><img src="/static/Assets/Img/m7_corp_client03.png" alt="image7"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </section>
+        <!-- mobile project section -->
+        <section class="mobile-pro">
+          <div class="col-12">
+
+              
+          </div>
+          <div class="carousel-container">  
+              <div class="carousel">
+  
+                  <img class="carousel_card" src="/static/Assets/Img/4.png" alt="Thaagam Foundation">
+                  <img class="carousel_card" src="/static/Assets/Img/3.png" alt="Thaagam Foundation">
+                  <img class="carousel_card" src="/static/Assets/Img/5.png" alt="Thaagam Foundation">
+                  <img class="carousel_card" src="/static/Assets/Img/6.png" alt="Thaagam Foundation">
+              </div>
+              
+              <button class="carousel-button prev" aria-label="Previous slide">&#10094;</button>
+              <button class="carousel-button next" aria-label="Next slide">&#10095;</button>
+
+          </div>
+        </section> 
+      
+        <!-- Why Choose Us -->
+        <section class="m7_choose_us_section ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="m7c-section-header text-center mb-5">
+                            <h2 class="m7c-section-title">Why Choose Us</h2>
+                            <div class="m7c-title-underline mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="About_Container mt-5">
+                <div class="content-wrapper">
+                    <div class="About_features">
+                        <div class="About_header">
+                            <!-- <p class="About_subtitle">Why Choose Us</p> -->
+                            <h1 class="About_title">Reasons To Count On Us</h1>
+                        </div>
+                        <div class="About_feature-card">
+                            <div class="About_feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 6l-9.5 9.5-5-5L1 18"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3>All-in-One Services:</h3>
+                                <p>Complete solutions for all your digital needs, all under one roof !</p>
+                            </div>
+                        </div>
+    
+                        <div class="About_feature-card">
+                            <div class="About_feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 18l6-6-6-6M8 6l-6 6 6 6"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Skilled Experts</h3>
+                                <p>A Dedicated Team Of Specialists Turning Ideas Into Flawless Solutions ! </p>
+                            </div>
+                        </div>
+    
+                        <div class="About_feature-card">
+                            <div class="About_feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Customized Solutions</h3>
+                                <p>We customize our services to match your unique business needs.</p>
+                            </div>
+                        </div>
+    
+                        <div class="About_feature-card">
+                            <div class="About_feature-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                                    <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"></path>
+                                    <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h3>Dedicated Support 24/7</h3>
+                                <p>Our dedicated team is available day and night to assist you whenever you need !</p>
+                            </div>
+                        </div>                
+                    </div>
+    
+                    <div class="graph-image">
+                        <img src="/static/Assets/Img/about_choose_us_img.png" alt="Growth Chart">
+                    </div>
+                </div>
+    
+            </div>
+        </section>
+        <!-- service section -->
+        <section id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="m7c-section-header text-center mt-5">
+                            <h2 class="m7c-section-title">Our Services</h2>
+                            <div class="m7c-title-underline mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <h2>Our Services</h2> -->
+            <div class="service-grid">
+                <a href="/hr_complaints/" class="service-link" aria-label="HR Compliances">
+                    <div class="service-item">
+                      <i class="fas fa-laptop-code"></i>
+                      <h3>HR Compliances</h3>
+                      <p>Comprehensive range of Services</p>
+                    </div>
+                  </a>
+                <div class="service-item">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Custom web solutions tailored to your business requirements.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Software Development</h3>
+                    <p>Robust and scalable software solutions for diverse industries.</p>
+                </div>
+               
+                <div class="service-item">
+                    <i class="fab fa-android"></i>
+                    <h3>Android Development</h3>
+                    <p>Innovative Android apps to engage your mobile audience.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-ad"></i>
+                    <h3>Ad Services</h3>
+                    <p>Strategic advertising solutions to maximize brand visibility and engagement.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fab fa-apple"></i>
+                    <h3>iOS Development</h3>
+                    <p>Sleek and powerful iOS apps for Apple device users.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>UI/UX Design</h3>
+                    <p>Intuitive and visually appealing designs for optimal user experience.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>IT Infrastructure</h3>
+                    <p>Comprehensive IT solutions to streamline your operations.</p>
+                </div>
+               
+                <div class="d-flex justify-content-center align-items-center mb-5">
+                  <a href="/service/" style="text-decoration: none;">
+                    <button class="exp_button">
+                        Explore More
+                        <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+                          <path
+                            clip-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                            fill-rule="evenodd"
+                          ></path>
+                        </svg>
+                    </button>
+                  </a>
+                </div>
+            </div>
+        </section>
+
+
+    
+  
+    <!-- Footer -->
+    <!-- Footer -->
+ 
+
+ 
+<!-- Bootstrap & Font Awesome CDN Links -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+    .m7-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+        color: rgba(255, 255, 255, 0.85);
+        padding: 4rem 0 2rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Logo styles */
+    .m7-footer-logo {
+        display: inline-block;
+        transition: transform 0.3s ease;
+    }
+
+    .m7-footer-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .m7-footer-desc {
+        color: rgba(255, 255, 255, 0.8) !important;
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    /* Headings */
+    .m7-footer-heading {
+        color: #1a73e8;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+        display: inline-block;
+    }
+
+    .m7-footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 50px;
+        height: 2px;
+        background: #1a73e8;
+        margin: 0 auto;
+    }
+
+    /* Links list */
+    .m7-footer-links {
+        list-style: none;
+        margin-bottom: 0;
+    }
+
+    .m7-footer-links li {
+        margin-bottom: 0.7rem;
+    }
+
+    .m7-footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+        position: relative;
+        padding-left: 0;
+        display: block;
+        text-align: start;
+    }
+
+    .m7-footer-links a:hover {
+        color: #1a73e8;
+        padding-left: 5px;
+    }
+
+    /* Social icons */
+    .m7-social-icons {
+        margin-bottom: 1rem;
+    }
+
+    .m7-social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: #1a73e8;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .m7-social-link:hover {
+        background: #1a73e8;
+        color: #fff;
+        transform: translateY(-3px);
+    }
+
+    /* Contact items */
+    .m7-contact-item {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .m7-contact-icon {
+        color: #1a73e8;
+        font-size: 1rem;
+        margin-right: 12px;
+        margin-top: 4px;
+        flex-shrink: 0;
+    }
+
+    .m7-contact-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .m7-mail-link {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .m7-mail-link:hover {
+        color: #1a73e8;
+    }
+
+    /* Footer bottom */
+    .m7-footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .m7-copyright {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+    }
+
+    .m7-legal-link {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: color 0.3s ease;
+    }
+
+    .m7-legal-link:hover {
+        color: #1a73e8;
+    }
+
+    /* Floating shapes */
+    .m7-floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .m7-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(26, 115, 232, 0.05);
+        animation: floatAnimation 8s infinite ease-in-out;
+    }
+
+    @keyframes floatAnimation {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991.98px) {
+        .m7-footer {
+            padding: 3rem 0 1.5rem 0;
+        }
+        
+        .m7-footer-heading {
+            margin-bottom: 1.2rem;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .m7-footer-heading::after {
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        
+        .m7-footer-desc {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 90%;
+        }
+        .m7-contact-item {
+            justify-content: center;
+        }
+
+        
+        .m7-footer-bottom {
+            margin-top: 2rem;
+        }
+        .m7-footer-links a{
+            text-align: center;
+        }
+    }
+
+    /* Special tweaks for small screens */
+    @media (max-width: 575.98px) {
+        .m7-footer {
+            padding: 2.5rem 0 1rem 0;
+        }
+        
+        .m7-footer-heading {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .m7-footer-links a, 
+        .m7-contact-text {
+            font-size: 0.85rem;
+        }
+        
+        .m7-footer-links li {
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .m7-social-link {
+            width: 32px;
+            height: 32px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+<footer class="m7-footer py-5">
+    <div class="container">
+        <div class="row position-relative gy-4">
+            <!-- Company Info Column -->
+            <div class="col-lg-4 col-md-6">
+                <div class="m7-footer-brand mb-4">
+                    <div class="m7-floating-shapes d-none d-md-block">
+                        <div class="m7-shape" style="width: 50px; height: 50px; left: 10%; top: 20%;"></div>
+                        <div class="m7-shape" style="width: 30px; height: 30px; left: 30%; top: 50%;"></div>
+                        <div class="m7-shape" style="width: 70px; height: 70px; left: 60%; top: 30%;"></div>
+                        <div class="m7-shape" style="width: 40px; height: 40px; left: 80%; top: 60%;"></div>
+                    </div>
+                    <a href="/" class="m7-footer-logo d-inline-block mb-3 text-md-start text-center w-100">
+                        <img alt="logo" src="/static/Assets/Img/logo_trans_m7.png" class="img-fluid" style="max-height: 60px;">
+                    </a>
+                    <p class="m7-footer-desc mb-4 text-md-start text-center mx-auto">Innovating the Future of Technology. We transform ideas into cutting-edge digital solutions.</p>
+                    <div class="m7-social-icons d-flex flex-wrap gap-3 justify-content-md-start justify-content-center">
+                        <a href="https://www.facebook.com/share/165EFPhRNY/" class="m7-social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://youtube.com/@m7corporation-n4u?si=MiA6eGk1J-LrJ0HN" class="m7-social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/company/m7_corporation/" class="m7-social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/m7_corporation" class="m7-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links Column -->
+            <div class="col-lg-2 col-md-6 col-6">
+                <h5 class="m7-footer-heading text-md-start text-center">Quick Links</h5>
+                <ul class="m7-footer-links ps-0">
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/careers/">Careers</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                    <li><a href="/service/">Services</a></li>
+                    <li><a href="/products/">Products</a></li>
+                </ul>
+            </div>
+
+            <!-- Services Column -->
+            <div class="col-lg-3 col-md-6 col-6">
+                <h5 class="m7-footer-heading text-md-start text-center">Our Services</h5>
+                <ul class="m7-footer-links ps-0">
+                    <li><a href="/service/">Digital Transformation</a></li>
+                    <li><a href="/service/">Cloud Solutions</a></li>
+                    <li><a href="/service/">AI & Machine Learning</a></li>
+                    <li><a href="/service/">Cybersecurity</a></li>
+                    <li><a href="/service/">IoT Solutions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Column -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="m7-footer-heading text-md-start text-center">Contact Us</h5>
+                <div class="m7-contact-list">
+                    <div class="m7-contact-item mb-3">
+                        <i class="fas fa-map-marker-alt m7-contact-icon"></i>
+                        <p class="m7-contact-text mb-0">No.6, Dhanammal street, Spurtank road, chetpet Chennai 600-031</p>
+                    </div>
+                    <div class="m7-contact-item mb-3">
+                        <i class="fas fa-phone m7-contact-icon"></i>
+                        <p class="m7-contact-text mb-0">+91 78239 32051</p>
+                    </div>
+                    <div class="m7-contact-item">
+                        <i class="fas fa-envelope m7-contact-icon"></i>
+                        <p class="m7-contact-text mb-0"><a href="mailto:ceo@m7corporation.tech" class="m7-mail-link">ceo@m7corporation.tech</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="row m7-footer-bottom mt-4 pt-4">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="m7-copyright mb-2 mb-md-0">&copy; 2025 M7 Corporation. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="m7-footer-legal">
+                    <a href="/privacy_policy/" class="m7-legal-link me-3">Privacy Policy</a>
+                    <a href="/term_Conditions/" class="m7-legal-link">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Common JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="/static/Assets/Js/scripts.js"></script>
+
+    <script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      const toast = document.getElementById('install-toast');
+      if (toast) {
+        toast.style.display = 'flex';
+        document.getElementById('install-now').addEventListener('click', () => {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(choiceResult => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log("App installed by user");
+            } else {
+              console.log("User dismissed install prompt");
+            }
+            toast.style.display = 'none';
+            deferredPrompt = null;
+          });
+        });
+      }
+    });
+    window.addEventListener('appinstalled', () => {
+      alert("App Installed Successfully!");
+    });
+    </script>
+
+    <!-- Page Specific JS Block -->
+    
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MP5PZ4TB"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager(noscript)-->
+
+</body>
+</html>

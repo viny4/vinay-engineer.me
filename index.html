@@ -76,38 +76,79 @@
     <!-- About Section -->
     <section id="about" class="about section">
       <div class="container" data-aos="fade-up">
-        <div class="row g-5 align-items-center">
+        <div class="row g-5">
+          
+          <!-- Left Column: Experience Timeline -->
           <div class="col-lg-6">
-            <div class="about-img-wrapper" data-aos="zoom-in" data-aos-delay="200">
-              <img src="assets/img/me-2.jpeg" class="img-fluid rounded-4 shadow-lg glass-card" alt="">
-              <div class="years-badge">
-                <span class="count">2+</span>
-                <span class="label">Years Exp</span>
+            <h3 class="section-heading mb-4">Experience <span class="accent-text">Timeline</span></h3>
+            <div class="timeline">
+              
+              <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card p-4">
+                  <span class="date">2023 - Present</span>
+                  <h4>Python Django Developer</h4>
+                  <h5 class="accent-text">Thaagam Foundation / M7 Corporation</h5>
+                  <p>Architecting scalable backend systems. Reducing manual workload by 60% via AWS automation (SES/SNS) and integrating GenAI for fraud detection.</p>
+                </div>
+              </div>
+
+               <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content glass-card p-4">
+                  <span class="date">2024 - Present</span>
+                  <h4>Master of Computer Applications</h4>
+                  <h5 class="accent-text">Madras University</h5>
+                  <p>Deepening knowledge in software architecture, advanced algorithms, and cloud computing.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Skills & Bio -->
+          <div class="col-lg-6">
+            <h3 class="section-heading mb-4">Technical <span class="accent-text">Arsenal</span></h3>
+            <p class="lead text-white-50 mb-4">I craft high-performance digital solutions using a battle-tested stack.</p>
+            
+            <div class="skills-category mb-4">
+              <h5 class="mb-3"><i class="bi bi-server me-2"></i>Backend & Core</h5>
+              <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">Django</div>
+                <div class="skill-tag">FastAPI</div>
+                <div class="skill-tag">REST APIs</div>
+                <div class="skill-tag">Microservices</div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <h3 class="section-heading">Engineering the <span class="accent-text">Unseen</span></h3>
-            <p class="lead text-white-50">I don't just write code; I design scalable architectures that power seamless digital experiences.</p>
-            <p>
-              Specializing in Python and Django, I've delivered over <strong>8+ production applications</strong>. From automating enterprise workflows on AWS to integrating generative AI for fraud detection, my work bridges the gap between complex backend logic and user-centric value.
-            </p>
-            
-            <div class="skills-grid mt-4">
-              <div class="skill-tag">Python</div>
-              <div class="skill-tag">Django</div>
-              <div class="skill-tag">AWS</div>
-              <div class="skill-tag">REST APIs</div>
-              <div class="skill-tag">PostgreSQL</div>
-              <div class="skill-tag">Redis</div>
-              <div class="skill-tag">Docker</div>
-              <div class="skill-tag">AI Integration</div>
+
+            <div class="skills-category mb-4">
+              <h5 class="mb-3"><i class="bi bi-cloud me-2"></i>Cloud & DevOps</h5>
+              <div class="skills-grid">
+                <div class="skill-tag">AWS (EC2, S3, SES)</div>
+                <div class="skill-tag">Docker</div>
+                <div class="skill-tag">CI/CD</div>
+                <div class="skill-tag">Nginx</div>
+                <div class="skill-tag">Git</div>
+              </div>
             </div>
 
-            <div class="mt-4">
-              <a href="assets/resume/Vinayagam CV.pdf" class="btn-link-neon">Download CV <i class="bi bi-arrow-right"></i></a>
+            <div class="skills-category mb-4">
+              <h5 class="mb-3"><i class="bi bi-database me-2"></i>Data & AI</h5>
+              <div class="skills-grid">
+                <div class="skill-tag">PostgreSQL</div>
+                <div class="skill-tag">Redis</div>
+                <div class="skill-tag">Celery</div>
+                <div class="skill-tag">Gemini AI</div>
+                <div class="skill-tag">Pandas</div>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <a href="assets/resume/Vinayagam CV.pdf" class="btn-neon">Download Full CV <i class="bi bi-download ms-2"></i></a>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -125,12 +166,12 @@
           <!-- Project 1 -->
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
             <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800" class="img-fluid" alt="">
+              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" class="img-fluid" alt="Civic AI">
               <div class="portfolio-overlay">
                 <h4>Civic Services AI</h4>
                 <p>AI-driven image analysis for smart cities.</p>
                 <div class="links">
-                  <a href="https://images.unsplash.com/photo-1573167243872-43c6433b9d40?w=800" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
+                  <a href="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
                   <a href="portfolio-details-civic.html"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -140,12 +181,12 @@
           <!-- Project 2 -->
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-web">
             <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800" class="img-fluid" alt="">
+              <img src="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80" class="img-fluid" alt="WhatsApp Platform">
               <div class="portfolio-overlay">
                 <h4>Enterprise WhatsApp</h4>
                 <p>Real-time chat automation.</p>
                 <div class="links">
-                  <a href="https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=800" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
+                  <a href="https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&q=80" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
                   <a href="portfolio-details-whatsapp.html"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
@@ -155,12 +196,12 @@
           <!-- Project 3 -->
           <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
             <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800" class="img-fluid" alt="">
+              <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80" class="img-fluid" alt="Donation System">
               <div class="portfolio-overlay">
                 <h4>Donation System</h4>
                 <p>Secure, multi-dashboard architecture.</p>
                 <div class="links">
-                  <a href="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
+                  <a href="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=800&q=80" data-gallery="portfolio-gallery" class="glightbox"><i class="bi bi-eye"></i></a>
                   <a href="portfolio-details-donation.html"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
