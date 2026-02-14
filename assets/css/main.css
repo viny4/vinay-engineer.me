@@ -690,6 +690,14 @@ img {
   color: rgba(59, 130, 246, 0.3);
 }
 
+.profile-image img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(59, 130, 246, 0.2);
+}
+
 .status-indicator {
   position: absolute;
   bottom: 1rem;
