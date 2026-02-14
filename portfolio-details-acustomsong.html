@@ -11,9 +11,11 @@
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <link href="https://fonts.googleapis.com/" rel="preconnect">
-  <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
 
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -26,45 +28,38 @@
 
 <body class="portfolio-details-page">
 
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+  <!-- Background Mesh Gradient -->
+  <div class="mesh-background"></div>
 
-    <div class="profile-img">
-      <img src="assets/img/me.png" alt="Vinayagam" class="img-fluid rounded-circle">
+  <!-- Navbar -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename">Vinayagam<span class="accent-dot">.</span></h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#portfolio">Work</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
     </div>
-
-    <a href="index-2.html" class="logo d-flex align-items-center justify-content-center">
-      <h1 class="sitename">Vinayagam</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://github.com/vinaythaagam" class="github" target="_blank"><i class="bi bi-github"></i></a>
-      <a href="https://linkedin.com/in/vk4499" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
-      <a href="mailto:vinayagamofficial@gmail.com" class="google-plus"><i class="bi bi-envelope"></i></a>
-    </div>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index-2.html#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="index-2.html#about"><i class="bi bi-person navicon"></i> About</a></li>
-        <li><a href="index-2.html#resume"><i class="bi bi-file-earmark-text navicon"></i> Resume</a></li>
-        <li><a href="index-2.html#portfolio"><i class="bi bi-images navicon"></i> Projects</a></li>
-        <li><a href="index-2.html#services"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
-        <li><a href="index-2.html#contact"><i class="bi bi-envelope navicon"></i> Contact</a></li>
-      </ul>
-    </nav>
-
   </header>
 
   <main class="main">
 
-    <div class="page-title dark-background">
+    <!-- Page Title -->
+    <div class="page-title">
       <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Project Details</h1>
+        <h1 class="mb-2 mb-lg-0 text-white">Project Details</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index-2.html">Home</a></li>
-            <li class="current">ACustomSong E-commerce Platform</li>
+            <li><a href="index.html">Home</a></li>
+            <li class="current text-white-50">ACustomSong E-commerce Platform</li>
           </ol>
         </nav>
       </div>
@@ -77,7 +72,7 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper init-swiper">
+            <div class="portfolio-details-slider swiper init-swiper glass-card">
 
               <script type="application/json" class="swiper-config">
                 {
@@ -113,97 +108,57 @@
               <div class="swiper-pagination"></div>
             </div>
 
-            <div class="portfolio-description mt-4" data-aos="fade-up" data-aos-delay="300">
-              <h2>Project Overview</h2>
+            <div class="portfolio-description glass-card p-4 mt-4" data-aos="fade-up" data-aos-delay="300">
+              <h2 class="text-white mb-3">Project Overview</h2>
               <p>
-                Developed ACustomSong, a specialized e-commerce platform connecting customers with professional musicians to create personalized songs for special occasions. The platform handles the complete lifecycle from custom order placement through collaborative creation to final delivery, featuring real-time communication between clients and artists.
+                Developed <strong>ACustomSong</strong>, a specialized e-commerce platform connecting customers with professional musicians to create personalized songs for special occasions. The platform handles the complete lifecycle from custom order placement through collaborative creation to final delivery.
               </p>
               <p>
-                This innovative platform solves the challenge of commissioning personalized music by providing a streamlined process for customers to share their requirements, collaborate with musicians, provide feedback, and receive professionally produced custom songs. The system manages everything from initial consultation to final product delivery with secure payment processing.
+                This innovative platform solves the challenge of commissioning personalized music by providing a streamlined process for customers to share their requirements, collaborate with musicians, provide feedback, and receive professionally produced custom songs.
               </p>
 
-              <h3 class="mt-4">Key Features</h3>
-              <ul>
-                <li><strong>Custom Order Management:</strong> Intuitive form system capturing customer requirements including occasion type, preferred music style, lyrics preferences, and special instructions</li>
-                <li><strong>Real-time Client Interaction:</strong> Built-in messaging system enabling direct communication between customers and assigned musicians for feedback and revisions</li>
-                <li><strong>Artist Portfolio System:</strong> Showcase of musician profiles with audio samples, specializations, ratings, and past work examples helping customers make informed choices</li>
-                <li><strong>Order Tracking Dashboard:</strong> Transparent progress tracking from order placement through composition, recording, production, and final delivery stages</li>
-                <li><strong>Revision Management:</strong> Structured workflow for customers to request changes with version control tracking all iterations</li>
-                <li><strong>Secure Payment Integration:</strong> Milestone-based payment system with 50% advance and remaining upon delivery, supporting multiple payment methods</li>
-                <li><strong>Audio Preview System:</strong> Secure streaming of work-in-progress recordings for customer approval before final production</li>
-                <li><strong>Digital Delivery:</strong> Automated delivery of final songs in multiple formats (MP3, WAV, FLAC) via secure download links</li>
-                <li><strong>Review & Rating System:</strong> Post-delivery feedback collection helping maintain quality standards and build artist reputation</li>
-                <li><strong>Admin Dashboard:</strong> Comprehensive backend for managing orders, monitoring artist performance, handling disputes, and generating business analytics</li>
+              <h3 class="mt-4 text-accent">Key Features</h3>
+              <ul class="list-unstyled">
+                <li><i class="bi bi-check2-circle text-accent me-2"></i><strong>Custom Order Management:</strong> Intuitive capture of requirements (occasion, style, lyrics).</li>
+                <li><i class="bi bi-check2-circle text-accent me-2"></i><strong>Real-time Client Interaction:</strong> Built-in messaging system using Django Channels.</li>
+                <li><i class="bi bi-check2-circle text-accent me-2"></i><strong>Artist Portfolio System:</strong> Showcase of musician profiles and samples.</li>
+                <li><i class="bi bi-check2-circle text-accent me-2"></i><strong>Payment Integration:</strong> Milestone-based payments with Razorpay.</li>
+                <li><i class="bi bi-check2-circle text-accent me-2"></i><strong>Audio Processing:</strong> FFmpeg integration for format conversion and watermarking.</li>
               </ul>
 
-              <h3 class="mt-4">Technical Implementation</h3>
+              <h3 class="mt-4 text-accent">Technical Implementation</h3>
               <p>
-                <strong>Backend Framework:</strong> Django with Django REST Framework providing robust API endpoints for frontend applications. Implemented custom middleware for request logging and performance monitoring.
+                <strong>Backend:</strong> Django with REST Framework. Custom middleware for monitoring.
               </p>
               <p>
-                <strong>Database:</strong> PostgreSQL with complex schema managing relationships between customers, artists, orders, revisions, messages, and payments. Optimized queries ensuring fast page loads even with large audio files.
+                <strong>Real-time:</strong> <strong>Django Channels</strong> for WebSockets.
               </p>
               <p>
-                <strong>Media Management:</strong> AWS S3 for secure storage of audio files with CloudFront CDN for fast global delivery. Implemented signed URLs for secure time-limited access to preview files.
+                <strong>Media:</strong> <strong>AWS S3</strong> + CloudFront CDN + Signed URLs.
               </p>
               <p>
-                <strong>Real-time Features:</strong> Django Channels for WebSocket connections enabling instant message delivery and real-time order status updates without page refreshes.
-              </p>
-              <p>
-                <strong>Payment Processing:</strong> Razorpay integration with webhook handling for automatic payment status updates. Implemented escrow-like system holding payments until customer approval.
-              </p>
-              <p>
-                <strong>Notification System:</strong> Multi-channel notification delivery via email (AWS SES), SMS (AWS SNS), and WhatsApp Business API ensuring customers never miss important updates.
-              </p>
-              <p>
-                <strong>Audio Processing:</strong> FFmpeg integration for format conversion, audio normalization, and watermarking preview files to prevent unauthorized distribution.
+                <strong>Audio:</strong> FFmpeg for processing.
               </p>
 
-              <h3 class="mt-4">Project Impact</h3>
+              <h3 class="mt-4 text-accent">Project Impact</h3>
               <ul>
-                <li>Successfully delivered 500+ custom songs with 96% customer satisfaction rate</li>
-                <li>Reduced average order completion time from 21 days to 12 days through streamlined communication</li>
-                <li>Achieved 85% first-draft approval rate indicating accurate requirement capture</li>
-                <li>Generated ₹15+ lakhs in revenue within first year of operation</li>
-                <li>Built network of 25+ professional musicians with verified portfolios</li>
-                <li>Reduced payment disputes by 90% through clear milestone-based payment system</li>
-                <li>Improved customer retention with 40% repeat order rate for different occasions</li>
-                <li>Automated 70% of order management tasks reducing administrative overhead</li>
-              </ul>
-
-              <h3 class="mt-4">Customer Journey</h3>
-              <p><strong>Discovery:</strong> Customer browses artist portfolios filtered by music genre and occasion type</p>
-              <p><strong>Order Placement:</strong> Fills detailed form specifying requirements, occasion date, budget, and special requests</p>
-              <p><strong>Artist Assignment:</strong> System matches order with appropriate musician based on style, availability, and expertise</p>
-              <p><strong>Initial Consultation:</strong> Artist contacts customer via platform messaging to clarify requirements and set expectations</p>
-              <p><strong>First Draft:</strong> Artist uploads preview of composed song, customer receives notification to review</p>
-              <p><strong>Revision Cycle:</strong> Customer provides feedback, artist makes adjustments, process repeats until approval</p>
-              <p><strong>Final Production:</strong> Upon approval, artist produces high-quality final version with professional mixing and mastering</p>
-              <p><strong>Delivery:</strong> Customer receives download links for multiple formats via email and WhatsApp</p>
-              <p><strong>Feedback:</strong> System prompts customer to rate experience and provide testimonial</p>
-
-              <h3 class="mt-4">Challenges Overcome</h3>
-              <ul>
-                <li>Designed flexible requirements capture form accommodating diverse song types (birthday, anniversary, proposal, tribute, etc.)</li>
-                <li>Built efficient audio streaming system with bandwidth optimization for preview files</li>
-                <li><li>Implemented fair dispute resolution process protecting both customer and artist interests</li>
-                <li>Created intuitive interface for artists with varying technical proficiency</li>
-                <li>Ensured GDPR-compliant handling of personal information shared in song lyrics</li>
-                <li>Developed automated quality checks ensuring delivered files meet technical standards</li>
+                <li>Delivered <strong>500+ custom songs</strong> with 96% satisfaction</li>
+                <li>Reduced order completion time from 21 to <strong>12 days</strong></li>
+                <li>Generated <strong>₹15+ lakhs</strong> in revenue</li>
+                <li>Reduced payment disputes by <strong>90%</strong></li>
               </ul>
             </div>
           </div>
 
           <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project Information</h3>
-              <ul>
-                <li><strong>Category:</strong> E-commerce / Creative Services</li>
-                <li><strong>Client:</strong> Music Production Company</li>
-                <li><strong>Project Duration:</strong> 4 months</li>
-                <li><strong>Technologies:</strong> Django, PostgreSQL, Django Channels, AWS (S3, SES, SNS, CloudFront), Razorpay, FFmpeg, WebSockets</li>
-                <li><strong>Orders Completed:</strong> 500+</li>
-                <li><strong>Active Artists:</strong> 25+</li>
+            <div class="portfolio-info glass-card p-4" data-aos="fade-up" data-aos-delay="200">
+              <h3 class="text-white mb-3">Project Information</h3>
+              <ul class="list-unstyled">
+                <li class="mb-2"><strong>Category</strong>: E-commerce / Creative Services</li>
+                <li class="mb-2"><strong>Client</strong>: Music Production Company</li>
+                <li class="mb-2"><strong>Project Duration</strong>: 4 months</li>
+                <li class="mb-2"><strong>Orders Completed</strong>: 500+</li>
+                <li class="mb-2"><strong>Technologies</strong>: Django, PostgreSQL, Channels, AWS, Razorpay, FFmpeg</li>
               </ul>
             </div>
           </div>
@@ -216,12 +171,11 @@
 
   </main>
 
-  <footer id="footer" class="footer position-relative light-background">
+  <footer id="footer" class="footer position-relative">
     <div class="container">
       <div class="copyright text-center ">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">Vinayagam</strong> <span>All Rights Reserved</span></p>
+        <p>&copy; 2024 <strong>Vinayagam</strong>. All Rights Reserved.</p>
       </div>
-      
     </div>
   </footer>
 
@@ -230,15 +184,12 @@
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
   <script src="assets/js/main.js"></script>
 
