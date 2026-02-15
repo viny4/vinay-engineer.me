@@ -445,6 +445,57 @@ a:hover {
   color: var(--color-accent);
 }
 
+/* === TERMINAL BUTTON === */
+.btn-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  padding: 1rem 2rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.btn-terminal::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-accent);
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btn-terminal:hover {
+  color: var(--color-bg);
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.4);
+}
+
+.btn-terminal:hover::before {
+  transform: translateX(0);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-terminal:hover .btn-icon {
+  transform: translateY(2px);
+}
+
 /* === TERMINAL BOX === */
 .terminal-box {
   background: #1a1a1a;
