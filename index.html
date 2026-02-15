@@ -1,1200 +1,566 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Vinayagam D | Python Backend Developer | Django & DRF Expert</title>
-  <meta content="Python Backend Developer with 2+ years experience in Django, DRF, REST APIs, PostgreSQL, AWS, and AI integration. Built scalable systems serving 200K+ users." name="description">
-  <meta name="keywords" content="Python Developer, Django Developer, Backend Engineer, REST API, PostgreSQL, AWS, Chennai, AI Integration, Google Gemini">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VINAYAGAM.D → Python Backend Engineer</title>
+  <meta name="description" content="Python Backend Developer. 200K+ users. 8+ production systems. Chennai.">
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vinayagam D | Python Backend Developer">
-  <meta property="og:description" content="Python Backend Developer specializing in Django, DRF, REST APIs, and scalable backend systems.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vinay-engineer.me/">
-  <meta property="og:image" content="https://vinay-engineer.me/assets/img/og-image.png">
-  
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
+  <!-- Fonts - Unique combinations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Outfit:wght@300;400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=Archivo+Black&display=swap" rel="stylesheet">
+  
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <!-- Animated Background Grid -->
-  <div class="grid-background"></div>
-  <div class="gradient-orbs"></div>
+  <!-- ASCII Art Background Pattern -->
+  <div class="ascii-pattern"></div>
 
-  <!-- Navbar -->
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <div class="logo-symbol">V</div>
-        <h1 class="sitename">VINAYAGAM</h1>
-      </a>
+  <!-- Floating Particles -->
+  <div class="particles-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#expertise">Expertise</a></li>
-          <li><a href="#portfolio">Projects</a></li>
-          <li><a href="#technical">Technical</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+  <!-- Matrix Rain Effect (optional, subtle) -->
+  <canvas id="matrix-canvas" class="matrix-background"></canvas>
+
+  <!-- Gradient Orbs -->
+  <div class="gradient-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- Terminal-style Navigation -->
+  <nav class="terminal-nav">
+    <div class="container-fluid">
+      <div class="nav-content">
+        <div class="nav-prompt">
+          <span class="prompt-symbol">$</span>
+          <span class="nav-path">~/vinayagam.d</span>
+        </div>
+        <div class="nav-menu">
+          <a href="#home" class="nav-cmd">./home</a>
+          <a href="#work" class="nav-cmd">./work</a>
+          <a href="#skills" class="nav-cmd">./skills</a>
+          <a href="#contact" class="nav-cmd">./contact</a>
+        </div>
+        <div class="nav-status">
+          <span class="status-dot"></span>
+          <span>AVAILABLE</span>
+        </div>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <main class="main">
+  <main class="main-wrapper">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero d-flex align-items-center">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7">
-            <div class="hero-content">
-              <div class="hero-badge" data-aos="fade-up" data-aos-delay="0">
-                <span class="badge-dot"></span>
-                Open to New Opportunities
-              </div>
-              
-              <h1 data-aos="fade-up" data-aos-delay="100">
-                Python Backend Developer<br>
-                Building <span class="gradient-text">Scalable Systems</span>
+    <!-- Hero - Editorial Magazine Style -->
+    <section id="home" class="hero-editorial">
+      <div class="container-fluid">
+        
+        <!-- ASCII Art Header -->
+        <div class="ascii-header">
+          <pre class="ascii-art">
+╦  ╦╦╔╗╔╔═╗╦ ╦╔═╗╔═╗╔═╗╔╦╗  ╔╦╗
+╚╗╔╝║║║║╠═╣╚╦╝╠═╣║ ╦╠═╣║║║   ║║
+ ╚╝ ╩╝╚╝╩ ╩ ╩ ╩ ╩╚═╝╩ ╩╩ ╩  ═╩╝</pre>
+        </div>
+
+        <!-- Main Title Block -->
+        <div class="title-block">
+          <div class="row align-items-end">
+            <div class="col-lg-7">
+              <div class="issue-label">ISSUE #001 → BACKEND ENGINEER</div>
+              <h1 class="display-title">
+                PYTHON<br>
+                BACKEND<br>
+                <span class="highlight-text">ENGINEER</span>
               </h1>
-              
-              <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                I architect and build production-grade backend systems using Python, Django, and cloud infrastructure. 
-                Specialized in API design, database optimization, AI integration, and distributed systems serving 200K+ active users.
-              </p>
-
-              <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
-                <div class="stat-item">
-                  <div class="stat-number">8+</div>
-                  <div class="stat-label">Production Apps</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                  <div class="stat-number">200K+</div>
-                  <div class="stat-label">Users Served</div>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                  <div class="stat-number">2+</div>
-                  <div class="stat-label">Years Experience</div>
-                </div>
-              </div>
-
-              <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
-                <a href="#portfolio" class="btn btn-primary">
-                  <span>View Projects</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-                <a href="#contact" class="btn btn-secondary">
-                  <span>Let's Connect</span>
-                  <i class="bi bi-envelope"></i>
-                </a>
-              </div>
-
-              <div class="tech-stack-preview" data-aos="fade-up" data-aos-delay="500">
-                <span class="tech-label">Core Stack:</span>
-                <div class="tech-icons">
-                  <span class="tech-badge" title="Python">Python</span>
-                  <span class="tech-badge" title="Django">Django</span>
-                  <span class="tech-badge" title="PostgreSQL">PostgreSQL</span>
-                  <span class="tech-badge" title="Google Gemini AI">Gemini AI</span>
-                  <span class="tech-badge" title="AWS">AWS</span>
-                  <span class="tech-badge" title="Docker">Docker</span>
-                  <span class="tech-badge" title="Redis">Redis</span>
+              <div class="subtitle-meta">
+                <div class="meta-grid">
+                  <div class="meta-item">
+                    <span class="meta-label">LOCATION</span>
+                    <span class="meta-value">Chennai, IN</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">EXPERIENCE</span>
+                    <span class="meta-value">2+ Years</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">USERS SERVED</span>
+                    <span class="meta-value">200K+</span>
+                  </div>
+                  <div class="meta-item">
+                    <span class="meta-label">STATUS</span>
+                    <span class="meta-value status-active">OPEN TO WORK</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-lg-5">
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="200">
-              <div class="code-window">
-                <div class="window-header">
-                  <div class="window-controls">
-                    <span></span><span></span><span></span>
+            
+            <div class="col-lg-5">
+              <!-- Profile Image Terminal Frame -->
+              <div class="profile-terminal">
+                <div class="terminal-header">
+                  <div class="terminal-controls">
+                    <span class="control-red"></span>
+                    <span class="control-yellow"></span>
+                    <span class="control-green"></span>
                   </div>
-                  <div class="window-title">main.py</div>
+                  <span class="terminal-title">vinayagam@backend:~$</span>
                 </div>
-                <div class="code-content">
-                  <pre><code><span class="code-keyword">class</span> <span class="code-class">BackendEngineer</span>:
-    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):
-        self.name = <span class="code-string">"Vinayagam"</span>
-        self.role = <span class="code-string">"Backend Engineer"</span>
-        self.location = <span class="code-string">"Chennai, India"</span>
-        
-        self.skills = {
-            <span class="code-string">"languages"</span>: [<span class="code-string">"Python"</span>, <span class="code-string">"JavaScript"</span>, <span class="code-string">"SQL"</span>],
-            <span class="code-string">"frameworks"</span>: [<span class="code-string">"Django"</span>, <span class="code-string">"DRF"</span>, <span class="code-string">"FastAPI"</span>],
-            <span class="code-string">"databases"</span>: [<span class="code-string">"PostgreSQL"</span>, <span class="code-string">"Redis"</span>, <span class="code-string">"MySQL"</span>],
-            <span class="code-string">"cloud"</span>: [<span class="code-string">"AWS"</span>, <span class="code-string">"Docker"</span>, <span class="code-string">"Nginx"</span>],
-            <span class="code-string">"ai"</span>: [<span class="code-string">"Google Gemini"</span>, <span class="code-string">"Prompt Engineering"</span>],
-        }
-        
-    <span class="code-keyword">def</span> <span class="code-function">build_scalable_systems</span>(self):
-        <span class="code-keyword">return</span> <span class="code-string">"Production-ready architectures"</span>
-    
-    <span class="code-keyword">def</span> <span class="code-function">integrate_ai</span>(self):
-        <span class="code-keyword">return</span> <span class="code-string">"Intelligent automation solutions"</span></code></pre>
+                <div class="profile-image-wrapper">
+                  <div class="scan-line"></div>
+                  <div class="glitch-overlay"></div>
+                  <img src="assets/img/me and ana.png" alt="Vinayagam D" class="profile-image">
+                  <div class="image-border-effects">
+                    <div class="corner corner-tl"></div>
+                    <div class="corner corner-tr"></div>
+                    <div class="corner corner-bl"></div>
+                    <div class="corner corner-br"></div>
+                  </div>
+                </div>
+                <div class="profile-stats-bar">
+                  <span class="stat-item">
+                    <i class="bi bi-cpu"></i> 200K+ USERS
+                  </span>
+                  <span class="stat-separator">|</span>
+                  <span class="stat-item">
+                    <i class="bi bi-lightning"></i> 8+ APPS
+                  </span>
+                  <span class="stat-separator">|</span>
+                  <span class="stat-item">
+                    <i class="bi bi-check-circle"></i> 99.9%
+                  </span>
+                </div>
+              </div>
+              
+              <!-- Code Snippet Box -->
+              <div class="terminal-box">
+                <div class="terminal-header">
+                  <span>skills.json</span>
+                </div>
+                <div class="terminal-content">
+                  <code>{
+  "core": [
+    "Python",
+    "Django/DRF",
+    "PostgreSQL"
+  ],
+  "ai": [
+    "Gemini AI",
+    "RAG",
+    "Prompts"
+  ],
+  "cloud": [
+    "AWS",
+    "Docker"
+  ],
+  "impact": "200K+ users"
+}</code>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="scroll-indicator" data-aos="fade-in" data-aos-delay="800">
-        <div class="scroll-line"></div>
-        <span>Scroll to explore</span>
+        <!-- Bento Box Stats -->
+        <div class="bento-stats">
+          <div class="stat-box stat-large">
+            <div class="stat-number">08+</div>
+            <div class="stat-label">Production Applications</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">System Uptime</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number">200K+</div>
+            <div class="stat-label">Active Users</div>
+          </div>
+          <div class="stat-box stat-wide">
+            <div class="stat-label" style="margin-bottom: 1rem;">Core Stack</div>
+            <div class="stack-list">
+              <span>Python</span>
+              <span>Django</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>AWS</span>
+              <span>Gemini AI</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-      <div class="container">
+    <!-- Featured Work - Newspaper Editorial Style -->
+    <section id="work" class="work-section">
+      <div class="container-fluid">
         
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Who I Am</span>
-          <h2>Engineering Philosophy</h2>
+        <div class="section-header-editorial">
+          <div class="section-number">01</div>
+          <h2 class="section-title-editorial">FEATURED<br>WORK</h2>
+          <div class="section-line"></div>
         </div>
 
-        <div class="row align-items-center g-5">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="about-image-wrapper">
-              <div class="profile-card">
-                <div class="profile-image">
-                  <!-- Profile Image -->
-                  <img src="assets/img/me%20and%20ana.png" alt="Vinayagam" class="img-fluid">
-                  <div class="status-indicator">
-                    <span class="pulse"></span>
-                    <span class="status-text">Open to Work</span>
-                  </div>
-                </div>
-                
-                <div class="profile-details">
-                  <h3>Vinayagam</h3>
-                  <p class="title">Backend Engineer & System Architect</p>
-                  <p class="location"><i class="bi bi-geo-alt"></i> Chennai, Tamil Nadu, India</p>
-                  
-                  <div class="quick-stats">
-                    <div class="quick-stat">
-                      <i class="bi bi-code-slash"></i>
-                      <span>Clean Code Advocate</span>
-                    </div>
-                    <div class="quick-stat">
-                      <i class="bi bi-lightning-charge"></i>
-                      <span>Performance Optimizer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="about-content">
-              <p class="lead">
-                I'm a backend engineer who believes great software is built on <strong>solid architecture, 
-                clean code, and deep understanding of system fundamentals</strong>.
-              </p>
-              
-              <p>
-                Over the past 2+ years, I've specialized in building production-grade systems using Python and Django, 
-                serving over 200,000 active users. My work spans from designing RESTful APIs to optimizing database 
-                queries, integrating cloud services, and implementing real-time features.
-              </p>
-
-              <p>
-                What drives me is the challenge of transforming complex business requirements into elegant, 
-                scalable technical solutions. I approach every project with a focus on maintainability, 
-                performance, and long-term sustainability.
-              </p>
-
-              <div class="philosophy-points">
-                <div class="point">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <div>
-                    <strong>Architecture First</strong>
-                    <span>Designing systems that scale from day one, not as an afterthought</span>
-                  </div>
-                </div>
-                <div class="point">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <div>
-                    <strong>Code Quality Matters</strong>
-                    <span>Writing code that's readable, testable, and maintainable for the long term</span>
-                  </div>
-                </div>
-                <div class="point">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <div>
-                    <strong>Performance by Design</strong>
-                    <span>Optimizing at every layer - from database queries to API response times</span>
-                  </div>
-                </div>
-                <div class="point">
-                  <i class="bi bi-check-circle-fill"></i>
-                  <div>
-                    <strong>Continuous Learning</strong>
-                    <span>Staying current with industry best practices and emerging technologies</span>
-                  </div>
-                </div>
-              </div>
-
-              <blockquote class="personal-quote">
-                <i class="bi bi-quote"></i>
-                <p>"I exist in the space between lines of code and infinite possibilities. 
-                Fascinated by AI, space technology, and the silent beauty of complex systems. 
-                Like a solitary node in a boundless network, I dedicate my craft to building 
-                what matters."</p>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Expertise Section -->
-    <section id="expertise" class="expertise section dark-section">
-      <div class="container">
-        
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">What I Do</span>
-          <h2>Technical Expertise</h2>
-          <p>Specialized skill sets built through real-world production experience</p>
-        </div>
-
-        <div class="row g-4">
+        <!-- Project Grid - Magazine Layout -->
+        <div class="projects-editorial">
           
-          <!-- Backend Development -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-server"></i>
+          <!-- Project 1: CommAI - HERO PROJECT -->
+          <article class="project-card project-hero">
+            <div class="project-tag-badge">LIVE PRODUCTION</div>
+            <div class="project-content-editorial">
+              <div class="project-meta-bar">
+                <span class="project-year">2024-2025</span>
+                <span class="project-type">Omnichannel Platform</span>
               </div>
-              <h3>Backend Architecture</h3>
-              <p>Designing and building scalable server-side applications with Django and Django REST Framework. 
-              Expert in RESTful API design, authentication systems, and microservices patterns.</p>
+              <h3 class="project-title-big">CommAI</h3>
+              <p class="project-lead">
+                AI-powered omnichannel communication platform unifying 6+ messaging channels (WhatsApp, Instagram, 
+                Messenger, Email, SMS, Live Chat) into a single dashboard. Features RAG-based AI agent processing 
+                10K+ daily messages with 95% faster response time.
+              </p>
               
-              <div class="expertise-tech">
-                <span>Python</span>
-                <span>Django</span>
-                <span>DRF</span>
-                <span>FastAPI</span>
+              <div class="project-metrics-grid">
+                <div class="metric-cell">
+                  <div class="metric-num">6+</div>
+                  <div class="metric-txt">Channels</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-num">10K+</div>
+                  <div class="metric-txt">Daily Messages</div>
+                </div>
+                <div class="metric-cell">
+                  <div class="metric-num">95%</div>
+                  <div class="metric-txt">Faster Response</div>
+                </div>
               </div>
-            </div>
-          </div>
 
-          <!-- Database Engineering -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-database"></i>
-              </div>
-              <h3>Database Engineering</h3>
-              <p>Optimizing database performance through proper indexing, query optimization, and schema design. 
-              Experience with both relational and NoSQL databases for different use cases.</p>
-              
-              <div class="expertise-tech">
-                <span>PostgreSQL</span>
-                <span>MySQL</span>
-                <span>Redis</span>
-                <span>MongoDB</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Cloud & DevOps -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-cloud"></i>
-              </div>
-              <h3>Cloud Infrastructure</h3>
-              <p>Deploying and managing applications on AWS with services like EC2, S3, SES, and SNS. 
-              Containerization with Docker and CI/CD pipeline configuration.</p>
-              
-              <div class="expertise-tech">
-                <span>AWS</span>
-                <span>Docker</span>
-                <span>Nginx</span>
-                <span>Linux</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- API Integration -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-arrows-angle-expand"></i>
-              </div>
-              <h3>API Integration</h3>
-              <p>Integrating third-party services and building custom integrations. Experience with payment gateways, 
-              messaging APIs, and AI services.</p>
-              
-              <div class="expertise-tech">
-                <span>REST APIs</span>
-                <span>WhatsApp API</span>
-                <span>Payment Gateways</span>
-                <span>Webhooks</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- AI & Machine Learning Integration -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-stars"></i>
-              </div>
-              <h3>AI & Prompt Engineering</h3>
-              <p>Integrating Generative AI models and crafting effective prompts for business automation. 
-              Experience with Google Gemini, OpenAI APIs, and LLM-powered features.</p>
-              
-              <div class="expertise-tech">
-                <span>Google Gemini</span>
-                <span>Prompt Engineering</span>
-                <span>LangChain</span>
-                <span>AI APIs</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Real-time Systems -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="expertise-card">
-              <div class="card-icon">
-                <i class="bi bi-lightning-charge"></i>
-              </div>
-              <h3>Real-time Features</h3>
-              <p>Implementing WebSockets and real-time communication using Django Channels. 
-              Building notification systems and live data synchronization.</p>
-              
-              <div class="expertise-tech">
-                <span>Django Channels</span>
+              <div class="tech-tags-editorial">
+                <span>Django REST</span>
+                <span>Meta Business API</span>
+                <span>RAG AI</span>
                 <span>WebSockets</span>
-                <span>Celery</span>
-                <span>RabbitMQ</span>
+                <span>PostgreSQL</span>
+                <span>Redis</span>
               </div>
-            </div>
-          </div>
 
-        </div>
+              <div class="project-links-editorial">
+                <a href="https://commai.m7corporation.com/" target="_blank" class="link-editorial">
+                  VIEW LIVE PROJECT →
+                </a>
+              </div>
+            </div>
+          </article>
 
-        <!-- Skills Grid -->
-        <div class="skills-comprehensive" data-aos="fade-up" data-aos-delay="700">
-          <h3 class="text-center mb-5">Complete Technical Arsenal</h3>
-          
-          <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-code-square"></i> Languages</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>Python</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>JavaScript</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>SQL</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Bash</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>HTML/CSS</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                </div>
+          <!-- Project 2: Civic AI -->
+          <article class="project-card">
+            <div class="project-number">001</div>
+            <div class="project-content-editorial">
+              <h3 class="project-title-editorial">Civic Services AI Platform</h3>
+              <p class="project-desc-short">
+                AI-powered municipal management system with Google Gemini integration. 95% classification 
+                accuracy, 60% reduction in manual processing. Serving 40K+ monthly requests.
+              </p>
+              <div class="project-tech-line">
+                Django · Gemini AI · PostgreSQL · AWS
               </div>
             </div>
+          </article>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-layers"></i> Frameworks</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>Django / DRF</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>FastAPI</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Flask</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Django Channels</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>React (Basic)</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                </div>
+          <!-- Project 3: Donation CRM -->
+          <article class="project-card">
+            <div class="project-number">002</div>
+            <div class="project-content-editorial">
+              <h3 class="project-title-editorial">Multi-Tenant Donation CRM</h3>
+              <p class="project-desc-short">
+                Enterprise-grade CRM platform for non-profits. 200K+ active users, $2M+ donations processed. 
+                Multi-tenant architecture with complete RBAC system.
+              </p>
+              <div class="project-tech-line">
+                Django · DRF · PostgreSQL · AWS · Payment Gateway
               </div>
             </div>
+          </article>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-hdd"></i> Databases & Cache</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>PostgreSQL</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>MySQL</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Redis</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>MongoDB</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Elasticsearch</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                </div>
+          <!-- Project 4: QuickPay -->
+          <article class="project-card">
+            <div class="project-number">003</div>
+            <div class="project-content-editorial">
+              <h3 class="project-title-editorial">QuickPay Fintech</h3>
+              <p class="project-desc-short">
+                Dynamic form builder for financial applications with secure payment processing, 
+                multi-step validation, and real-time verification.
+              </p>
+              <div class="project-tech-line">
+                Django · Payment APIs · JWT · Real-time Validation
               </div>
             </div>
+          </article>
 
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-stars"></i> AI & Tools</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>Google Gemini AI</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Prompt Engineering</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>LangChain</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>OpenAI APIs</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>AI Integration</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row g-4 mt-3">
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-cloud"></i> Cloud & DevOps</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>AWS (EC2, S3, SES)</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Docker</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Git / GitHub</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Linux / Ubuntu</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Nginx</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-diagram-3"></i> Architecture</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>RESTful APIs</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Microservices</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>System Design</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Design Patterns</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>SOLID Principles</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-shield-check"></i> Security & Auth</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>JWT</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>OAuth 2.0</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>API Security</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>CORS</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Encryption</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="skill-category">
-                <h4><i class="bi bi-gear"></i> Other Tools</h4>
-                <div class="skill-list">
-                  <div class="skill-item">
-                    <span>Postman</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>VS Code</span>
-                    <div class="skill-level expert"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>PyCharm</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Swagger/OpenAPI</span>
-                    <div class="skill-level advanced"></div>
-                  </div>
-                  <div class="skill-item">
-                    <span>Jira</span>
-                    <div class="skill-level intermediate"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
-      <div class="container">
+    <!-- Skills Section - Terminal Output Style -->
+    <section id="skills" class="skills-section">
+      <div class="container-fluid">
         
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Case Studies</span>
-          <h2>Featured Projects</h2>
-          <p>Real-world production systems with measurable business impact</p>
+        <div class="section-header-editorial">
+          <div class="section-number">02</div>
+          <h2 class="section-title-editorial">TECHNICAL<br>STACK</h2>
+          <div class="section-line"></div>
         </div>
 
-        <!-- Project 1: Civic Services AI Platform -->
-        <div class="project-showcase" data-aos="fade-up" data-aos-delay="100">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="project-image">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80" alt="Civic Services AI Platform" class="img-fluid">
-                <div class="project-tag featured">Featured Project</div>
-              </div>
+        <div class="terminal-skills">
+          <div class="terminal-output">
+            <div class="output-line">
+              <span class="prompt">$</span>
+              <span class="command">cat skills/backend.txt</span>
             </div>
-            <div class="col-lg-6">
-              <div class="project-content">
-                <h3>Civic Services AI Platform</h3>
-                <p class="project-category">AI-Powered Municipal Management System</p>
-                
-                <p class="project-description">
-                  Architected an intelligent civic services platform that transformed how municipal governments 
-                  manage citizen requests, infrastructure maintenance, and public services. Integrated <strong>Google Gemini AI</strong> 
-                  for automated request categorization, priority assessment, and intelligent routing with 95% accuracy.
-                </p>
-
-                <div class="project-impact">
-                  <div class="impact-item">
-                    <strong>60%</strong>
-                    <span>Reduction in manual processing time</span>
+            <div class="output-content">
+              <div class="skill-category-terminal">
+                <div class="category-title">## LANGUAGES & FRAMEWORKS</div>
+                <div class="skills-row">
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Python</span>
+                    <span class="skill-bar expert"></span>
+                    <span class="skill-level">Expert</span>
                   </div>
-                  <div class="impact-item">
-                    <strong>40K+</strong>
-                    <span>Citizen requests processed monthly</span>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Django / DRF</span>
+                    <span class="skill-bar expert"></span>
+                    <span class="skill-level">Expert</span>
                   </div>
-                  <div class="impact-item">
-                    <strong>95%</strong>
-                    <span>AI classification accuracy</span>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">FastAPI</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Django Channels</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
                   </div>
                 </div>
+              </div>
 
-                <div class="project-tech-stack">
-                  <span class="tech">Django REST Framework</span>
-                  <span class="tech">PostgreSQL</span>
-                  <span class="tech">Google Gemini AI</span>
-                  <span class="tech">Prompt Engineering</span>
-                  <span class="tech">Redis Caching</span>
-                  <span class="tech">AWS S3</span>
-                  <span class="tech">Celery</span>
+              <div class="skill-category-terminal">
+                <div class="category-title">## DATABASES & CACHING</div>
+                <div class="skills-row">
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">PostgreSQL</span>
+                    <span class="skill-bar expert"></span>
+                    <span class="skill-level">Expert</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Redis</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">MySQL</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
                 </div>
+              </div>
 
-                <div class="project-highlights">
-                  <h4>Key Technical Achievements</h4>
-                  <ul>
-                    <li>Designed RESTful API architecture serving 40K+ monthly requests with <200ms response time</li>
-                    <li>Implemented AI-powered request classification using Google Gemini with prompt engineering</li>
-                    <li>Built intelligent routing system that reduced manual triage by 60%</li>
-                    <li>Developed custom prompt templates for accurate intent detection and categorization</li>
-                    <li>Created real-time notification system with Django Channels and WebSockets</li>
-                    <li>Optimized database queries reducing response time by 70% through indexing</li>
-                    <li>Integrated AWS SES for automated email workflows and citizen notifications</li>
-                  </ul>
+              <div class="skill-category-terminal">
+                <div class="category-title">## AI & MACHINE LEARNING</div>
+                <div class="skills-row">
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Google Gemini AI</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Prompt Engineering</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">RAG / LangChain</span>
+                    <span class="skill-bar intermediate"></span>
+                    <span class="skill-level">Intermediate</span>
+                  </div>
                 </div>
+              </div>
 
-                <div class="project-links">
-                  <a href="#" class="project-link">
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    View Case Study
-                  </a>
+              <div class="skill-category-terminal">
+                <div class="category-title">## CLOUD & DEVOPS</div>
+                <div class="skills-row">
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">AWS (EC2, S3, SES)</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Docker</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
+                  <div class="skill-item-terminal">
+                    <span class="skill-name">Nginx</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Project 2: CommAI Platform -->
-        <div class="project-showcase reverse" data-aos="fade-up" data-aos-delay="200">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6 order-lg-2">
-              <div class="project-image">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=80" alt="CommAI Omnichannel Platform" class="img-fluid">
-                <div class="project-tag">Live Production</div>
-              </div>
+        <!-- Performance Metrics - Dashboard Style -->
+        <div class="metrics-dashboard">
+          <div class="dashboard-title">PERFORMANCE METRICS</div>
+          <div class="metrics-grid-dash">
+            <div class="metric-dash">
+              <div class="metric-icon">⚡</div>
+              <div class="metric-value">70%</div>
+              <div class="metric-label">Query Time Reduced</div>
             </div>
-            <div class="col-lg-6 order-lg-1">
-              <div class="project-content">
-                <h3>CommAI - Omnichannel Communication Platform</h3>
-                <p class="project-category">AI-Powered Multi-Channel Messaging System</p>
-                
-                <p class="project-description">
-                  Built a comprehensive omnichannel communication platform that unifies WhatsApp, Instagram, Facebook Messenger, 
-                  Email, and SMS into a single dashboard. Features AI-powered auto-responses using RAG technology, real-time 
-                  template builder with Meta API integration, and bulk campaign management serving 10K+ messages daily.
-                </p>
-
-                <div class="project-impact">
-                  <div class="impact-item">
-                    <strong>6+</strong>
-                    <span>Messaging channels supported</span>
-                  </div>
-                  <div class="impact-item">
-                    <strong>95%</strong>
-                    <span>Faster response time with AI</span>
-                  </div>
-                  <div class="impact-item">
-                    <strong>10K+</strong>
-                    <span>Messages processed daily</span>
-                  </div>
-                </div>
-
-                <div class="project-tech-stack">
-                  <span class="tech">Django REST Framework</span>
-                  <span class="tech">Meta Business API</span>
-                  <span class="tech">RAG AI Agent</span>
-                  <span class="tech">WebSockets</span>
-                  <span class="tech">PostgreSQL</span>
-                  <span class="tech">Redis</span>
-                  <span class="tech">Celery</span>
-                </div>
-
-                <div class="project-highlights">
-                  <h4>Key Technical Achievements</h4>
-                  <ul>
-                    <li>Integrated Meta Business API (v18.0+) for WhatsApp, Instagram, and Messenger</li>
-                    <li>Built RAG-powered AI agent with custom knowledge base for 24/7 auto-responses</li>
-                    <li>Developed real-time template builder with Meta approval status synchronization</li>
-                    <li>Implemented unified inbox aggregating messages from 6+ platforms in real-time</li>
-                    <li>Created bulk campaign system supporting WhatsApp, Email, and SMS with delivery tracking</li>
-                    <li>Built live chat widget with WebSocket for real-time website visitor engagement</li>
-                    <li>Designed contact management with CSV import, segmentation, and group targeting</li>
-                    <li>Implemented AI conversation analysis with tone, empathy, and helpfulness scoring</li>
-                  </ul>
-                </div>
-
-                <div class="project-links">
-                  <a href="https://commai.m7corporation.com/" class="project-link" target="_blank">
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    View Live Project
-                  </a>
-                </div>
-              </div>
+            <div class="metric-dash">
+              <div class="metric-icon">⏱️</div>
+              <div class="metric-value">&lt;200ms</div>
+              <div class="metric-label">API Response P95</div>
             </div>
-          </div>
-        </div>
-
-      
-
-        <!-- Project 3: Donation Management CRM -->
-        <div class="project-showcase" data-aos="fade-up" data-aos-delay="300">
-          <div class="row align-items-center g-5">
-            <div class="col-lg-6">
-              <div class="project-image">
-                <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?w=1200&q=80" alt="Donation CRM System" class="img-fluid">
-              </div>
+            <div class="metric-dash">
+              <div class="metric-icon">📈</div>
+              <div class="metric-value">99.9%</div>
+              <div class="metric-label">System Uptime</div>
             </div>
-            <div class="col-lg-6">
-              <div class="project-content">
-                <h3>Multi-Tenant Donation CRM</h3>
-                <p class="project-category">Enterprise-Grade Donor Management System</p>
-                
-                <p class="project-description">
-                  Developed a comprehensive CRM platform for non-profit organizations to manage donations, 
-                  track donor relationships, generate tax receipts, and analyze fundraising campaigns. 
-                  Serving 200K+ registered users across multiple organizations.
-                </p>
-
-                <div class="project-impact">
-                  <div class="impact-item">
-                    <strong>200K+</strong>
-                    <span>Active users</span>
-                  </div>
-                  <div class="impact-item">
-                    <strong>$2M+</strong>
-                    <span>Donations processed</span>
-                  </div>
-                  <div class="impact-item">
-                    <strong>Multi-tenant</strong>
-                    <span>Architecture</span>
-                  </div>
-                </div>
-
-                <div class="project-tech-stack">
-                  <span class="tech">Django</span>
-                  <span class="tech">DRF</span>
-                  <span class="tech">PostgreSQL</span>
-                  <span class="tech">AWS (EC2, S3, SES)</span>
-                  <span class="tech">Payment Gateway</span>
-                </div>
-
-                <div class="project-highlights">
-                  <h4>Key Technical Achievements</h4>
-                  <ul>
-                    <li>Architected multi-tenant system with data isolation</li>
-                    <li>Integrated payment gateway with automated receipt generation</li>
-                    <li>Built role-based access control (RBAC) system</li>
-                    <li>Implemented advanced reporting and analytics dashboard</li>
-                    <li>Optimized database queries handling millions of records</li>
-                  </ul>
-                </div>
-
-                <div class="project-links">
-                  <a href="#" class="project-link">
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    View Case Study
-                  </a>
-                </div>
-              </div>
+            <div class="metric-dash">
+              <div class="metric-icon">👥</div>
+              <div class="metric-value">10K+</div>
+              <div class="metric-label">Concurrent Users</div>
             </div>
-          </div>
-        </div>
-
-        <!-- More Projects Grid -->
-        <div class="additional-projects" data-aos="fade-up" data-aos-delay="400">
-          <h3 class="text-center mb-5">Other Notable Projects</h3>
-          
-          <div class="row g-4">
-            
-            <!-- QuickPay -->
-            <div class="col-lg-6">
-              <div class="project-card">
-                <div class="project-card-header">
-                  <h4>QuickPay Fintech Platform</h4>
-                  <span class="project-year">2024</span>
-                </div>
-                <p>Dynamic form builder for financial applications. Built secure payment processing with 
-                multi-step validation and real-time verification.</p>
-                <div class="project-card-tech">
-                  <span>Django</span>
-                  <span>Payment APIs</span>
-                  <span>JWT Auth</span>
-                </div>
-                <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <!-- E-commerce -->
-            <div class="col-lg-6">
-              <div class="project-card">
-                <div class="project-card-header">
-                  <h4>Custom E-commerce Platform</h4>
-                  <span class="project-year">2023</span>
-                </div>
-                <p>Full-featured e-commerce system with inventory management, order processing, 
-                and customer relationship tools.</p>
-                <div class="project-card-tech">
-                  <span>Django</span>
-                  <span>PostgreSQL</span>
-                  <span>Stripe</span>
-                </div>
-                <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <!-- HR Management -->
-            <div class="col-lg-6">
-              <div class="project-card">
-                <div class="project-card-header">
-                  <h4>HR Management System</h4>
-                  <span class="project-year">2024</span>
-                </div>
-                <p>Comprehensive HR platform with employee management, attendance tracking, 
-                leave management, and payroll integration.</p>
-                <div class="project-card-tech">
-                  <span>Django</span>
-                  <span>Celery</span>
-                  <span>AWS SES</span>
-                </div>
-                <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
-            <!-- Analytics Dashboard -->
-            <div class="col-lg-6">
-              <div class="project-card">
-                <div class="project-card-header">
-                  <h4>Real-time Analytics Dashboard</h4>
-                  <span class="project-year">2024</span>
-                </div>
-                <p>Interactive dashboard with live data visualization, custom report generation, 
-                and export capabilities for business intelligence.</p>
-                <div class="project-card-tech">
-                  <span>Django</span>
-                  <span>WebSockets</span>
-                  <span>Chart.js</span>
-                </div>
-                <a href="#" class="card-link">Learn more <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Technical Writing & Contributions -->
-    <section id="technical" class="technical section dark-section">
-      <div class="container">
+    <!-- Experience - Timeline Editorial -->
+    <section class="experience-section">
+      <div class="container-fluid">
         
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Technical Depth</span>
-          <h2>Architecture & Code Samples</h2>
-          <p>Deep dives into system design and implementation</p>
+        <div class="section-header-editorial">
+          <div class="section-number">03</div>
+          <h2 class="section-title-editorial">WORK<br>HISTORY</h2>
+          <div class="section-line"></div>
         </div>
 
-        <div class="row g-4">
+        <div class="experience-timeline-editorial">
           
-          <!-- System Architecture -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="technical-card">
-              <div class="card-header">
-                <i class="bi bi-diagram-3"></i>
-                <h3>System Architecture Examples</h3>
-              </div>
-              <p>View detailed architecture diagrams and design decisions from production systems:</p>
-              <ul class="technical-list">
-                <li>
-                  <strong>Microservices Communication Pattern</strong>
-                  <span>Event-driven architecture with message queues</span>
-                </li>
-                <li>
-                  <strong>Database Optimization Strategy</strong>
-                  <span>Indexing, partitioning, and query optimization</span>
-                </li>
-                <li>
-                  <strong>Caching Layer Design</strong>
-                  <span>Redis implementation for high-traffic APIs</span>
-                </li>
-                <li>
-                  <strong>API Rate Limiting</strong>
-                  <span>Token bucket algorithm implementation</span>
-                </li>
-              </ul>
-              <a href="#" class="btn-link">
-                View Architecture Docs
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Code Samples -->
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="technical-card">
-              <div class="card-header">
-                <i class="bi bi-code-slash"></i>
-                <h3>Code Quality & Best Practices</h3>
-              </div>
-              <p>Production-grade code samples demonstrating clean architecture:</p>
-              <ul class="technical-list">
-                <li>
-                  <strong>Custom Django Middleware</strong>
-                  <span>Request logging and performance monitoring</span>
-                </li>
-                <li>
-                  <strong>Database Transaction Patterns</strong>
-                  <span>ACID compliance and race condition handling</span>
-                </li>
-                <li>
-                  <strong>API Versioning Strategy</strong>
-                  <span>Backward compatibility and deprecation</span>
-                </li>
-                <li>
-                  <strong>Testing Patterns</strong>
-                  <span>Unit tests, integration tests, and mocking</span>
-                </li>
-              </ul>
-              <a href="https://github.com/vinaynural" class="btn-link" target="_blank">
-                View GitHub Profile
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Performance Metrics -->
-        <div class="performance-showcase" data-aos="fade-up" data-aos-delay="300">
-          <h3 class="text-center mb-5">Performance Optimization Results</h3>
-          
-          <div class="row g-4">
-            <div class="col-lg-3 col-md-6">
-              <div class="metric-card">
-                <div class="metric-icon">
-                  <i class="bi bi-speedometer2"></i>
-                </div>
-                <div class="metric-value">70%</div>
-                <div class="metric-label">Query Time Reduction</div>
-                <div class="metric-detail">Through indexing & optimization</div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="metric-card">
-                <div class="metric-icon">
-                  <i class="bi bi-lightning-charge"></i>
-                </div>
-                <div class="metric-value">&lt;200ms</div>
-                <div class="metric-label">Average API Response</div>
-                <div class="metric-detail">P95 latency for most endpoints</div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="metric-card">
-                <div class="metric-icon">
-                  <i class="bi bi-arrow-up-right"></i>
-                </div>
-                <div class="metric-value">99.9%</div>
-                <div class="metric-label">System Uptime</div>
-                <div class="metric-detail">Production environment SLA</div>
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-              <div class="metric-card">
-                <div class="metric-icon">
-                  <i class="bi bi-people"></i>
-                </div>
-                <div class="metric-value">10K+</div>
-                <div class="metric-label">Concurrent Users</div>
-                <div class="metric-detail">Peak load handling capacity</div>
+          <div class="exp-item">
+            <div class="exp-period">OCT 2023 — OCT 2025</div>
+            <div class="exp-content">
+              <h3 class="exp-title">Python Django Developer</h3>
+              <div class="exp-company">THAAGAM FOUNDATION · Chennai, India</div>
+              <div class="exp-highlights">
+                <p>→ Developed 8+ production Django backends serving 200K+ users with 99%+ uptime</p>
+                <p>→ Built scalable CRM, HR management, and field operations platforms</p>
+                <p>→ Engineered automated communication pipeline (AWS SES, SNS, WhatsApp API) - reduced manual workload by 60%</p>
+                <p>→ Optimized database queries - improved report generation by 200%</p>
+                <p>→ Integrated AI validation system using Gemini API for fraud prevention</p>
+                <p>→ Implemented real-time features using Django Channels and WebSockets</p>
               </div>
             </div>
           </div>
+
+          <div class="exp-item">
+            <div class="exp-period">FEB 2023 — JUL 2023</div>
+            <div class="exp-content">
+              <h3 class="exp-title">PHP Development Intern</h3>
+              <div class="exp-company">CADD CENTRE · Chennai, India</div>
+              <div class="exp-highlights">
+                <p>→ Trained in PHP web development, MVC architecture, and MySQL</p>
+                <p>→ Developed multiple training projects and earned professional certification</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
     </section>
 
-    <!-- Experience Timeline -->
-    <section id="experience" class="experience section">
-      <div class="container">
+    <!-- Contact Section - Command Line Interface -->
+    <section id="contact" class="contact-section">
+      <div class="container-fluid">
         
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Career Journey</span>
-          <h2>Professional Experience</h2>
+        <div class="section-header-editorial">
+          <div class="section-number">04</div>
+          <h2 class="section-title-editorial">GET IN<br>TOUCH</h2>
+          <div class="section-line"></div>
         </div>
 
-        <div class="timeline-container" data-aos="fade-up" data-aos-delay="100">
-          
-          <!-- Current Role -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <div class="marker-dot current"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-date">Oct 2023 - Oct 2025</div>
-              <div class="timeline-card">
-                <div class="card-header">
-                  <h3>Python Django Developer</h3>
-                  <h4>Thaagam Foundation</h4>
-                  <span class="location"><i class="bi bi-geo-alt"></i> Chennai, Tamil Nadu, India</span>
-                </div>
-                <div class="card-body">
-                  <p class="role-description">
-                    Led backend development for multiple production systems serving 200K+ users across government, 
-                    non-profit, and commercial sectors. Architected scalable solutions with 99%+ uptime.
-                  </p>
-                  
-                  <div class="achievements">
-                    <h5>Key Achievements</h5>
-                    <ul>
-                      <li>Developed and deployed 8+ production Django backends serving 200K+ users with 99%+ uptime</li>
-                      <li>Built scalable donor CRM, HR management, and field operations platforms using Django REST Framework</li>
-                      <li>Engineered automated communication pipeline using AWS SES, SNS, and WhatsApp Business API</li>
-                      <li>Reduced manual workload by 60% and eliminated notification delays through automation</li>
-                      <li>Optimized database queries and implemented efficient ORM patterns - improved report generation by 200%</li>
-                      <li>Designed and integrated AI validation system using Gemini API for fraud prevention</li>
-                      <li>Developed reusable Django class-based views - reduced code duplication by 40%</li>
-                      <li>Implemented real-time features using Django Channels and WebSockets with Redis message broker</li>
-                      <li>Owned end-to-end AWS infrastructure management (EC2, S3, IAM, Route53, SES, SNS)</li>
-                      <li>Built RESTful API endpoints handling 10K+ daily requests with JWT authentication and RBAC</li>
-                    </ul>
-                  </div>
-
-                  <div class="tech-used">
-                    <strong>Technologies:</strong>
-                    Python, Django, DRF, PostgreSQL, Redis, AWS (EC2, S3, SES, SNS), Docker, Celery, Django Channels, Google Gemini AI
-                  </div>
-                </div>
+        <div class="contact-terminal">
+          <div class="terminal-window-large">
+            <div class="terminal-header-large">
+              <div class="terminal-buttons">
+                <span></span><span></span><span></span>
               </div>
+              <span class="terminal-title">connect.sh</span>
             </div>
-          </div>
-
-          <!-- Previous Experience -->
-          <div class="timeline-item">
-            <div class="timeline-marker">
-              <div class="marker-dot"></div>
-              <div class="marker-line"></div>
-            </div>
-            <div class="timeline-content">
-              <div class="timeline-date">Feb 2023 - Jul 2023</div>
-              <div class="timeline-card">
-                <div class="card-header">
-                  <h3>PHP Development Intern</h3>
-                  <h4>CADD CENTRE</h4>
-                  <span class="location"><i class="bi bi-geo-alt"></i> Chennai, India</span>
-                </div>
-                <div class="card-body">
-                  <p class="role-description">
-                    Completed comprehensive web development training focusing on PHP, MySQL, and MVC architecture. 
-                    Built multiple practice projects applying backend development fundamentals.
-                  </p>
-                  
-                  <div class="tech-used">
-                    <strong>Technologies:</strong>
-                    PHP, MySQL, HTML, CSS, JavaScript, MVC Architecture
+            <div class="terminal-body-large">
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="command">./contact --info</span>
+              </div>
+              <div class="terminal-output-large">
+                <div class="contact-info-grid">
+                  <div class="contact-row">
+                    <span class="contact-key">EMAIL</span>
+                    <a href="mailto:vinayagam.python@gmail.com" class="contact-value">vinayagam.python@gmail.com</a>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">PHONE</span>
+                    <a href="tel:+919025533402" class="contact-value">+91 9025533402</a>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">LINKEDIN</span>
+                    <a href="https://www.linkedin.com/in/vinjr/" target="_blank" class="contact-value">linkedin.com/in/vinjr</a>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">GITHUB</span>
+                    <a href="https://github.com/vinaynural" target="_blank" class="contact-value">github.com/vinaynural</a>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">PORTFOLIO</span>
+                    <a href="https://vinay-engineer.me/" target="_blank" class="contact-value">vinay-engineer.me</a>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">LOCATION</span>
+                    <span class="contact-value">Chennai, Tamil Nadu, India</span>
+                  </div>
+                  <div class="contact-row">
+                    <span class="contact-key">STATUS</span>
+                    <span class="contact-value status-value">OPEN TO NEW OPPORTUNITIES</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Education -->
-        <div class="education-section" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="mb-5">Education</h3>
-          
-          <div class="row g-4">
-            <div class="col-lg-6">
-              <div class="education-card">
-                <div class="edu-icon">
-                  <i class="bi bi-mortarboard"></i>
-                </div>
-                <div class="edu-content">
-                  <h4>Master of Computer Applications (MCA)</h4>
-                  <h5>Madras University</h5>
-                  <p class="edu-period">2024 - Present</p>
-                  <p class="edu-description">
-                    Advanced studies in software engineering, system design, database management, 
-                    and distributed systems.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-6">
-              <div class="education-card">
-                <div class="edu-icon">
-                  <i class="bi bi-book"></i>
-                </div>
-                <div class="edu-content">
-                  <h4>Bachelor of Computer Science</h4>
-                  <h5>Madras University</h5>
-                  <p class="edu-period">Graduated 2023</p>
-                  <p class="edu-description">
-                    Foundation in computer science fundamentals, algorithms, data structures, 
-                    and software development.
-                  </p>
-                </div>
+              <div class="terminal-line terminal-cursor">
+                <span class="prompt">$</span>
+                <span class="cursor-blink">_</span>
               </div>
             </div>
           </div>
@@ -1203,181 +569,72 @@
       </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section dark-section">
-      <div class="container">
-        
-        <div class="section-header" data-aos="fade-up">
-          <span class="section-tag">Get In Touch</span>
-          <h2>Let's Build Something Great</h2>
-          <p>I'm actively seeking full-time backend engineering opportunities where I can contribute to building 
-          scalable, high-performance systems. Open to remote and relocation.</p>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            
-            <div class="contact-grid" data-aos="fade-up" data-aos-delay="100">
-              
-              <div class="contact-card-main">
-                <div class="contact-intro">
-                  <h3>Ready to Connect?</h3>
-                  <p>
-                    Whether you're looking for a backend engineer who can architect scalable systems, 
-                    optimize performance, or build production-grade APIs - I'd love to hear about your projects 
-                    and opportunities.
-                  </p>
-                  
-                  <div class="availability-badge">
-                    <span class="status-pulse"></span>
-                    <span>Available for full-time opportunities</span>
-                  </div>
-                </div>
-
-                <div class="contact-methods">
-                  
-                  <div class="contact-method primary">
-                    <div class="method-icon">
-                      <i class="bi bi-envelope"></i>
-                    </div>
-                    <div class="method-content">
-                      <h4>Email</h4>
-                      <a href="mailto:vinayagam.python@gmail.com">vinayagam.python@gmail.com</a>
-                      <p class="method-note">Best for detailed inquiries</p>
-                    </div>
-                  </div>
-
-                  <div class="contact-method">
-                    <div class="method-icon">
-                      <i class="bi bi-linkedin"></i>
-                    </div>
-                    <div class="method-content">
-                      <h4>LinkedIn</h4>
-                      <a href="https://www.linkedin.com/in/vinjr/" target="_blank">linkedin.com/in/vinjr</a>
-                      <p class="method-note">Professional networking</p>
-                    </div>
-                  </div>
-
-                  <div class="contact-method">
-                    <div class="method-icon">
-                      <i class="bi bi-github"></i>
-                    </div>
-                    <div class="method-content">
-                      <h4>GitHub</h4>
-                      <a href="https://github.com/vinaynural" target="_blank">github.com/vinaynural</a>
-                      <p class="method-note">View my code</p>
-                    </div>
-                  </div>
-
-                  <div class="contact-method">
-                    <div class="method-icon">
-                      <i class="bi bi-telephone"></i>
-                    </div>
-                    <div class="method-content">
-                      <h4>Phone</h4>
-                      <a href="tel:+919025533402">+91 9025533402</a>
-                      <p class="method-note">Available for calls</p>
-                    </div>
-                  </div>
-
-                </div>
-
-                <div class="location-info">
-                  <i class="bi bi-geo-alt"></i>
-                  <span>Based in Chennai, Tamil Nadu, India</span>
-                  <span class="location-note">• Open to remote work and relocation</span>
-                </div>
-              </div>
-
-              <div class="quick-links-sidebar">
-                <h4>Quick Links</h4>
-                
-                <a href="assets/resume/Vinayagam-Resume.pdf" class="quick-link-item" download>
-                  <i class="bi bi-file-earmark-text"></i>
-                  <span>Download Resume</span>
-                </a>
-
-                <a href="https://github.com/vinaynural" class="quick-link-item" target="_blank">
-                  <i class="bi bi-github"></i>
-                  <span>GitHub Profile</span>
-                </a>
-
-                <a href="https://www.linkedin.com/in/vinjr/" class="quick-link-item" target="_blank">
-                  <i class="bi bi-linkedin"></i>
-                  <span>LinkedIn Profile</span>
-                </a>
-                
-                <a href="https://vinay-engineer.me/" class="quick-link-item" target="_blank">
-                  <i class="bi bi-globe"></i>
-                  <span>Portfolio Website</span>
-                </a>
-
-                <hr class="divider">
-
-                <h4>Social Media</h4>
-
-                <a href="https://x.com/_vinyjr" class="quick-link-item" target="_blank">
-                  <i class="bi bi-twitter-x"></i>
-                  <span>Twitter/X</span>
-                </a>
-
-                <a href="https://www.instagram.com/_vinay__jr/" class="quick-link-item" target="_blank">
-                  <i class="bi bi-instagram"></i>
-                  <span>Instagram</span>
-                </a>
-              </div>
-
-            </div>
-
+    <!-- Footer - Minimal -->
+    <footer class="footer-minimal">
+      <div class="container-fluid">
+        <div class="footer-content-minimal">
+          <div class="footer-left">
+            <span>© <span id="year"></span> VINAYAGAM.D</span>
+            <span class="footer-sep">·</span>
+            <span>PYTHON BACKEND ENGINEER</span>
+          </div>
+          <div class="footer-right">
+            <a href="https://github.com/vinaynural" target="_blank">GITHUB</a>
+            <span class="footer-sep">·</span>
+            <a href="https://www.linkedin.com/in/vinjr/" target="_blank">LINKEDIN</a>
+            <span class="footer-sep">·</span>
+            <a href="mailto:vinayagam.python@gmail.com">EMAIL</a>
           </div>
         </div>
-
       </div>
-    </section>
+    </footer>
 
   </main>
 
-  <!-- Footer -->
-  <footer id="footer" class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="footer-brand">
-              <div class="logo-symbol">V</div>
-              <div>
-                <h3>Vinayagam D</h3>
-                <p>Python Backend Developer | Django & DRF Expert</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 text-lg-end">
-            <div class="footer-links">
-              <a href="#hero">Home</a>
-              <a href="#about">About</a>
-              <a href="#expertise">Expertise</a>
-              <a href="#portfolio">Projects</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-        
-        <hr class="footer-divider">
-        
-        <div class="footer-bottom">
-          <p>&copy; <span id="copyright-year"></span> Vinayagam D. Built with Python, Django & Passion.</p>
-          <p class="footer-note">Portfolio designed to showcase backend engineering excellence</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Scroll to Top -->
-  <a href="#" id="scroll-top" class="scroll-top">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
+  <script src="assets/js/main.js"></script>
 
-  <!-- Vendor JS Files -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script><script src="assets/vendor/aos/aos.js"></script><script src="assets/vendor/glightbox/js/glightbox.min.js"></script><script src="assets/vendor/swiper/swiper-bundle.min.js"></script><script src="assets/vendor/waypoints/noframework.waypoints.min.js"></script><script src="assets/vendor/php-email-form/validate.js"></script><script src="assets/js/main.js"></script> 
-  </body>
-  </html>
+
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Active nav highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-cmd');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollY >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
