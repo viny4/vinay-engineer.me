@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VINAYAGAM.D → Python Backend Engineer</title>
-  <meta name="description" content="Python Backend Developer. 200K+ users. 8+ production systems. Chennai.">
+  <title>VINAYAGAM.D → Backend Engineer</title>
+  <meta name="description" content="Backend Developer. 200K+ users. 8+ production systems. Chennai.">
   
   <!-- Fonts - Unique combinations -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,6 +60,9 @@
           <a href="#contact" class="nav-cmd">./contact</a>
         </div>
         <div class="nav-status">
+          <div id="audio-control" class="nav-cmd" style="margin-right: 1.5rem; cursor: pointer;">
+            <i class="bi bi-volume-up" id="audio-icon"></i> <span id="audio-status">SOUND: ON</span>
+          </div>
           <span class="status-dot"></span>
           <span>AVAILABLE</span>
         </div>
@@ -87,7 +90,6 @@
             <div class="col-lg-7">
               <div class="issue-label">ISSUE #001 → BACKEND ENGINEER</div>
               <h1 class="display-title">
-                PYTHON<br>
                 BACKEND<br>
                 <span class="highlight-text">ENGINEER</span>
               </h1>
@@ -348,14 +350,14 @@
                 <div class="category-title">## LANGUAGES & FRAMEWORKS</div>
                 <div class="skills-row">
                   <div class="skill-item-terminal">
-                    <span class="skill-name">Python</span>
+                    <span class="skill-name">Python / Django</span>
                     <span class="skill-bar expert"></span>
                     <span class="skill-level">Expert</span>
                   </div>
                   <div class="skill-item-terminal">
-                    <span class="skill-name">Django / DRF</span>
-                    <span class="skill-bar expert"></span>
-                    <span class="skill-level">Expert</span>
+                    <span class="skill-name">TypeScript</span>
+                    <span class="skill-bar advanced"></span>
+                    <span class="skill-level">Advanced</span>
                   </div>
                   <div class="skill-item-terminal">
                     <span class="skill-name">FastAPI</span>
@@ -478,6 +480,17 @@
 
         <div class="experience-timeline-editorial">
           
+          <div class="exp-item">
+            <div class="exp-period">FEB 2026 — PRESENT</div>
+            <div class="exp-content">
+              <h3 class="exp-title">Backend Engineer</h3>
+              <div class="exp-company">TRAMES PRIVATE LIMITED · Singapore (Remote)</div>
+              <div class="exp-highlights">
+                <p>→ Trames is a logistics technology company providing an AI, blockchain, and cloud-based platform for global supply chain and freight management.</p>
+              </div>
+            </div>
+          </div>
+
           <div class="exp-item">
             <div class="exp-period">OCT 2023 — OCT 2025</div>
             <div class="exp-content">
@@ -614,6 +627,11 @@
   <!-- Scripts -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Background Music -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
+  </audio>
+
   <script src="assets/js/main.js"></script>
 
 
@@ -655,6 +673,8 @@
       });
     });
   </script>
+
+
 
 </body>
 </html>
