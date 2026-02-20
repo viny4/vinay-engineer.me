@@ -758,6 +758,107 @@
   });
 
   // ========================================
+  // BACKGROUND MUSIC CONTROL
+  // ========================================
+  
+  const audio = document.getElementById('bg-music');
+  const audioControl = document.getElementById('audio-control');
+  const audioIcon = document.getElementById('audio-icon');
+  const audioStatus = document.getElementById('audio-status');
+  
+  let isPlaying = false;
+
+  const updateUI = (active) => {
+    if (active) {
+      audioIcon.className = 'bi bi-volume-up';
+      audioStatus.textContent = 'SOUND: ON';
+    } else {
+      audioIcon.className = 'bi bi-volume-mute';
+      audioStatus.textContent = 'SOUND: OFF';
+    }
+  };
+
+  const playAudio = () => {
+    if (!audio) {
+      console.error('Audio element not found!');
+      return;
+    }
+    
+    // Ensure not muted and volume is audible
+    audio.muted = false;
+    if (audio.volume === 0) audio.volume = 0.5;
+
+    console.log('Attempting to play background music...');
+    audio.play().then(() => {
+      console.log('Background music playing successfully.');
+      isPlaying = true;
+      updateUI(true);
+      localStorage.setItem('audio-enabled', 'true');
+      // Remove listeners once playing starts
+      document.removeEventListener('click', startOnInteraction);
+      document.removeEventListener('scroll', startOnInteraction);
+    }).catch(err => {
+      console.warn('Autoplay blocked or playback error:', err);
+      // If it's just a browser block, keep UI as 'ON' because it will start on next click
+      if (err.name === 'NotAllowedError') {
+        updateUI(true);
+      } else {
+        updateUI(false);
+      }
+    });
+  };
+
+  const pauseAudio = () => {
+    audio.pause();
+    isPlaying = false;
+    updateUI(false);
+    localStorage.setItem('audio-enabled', 'false');
+  };
+
+  const toggleAudio = () => {
+    isPlaying ? pauseAudio() : playAudio();
+  };
+
+  if (audioControl) {
+    audioControl.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent document click from firing immediately
+      toggleAudio();
+    });
+  }
+
+  function startOnInteraction() {
+    if (localStorage.getItem('audio-enabled') !== 'false') {
+      playAudio();
+    }
+  }
+
+  // Attempt to play on load and on any interaction
+  window.addEventListener('load', () => {
+    if (localStorage.getItem('audio-enabled') !== 'false') {
+      // Browsers usually block this, but we try anyway
+      playAudio();
+      
+      // Listen for the first real interaction to trigger play
+      document.addEventListener('click', startOnInteraction, { once: true });
+      document.addEventListener('scroll', startOnInteraction, { once: true });
+    } else {
+      updateUI(false);
+    }
+  });
+
+  // ========================================
+  // SERVICE WORKER REGISTRATION (CACHING)
+  // ========================================
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('SW: Registered successfully', reg.scope))
+        .catch(err => console.log('SW: Registration failed', err));
+    });
+  }
+
+  // ========================================
   console.log('%c$ Portfolio initialized successfully!', 'color: #ffcc00; font-family: monospace;');
   // ========================================
 
