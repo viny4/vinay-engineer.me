@@ -1,567 +1,721 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VINAYAGAM.D → Backend Engineer</title>
-  <meta name="description" content="Backend Engineer based in Chennai. Building scalable systems with Python, Django, and cloud-native infrastructure.">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=Archivo+Black&display=swap" rel="stylesheet">
-  
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VINAYAGAM.D → Backend Engineer</title>
+    <meta
+      name="description"
+      content="Backend Engineer based in Chennai. Building scalable systems with Python, Django, and cloud-native infrastructure."
+    />
 
-<body>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ASCII Art Background Pattern -->
-  <div class="ascii-pattern"></div>
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/css/main.css?v=1.1" rel="stylesheet" />
+  </head>
 
-  <!-- Floating Particles -->
-  <div class="particles-container">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-  </div>
+  <body>
+    <!-- ASCII Art Background Pattern -->
+    <div class="ascii-pattern"></div>
 
-  <!-- Matrix Rain Effect -->
-  <canvas id="matrix-canvas" class="matrix-background"></canvas>
+    <!-- Floating Particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
 
-  <!-- Gradient Orbs -->
-  <div class="gradient-orbs">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-  </div>
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrix-canvas" class="matrix-background"></canvas>
 
-  <!-- Navigation -->
-  <nav class="terminal-nav">
-    <div class="container-fluid">
-      <div class="nav-content">
-        <div class="nav-prompt">
-          <span class="prompt-symbol">$</span>
-          <span class="nav-path">~/vinayagam.d</span>
-        </div>
-        <div class="nav-menu">
-          <a href="#home" class="nav-cmd">./home</a>
-          <a href="#about" class="nav-cmd">./about</a>
-          <a href="#stack" class="nav-cmd">./stack</a>
-          <a href="#experience" class="nav-cmd">./experience</a>
-          <a href="#contact" class="nav-cmd">./contact</a>
-        </div>
-        <div class="nav-status">
-          <div id="audio-control" class="nav-cmd" style="margin-right: 1.5rem; cursor: pointer;">
-            <i class="bi bi-volume-up" id="audio-icon"></i> <span id="audio-status">SOUND: ON</span>
+    <!-- Gradient Orbs -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="terminal-nav">
+      <div class="container-fluid">
+        <div class="nav-content">
+          <div class="nav-prompt">
+            <span class="prompt-symbol">$</span>
+            <span class="nav-path">~/vinayagam.d</span>
           </div>
-          <span class="status-dot"></span>
-          <span>AVAILABLE</span>
+          <div class="nav-menu">
+            <a href="#home" class="nav-cmd">./home</a>
+            <a href="#about" class="nav-cmd">./about</a>
+            <a href="#stack" class="nav-cmd">./stack</a>
+            <a href="#experience" class="nav-cmd">./experience</a>
+            <a href="#contact" class="nav-cmd">./contact</a>
+          </div>
+          <div class="nav-status">
+            <div
+              id="audio-control"
+              class="nav-cmd"
+              style="margin-right: 1.5rem; cursor: pointer"
+            >
+              <i class="bi bi-volume-up" id="audio-icon"></i>
+              <span id="audio-status">SOUND: ON</span>
+            </div>
+            <span class="status-dot"></span>
+            <span>AVAILABLE</span>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main class="main-wrapper">
-
-    <!-- HERO -->
-    <section id="home" class="hero-editorial">
-      <div class="container-fluid">
-
-        <!-- ASCII Art Header -->
-        <div class="ascii-header">
-          <pre class="ascii-art">
+    <main class="main-wrapper">
+      <!-- HERO -->
+      <section id="home" class="hero-editorial">
+        <div class="container-fluid">
+          <!-- ASCII Art Header -->
+          <div class="ascii-header">
+            <pre class="ascii-art">
 ╦  ╦╦╔╗╔╔═╗╦ ╦╔═╗╔═╗╔═╗╔╦╗  ╔╦╗
 ╚╗╔╝║║║║╠═╣╚╦╝╠═╣║ ╦╠═╣║║║   ║║
- ╚╝ ╩╝╚╝╩ ╩ ╩ ╩ ╩╚═╝╩ ╩╩ ╩  ═╩╝</pre>
-        </div>
-
-        <!-- Main Title Block -->
-        <div class="title-block">
-          <div class="row align-items-end">
-            <div class="col-lg-7">
-              <div class="issue-label">ISSUE #001 → BACKEND ENGINEER</div>
-              <h1 class="display-title">
-                BACKEND<br>
-                <span class="highlight-text">ENGINEER</span>
-              </h1>
-              <div class="subtitle-meta">
-                <div class="meta-grid">
-                  <div class="meta-item">
-                    <span class="meta-label">LOCATION</span>
-                    <span class="meta-value">Chennai, IN</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">EXPERIENCE</span>
-                    <span class="meta-value">2+ Years</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">CURRENT ROLE</span>
-                    <span class="meta-value">Trames Pvt Ltd</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-label">STATUS</span>
-                    <span class="meta-value status-active">EMPLOYED</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Resume Download Button -->
-              <div class="hero-actions">
-                <a href="assets/resume/Vinayagam_CV.pdf" download="Vinayagam_CV.pdf" class="btn-terminal">
-                  <span class="btn-text">DOWNLOAD_CV.pdf</span>
-                  <span class="btn-icon">⬇</span>
-                </a>
-              </div>
-            </div>
-            
-            <div class="col-lg-5">
-              <!-- Profile Image Terminal Frame -->
-              <div class="profile-terminal">
-                <div class="terminal-header">
-                  <div class="terminal-controls">
-                    <span class="control-red"></span>
-                    <span class="control-yellow"></span>
-                    <span class="control-green"></span>
-                  </div>
-                  <span class="terminal-title">vinayagam@backend:~$</span>
-                </div>
-                <div class="profile-image-wrapper">
-                  <div class="scan-line"></div>
-                  <div class="glitch-overlay"></div>
-                  <img src="assets/img/me and ana.png" alt="Vinayagam D" class="profile-image">
-                  <div class="image-border-effects">
-                    <div class="corner corner-tl"></div>
-                    <div class="corner corner-tr"></div>
-                    <div class="corner corner-bl"></div>
-                    <div class="corner corner-br"></div>
-                  </div>
-                </div>
-                <div class="profile-stats-bar">
-                  <span class="stat-item">
-                    <i class="bi bi-geo-alt"></i> Chennai
-                  </span>
-                  <span class="stat-separator">|</span>
-                  <span class="stat-item">
-                    <i class="bi bi-briefcase"></i> Backend Eng
-                  </span>
-                  <span class="stat-separator">|</span>
-                  <span class="stat-item">
-                    <i class="bi bi-code-slash"></i> Python
-                  </span>
-                </div>
-              </div>
-            </div>
+ ╚╝ ╩╝╚╝╩ ╩ ╩ ╩ ╩╚═╝╩ ╩╩ ╩  ═╩╝</pre
+            >
           </div>
-        </div>
 
-      </div>
-    </section>
-
-    <!-- ABOUT ME -->
-    <section id="about" class="skills-section">
-      <div class="container-fluid">
-
-        <div class="section-header-editorial">
-          <div class="section-number">01</div>
-          <h2 class="section-title-editorial">ABOUT<br>ME</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="terminal-skills">
-          <div class="terminal-output">
-            <div class="output-line">
-              <span class="prompt">$</span>
-              <span class="command">cat about/vinayagam.txt</span>
-            </div>
-            <div class="output-content">
-              <div class="skill-category-terminal">
-                <p style="color: var(--text-secondary); line-height: 2; font-size: 1rem; max-width: 720px;">
-                  I'm a Backend Engineer from Chennai, India with 2+ years of experience building production-grade systems. 
-                  I specialize in Python and Django — designing APIs, managing databases, and shipping reliable software 
-                  that scales. I care about clean architecture, thoughtful code, and solving real problems.
-                </p>
-                <br>
-                <p style="color: var(--text-secondary); line-height: 2; font-size: 1rem; max-width: 720px;">
-                  Currently working at <span style="color: var(--accent);">Trames Private Limited</span> — a Singapore-based 
-                  logistics technology company — building backend infrastructure for global freight and supply chain operations.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TECH STACK -->
-    <section id="stack" class="skills-section">
-      <div class="container-fluid">
-
-        <div class="section-header-editorial">
-          <div class="section-number">02</div>
-          <h2 class="section-title-editorial">TECH<br>STACK</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="terminal-skills">
-          <div class="terminal-output">
-            <div class="output-line">
-              <span class="prompt">$</span>
-              <span class="command">cat skills/backend.txt</span>
-            </div>
-            <div class="output-content">
-              <div class="skill-category-terminal">
-                <div class="category-title">## LANGUAGES & FRAMEWORKS</div>
-                <div class="skills-row">
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Python / Django</span>
-                    <span class="skill-bar expert"></span>
-                    <span class="skill-level">Expert</span>
+          <!-- Main Title Block -->
+          <div class="title-block">
+            <div class="row align-items-end">
+              <div class="col-lg-7">
+                <div class="issue-label">ISSUE #001 → BACKEND ENGINEER</div>
+                <h1 class="display-title">
+                  BACKEND<br />
+                  <span class="highlight-text">ENGINEER</span>
+                </h1>
+                <div class="subtitle-meta">
+                  <div class="meta-grid">
+                    <div class="meta-item">
+                      <span class="meta-label">LOCATION</span>
+                      <span class="meta-value">Chennai, IN</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">EXPERIENCE</span>
+                      <span class="meta-value">2+ Years</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">CURRENT ROLE</span>
+                      <span class="meta-value">Trames Pvt Ltd</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">STATUS</span>
+                      <span class="meta-value status-active">EMPLOYED</span>
+                    </div>
                   </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">TypeScript</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">FastAPI</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Django Channels</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
+                </div>
+
+                <!-- Resume Download Button -->
+                <div class="hero-actions">
+                  <a
+                    href="assets/resume/Vinayagam_CV.pdf"
+                    download="Vinayagam_CV.pdf"
+                    class="btn-terminal"
+                  >
+                    <span class="btn-text">DOWNLOAD_CV.pdf</span>
+                    <span class="btn-icon">⬇</span>
+                  </a>
                 </div>
               </div>
 
-              <div class="skill-category-terminal">
-                <div class="category-title">## DATABASES & CACHING</div>
-                <div class="skills-row">
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">PostgreSQL</span>
-                    <span class="skill-bar expert"></span>
-                    <span class="skill-level">Expert</span>
+              <div class="col-lg-5">
+                <!-- Profile Image Terminal Frame -->
+                <div class="profile-terminal">
+                  <div class="terminal-header">
+                    <div class="terminal-controls">
+                      <span class="control-red"></span>
+                      <span class="control-yellow"></span>
+                      <span class="control-green"></span>
+                    </div>
+                    <span class="terminal-title">vinayagam@backend:~$</span>
                   </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Redis</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
+                  <div class="profile-image-wrapper">
+                    <div class="scan-line"></div>
+                    <div class="glitch-overlay"></div>
+                    <img
+                      src="assets/img/me and ana.png?v=1.1"
+                      alt="Vinayagam D"
+                      class="profile-image"
+                    />
+                    <div class="image-border-effects">
+                      <div class="corner corner-tl"></div>
+                      <div class="corner corner-tr"></div>
+                      <div class="corner corner-bl"></div>
+                      <div class="corner corner-br"></div>
+                    </div>
                   </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">MySQL</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skill-category-terminal">
-                <div class="category-title">## AI & MACHINE LEARNING</div>
-                <div class="skills-row">
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Google Gemini AI</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Prompt Engineering</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">RAG / LangChain</span>
-                    <span class="skill-bar intermediate"></span>
-                    <span class="skill-level">Intermediate</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="skill-category-terminal">
-                <div class="category-title">## CLOUD & DEVOPS</div>
-                <div class="skills-row">
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">AWS (EC2, S3, SES)</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Docker</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
-                  </div>
-                  <div class="skill-item-terminal">
-                    <span class="skill-name">Nginx</span>
-                    <span class="skill-bar advanced"></span>
-                    <span class="skill-level">Advanced</span>
+                  <div class="profile-stats-bar">
+                    <span class="stat-item">
+                      <i class="bi bi-geo-alt"></i> Chennai
+                    </span>
+                    <span class="stat-separator">|</span>
+                    <span class="stat-item">
+                      <i class="bi bi-briefcase"></i> Backend Eng
+                    </span>
+                    <span class="stat-separator">|</span>
+                    <span class="stat-item">
+                      <i class="bi bi-code-slash"></i> Python
+                    </span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="experience-section">
-      <div class="container-fluid">
-
-        <div class="section-header-editorial">
-          <div class="section-number">03</div>
-          <h2 class="section-title-editorial">WORK<br>HISTORY</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="experience-timeline-editorial">
-
-          <div class="exp-item">
-            <div class="exp-period">FEB 2026 — PRESENT</div>
-            <div class="exp-content">
-              <h3 class="exp-title">Backend Engineer</h3>
-              <div class="exp-company">TRAMES PRIVATE LIMITED · Singapore (Remote)</div>
-              <div class="exp-highlights">
-                <p>→ Trames is a logistics technology company providing an AI, blockchain, and cloud-based platform for global supply chain and freight management.</p>
-              </div>
-            </div>
+      <!-- ABOUT ME -->
+      <section id="about" class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">01</div>
+            <h2 class="section-title-editorial">ABOUT<br />ME</h2>
+            <div class="section-line"></div>
           </div>
 
-          <div class="exp-item">
-            <div class="exp-period">OCT 2023 — OCT 2025</div>
-            <div class="exp-content">
-              <h3 class="exp-title">Python Django Developer</h3>
-              <div class="exp-company">THAAGAM FOUNDATION · Chennai, India</div>
-              <div class="exp-highlights">
-                <p>→ Developed 8+ production Django backends serving 200K+ users with 99%+ uptime</p>
-                <p>→ Built scalable CRM, HR management, and field operations platforms</p>
-                <p>→ Engineered automated communication pipeline (AWS SES, SNS, WhatsApp API) — reduced manual workload by 60%</p>
-                <p>→ Optimized database queries — improved report generation by 200%</p>
-                <p>→ Integrated AI validation using Gemini API for fraud prevention</p>
-                <p>→ Implemented real-time features using Django Channels and WebSockets</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="exp-item">
-            <div class="exp-period">FEB 2023 — JUL 2023</div>
-            <div class="exp-content">
-              <h3 class="exp-title">PHP Development Intern</h3>
-              <div class="exp-company">CADD CENTRE · Chennai, India</div>
-              <div class="exp-highlights">
-                <p>→ Trained in PHP web development, MVC architecture, and MySQL</p>
-                <p>→ Developed multiple training projects and earned professional certification</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHAT I'M FOCUSED ON -->
-    <section class="skills-section">
-      <div class="container-fluid">
-
-        <div class="section-header-editorial">
-          <div class="section-number">04</div>
-          <h2 class="section-title-editorial">WHAT I'M<br>FOCUSED ON</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="terminal-skills">
-          <div class="terminal-output">
-            <div class="output-line">
-              <span class="prompt">$</span>
-              <span class="command">cat focus/current.txt</span>
-            </div>
-            <div class="output-content">
-              <div class="skill-category-terminal">
-                <div class="skills-row" style="flex-direction: column; gap: 1.5rem;">
-                  <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-                    <div class="category-title" style="margin-bottom: 0.5rem;">→ BUILDING AT TRAMES</div>
-                    <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
-                      Contributing to a global freight management platform. Learning how large-scale logistics systems are architected and operated.
-                    </p>
-                  </div>
-                  <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-                    <div class="category-title" style="margin-bottom: 0.5rem;">→ DEEPENING SYSTEM DESIGN</div>
-                    <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
-                      Focusing on distributed systems, high-availability architectures, and building backends that scale under real-world pressure.
-                    </p>
-                  </div>
-                  <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-                    <div class="category-title" style="margin-bottom: 0.5rem;">→ EXPLORING AI INTEGRATION</div>
-                    <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
-                      Integrating AI into backend workflows — from intelligent APIs to RAG pipelines — to build smarter, more adaptive systems.
-                    </p>
-                  </div>
-                  <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
-                    <div class="category-title" style="margin-bottom: 0.5rem;">→ GROWING AS AN ENGINEER</div>
-                    <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
-                      Reading, building side projects, and sharpening my craft every day. Still early in my journey — excited about what's ahead.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-      <div class="container-fluid">
-
-        <div class="section-header-editorial">
-          <div class="section-number">05</div>
-          <h2 class="section-title-editorial">GET IN<br>TOUCH</h2>
-          <div class="section-line"></div>
-        </div>
-
-        <div class="contact-terminal">
-          <div class="terminal-window-large">
-            <div class="terminal-header-large">
-              <div class="terminal-buttons">
-                <span></span><span></span><span></span>
-              </div>
-              <span class="terminal-title">connect.sh</span>
-            </div>
-            <div class="terminal-body-large">
-              <div class="terminal-line">
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
                 <span class="prompt">$</span>
-                <span class="command">./contact --info</span>
+                <span class="command">cat about/vinayagam.txt</span>
               </div>
-              <div class="terminal-output-large">
-                <div class="contact-info-grid">
-                  <div class="contact-row">
-                    <span class="contact-key">EMAIL</span>
-                    <a href="mailto:vinayagam.python@gmail.com" class="contact-value">vinayagam.python@gmail.com</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">PHONE</span>
-                    <a href="tel:+919025533402" class="contact-value">+91 9025533402</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">LINKEDIN</span>
-                    <a href="https://www.linkedin.com/in/vinjr/" target="_blank" class="contact-value">linkedin.com/in/vinjr</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">GITHUB</span>
-                    <a href="https://github.com/vinaynural" target="_blank" class="contact-value">github.com/vinaynural</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">X</span>
-                    <a href="https://x.com/_vinyjr" target="_blank" class="contact-value">x.com/_vinyjr</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">INSTAGRAM</span>
-                    <a href="https://www.instagram.com/_vinay__jr/" target="_blank" class="contact-value">instagram.com/_vinay__jr</a>
-                  </div>
-                  <div class="contact-row">
-                    <span class="contact-key">LOCATION</span>
-                    <span class="contact-value">Chennai, Tamil Nadu, India</span>
-                  </div>
+              <div class="output-content">
+                <div class="skill-category-terminal">
+                  <p
+                    style="
+                      color: var(--text-secondary);
+                      line-height: 2;
+                      font-size: 1rem;
+                      max-width: 720px;
+                    "
+                  >
+                    I'm a Backend Engineer from Chennai, India with 2+ years of
+                    experience building production-grade systems. I specialize
+                    in Python and Django — designing APIs, managing databases,
+                    and shipping reliable software that scales. I care about
+                    clean architecture, thoughtful code, and solving real
+                    problems.
+                  </p>
+                  <br />
+                  <p
+                    style="
+                      color: var(--text-secondary);
+                      line-height: 2;
+                      font-size: 1rem;
+                      max-width: 720px;
+                    "
+                  >
+                    Currently working at
+                    <span style="color: var(--accent)"
+                      >Trames Private Limited</span
+                    >
+                    — a Singapore-based logistics technology company — building
+                    backend infrastructure for global freight and supply chain
+                    operations.
+                  </p>
                 </div>
-              </div>
-              <div class="terminal-line terminal-cursor">
-                <span class="prompt">$</span>
-                <span class="cursor-blink">_</span>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-minimal">
-      <div class="container-fluid">
-        <div class="footer-content-minimal">
-          <div class="footer-left">
-            <span>© <span id="year"></span> VINAYAGAM.D</span>
-            <span class="footer-sep">·</span>
-            <span>BACKEND ENGINEER</span>
+      <!-- TECH STACK -->
+      <section id="stack" class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">02</div>
+            <h2 class="section-title-editorial">TECH<br />STACK</h2>
+            <div class="section-line"></div>
           </div>
-          <div class="footer-right">
-            <a href="https://github.com/vinaynural" target="_blank">GITHUB</a>
-            <span class="footer-sep">·</span>
-            <a href="https://www.linkedin.com/in/vinjr/" target="_blank">LINKEDIN</a>
-            <span class="footer-sep">·</span>
-            <a href="https://x.com/_vinyjr" target="_blank">X</a>
-            <span class="footer-sep">·</span>
-            <a href="https://www.instagram.com/_vinay__jr/" target="_blank">INSTAGRAM</a>
-            <span class="footer-sep">·</span>
-            <a href="mailto:vinayagam.python@gmail.com">EMAIL</a>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat skills/backend.txt</span>
+              </div>
+              <div class="output-content">
+                <div class="skill-category-terminal">
+                  <div class="category-title">## LANGUAGES & FRAMEWORKS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Python / Django</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">TypeScript</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">FastAPI</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Django Channels</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## DATABASES & CACHING</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">PostgreSQL</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Redis</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">MySQL</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## AI & MACHINE LEARNING</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Google Gemini AI</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Prompt Engineering</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">RAG / LangChain</span>
+                      <span class="skill-bar intermediate"></span>
+                      <span class="skill-level">Intermediate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## CLOUD & DEVOPS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">AWS (EC2, S3, SES)</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Docker</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Nginx</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </section>
 
-  </main>
+      <!-- EXPERIENCE -->
+      <section id="experience" class="experience-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">03</div>
+            <h2 class="section-title-editorial">WORK<br />HISTORY</h2>
+            <div class="section-line"></div>
+          </div>
 
-  <!-- Scripts -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <div class="experience-timeline-editorial">
+            <div class="exp-item">
+              <div class="exp-period">FEB 2026 — PRESENT</div>
+              <div class="exp-content">
+                <h3 class="exp-title">Backend Engineer</h3>
+                <div class="exp-company">
+                  TRAMES PRIVATE LIMITED · Singapore (Remote)
+                </div>
+                <div class="exp-highlights">
+                  <p>
+                    → Trames is a logistics technology company providing an AI,
+                    blockchain, and cloud-based platform for global supply chain
+                    and freight management.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <!-- Background Music -->
-  <audio id="bg-music" loop preload="auto">
-    <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
-  </audio>
+            <div class="exp-item">
+              <div class="exp-period">OCT 2023 — OCT 2025</div>
+              <div class="exp-content">
+                <h3 class="exp-title">Python Django Developer</h3>
+                <div class="exp-company">
+                  THAAGAM FOUNDATION · Chennai, India
+                </div>
+                <div class="exp-highlights">
+                  <p>
+                    → Developed 8+ production Django backends serving 200K+
+                    users with 99%+ uptime
+                  </p>
+                  <p>
+                    → Built scalable CRM, HR management, and field operations
+                    platforms
+                  </p>
+                  <p>
+                    → Engineered automated communication pipeline (AWS SES, SNS,
+                    WhatsApp API) — reduced manual workload by 60%
+                  </p>
+                  <p>
+                    → Optimized database queries — improved report generation by
+                    200%
+                  </p>
+                  <p>
+                    → Integrated AI validation using Gemini API for fraud
+                    prevention
+                  </p>
+                  <p>
+                    → Implemented real-time features using Django Channels and
+                    WebSockets
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <script src="assets/js/main.js"></script>
+            <div class="exp-item">
+              <div class="exp-period">FEB 2023 — JUL 2023</div>
+              <div class="exp-content">
+                <h3 class="exp-title">PHP Development Intern</h3>
+                <div class="exp-company">CADD CENTRE · Chennai, India</div>
+                <div class="exp-highlights">
+                  <p>
+                    → Trained in PHP web development, MVC architecture, and
+                    MySQL
+                  </p>
+                  <p>
+                    → Developed multiple training projects and earned
+                    professional certification
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+      <!-- WHAT I'M FOCUSED ON -->
+      <section class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">04</div>
+            <h2 class="section-title-editorial">WHAT I'M<br />FOCUSED ON</h2>
+            <div class="section-line"></div>
+          </div>
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat focus/current.txt</span>
+              </div>
+              <div class="output-content">
+                <div class="skill-category-terminal">
+                  <div
+                    class="skills-row"
+                    style="flex-direction: column; gap: 1.5rem"
+                  >
+                    <div
+                      style="
+                        border-left: 3px solid var(--accent);
+                        padding-left: 1.5rem;
+                      "
+                    >
+                      <div class="category-title" style="margin-bottom: 0.5rem">
+                        → BUILDING AT TRAMES
+                      </div>
+                      <p
+                        style="
+                          color: var(--text-secondary);
+                          line-height: 1.8;
+                          margin: 0;
+                        "
+                      >
+                        Contributing to a global freight management platform.
+                        Learning how large-scale logistics systems are
+                        architected and operated.
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        border-left: 3px solid var(--accent);
+                        padding-left: 1.5rem;
+                      "
+                    >
+                      <div class="category-title" style="margin-bottom: 0.5rem">
+                        → DEEPENING SYSTEM DESIGN
+                      </div>
+                      <p
+                        style="
+                          color: var(--text-secondary);
+                          line-height: 1.8;
+                          margin: 0;
+                        "
+                      >
+                        Focusing on distributed systems, high-availability
+                        architectures, and building backends that scale under
+                        real-world pressure.
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        border-left: 3px solid var(--accent);
+                        padding-left: 1.5rem;
+                      "
+                    >
+                      <div class="category-title" style="margin-bottom: 0.5rem">
+                        → EXPLORING AI INTEGRATION
+                      </div>
+                      <p
+                        style="
+                          color: var(--text-secondary);
+                          line-height: 1.8;
+                          margin: 0;
+                        "
+                      >
+                        Integrating AI into backend workflows — from intelligent
+                        APIs to RAG pipelines — to build smarter, more adaptive
+                        systems.
+                      </p>
+                    </div>
+                    <div
+                      style="
+                        border-left: 3px solid var(--accent);
+                        padding-left: 1.5rem;
+                      "
+                    >
+                      <div class="category-title" style="margin-bottom: 0.5rem">
+                        → GROWING AS AN ENGINEER
+                      </div>
+                      <p
+                        style="
+                          color: var(--text-secondary);
+                          line-height: 1.8;
+                          margin: 0;
+                        "
+                      >
+                        Reading, building side projects, and sharpening my craft
+                        every day. Still early in my journey — excited about
+                        what's ahead.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">05</div>
+            <h2 class="section-title-editorial">GET IN<br />TOUCH</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="contact-terminal">
+            <div class="terminal-window-large">
+              <div class="terminal-header-large">
+                <div class="terminal-buttons">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="terminal-title">connect.sh</span>
+              </div>
+              <div class="terminal-body-large">
+                <div class="terminal-line">
+                  <span class="prompt">$</span>
+                  <span class="command">./contact --info</span>
+                </div>
+                <div class="terminal-output-large">
+                  <div class="contact-info-grid">
+                    <div class="contact-row">
+                      <span class="contact-key">EMAIL</span>
+                      <a
+                        href="mailto:vinayagam.python@gmail.com"
+                        class="contact-value"
+                        >vinayagam.python@gmail.com</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">PHONE</span>
+                      <a href="tel:+919025533402" class="contact-value"
+                        >+91 9025533402</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">LINKEDIN</span>
+                      <a
+                        href="https://www.linkedin.com/in/vinjr/"
+                        target="_blank"
+                        class="contact-value"
+                        >linkedin.com/in/vinjr</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">GITHUB</span>
+                      <a
+                        href="https://github.com/vinaynural"
+                        target="_blank"
+                        class="contact-value"
+                        >github.com/vinaynural</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">X</span>
+                      <a
+                        href="https://x.com/_vinyjr"
+                        target="_blank"
+                        class="contact-value"
+                        >x.com/_vinyjr</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">INSTAGRAM</span>
+                      <a
+                        href="https://www.instagram.com/_vinay__jr/"
+                        target="_blank"
+                        class="contact-value"
+                        >instagram.com/_vinay__jr</a
+                      >
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">LOCATION</span>
+                      <span class="contact-value"
+                        >Chennai, Tamil Nadu, India</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="terminal-line terminal-cursor">
+                  <span class="prompt">$</span>
+                  <span class="cursor-blink">_</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer-minimal">
+        <div class="container-fluid">
+          <div class="footer-content-minimal">
+            <div class="footer-left">
+              <span>© <span id="year"></span> VINAYAGAM.D</span>
+              <span class="footer-sep">·</span>
+              <span>BACKEND ENGINEER</span>
+            </div>
+            <div class="footer-right">
+              <a href="https://github.com/vinaynural" target="_blank">GITHUB</a>
+              <span class="footer-sep">·</span>
+              <a href="https://www.linkedin.com/in/vinjr/" target="_blank"
+                >LINKEDIN</a
+              >
+              <span class="footer-sep">·</span>
+              <a href="https://x.com/_vinyjr" target="_blank">X</a>
+              <span class="footer-sep">·</span>
+              <a href="https://www.instagram.com/_vinay__jr/" target="_blank"
+                >INSTAGRAM</a
+              >
+              <span class="footer-sep">·</span>
+              <a href="mailto:vinayagam.python@gmail.com">EMAIL</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/audio/bg-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="assets/js/main.js?v=1.1"></script>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
       });
-    });
 
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-cmd');
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-cmd");
 
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (scrollY >= sectionTop - 200) {
-          current = section.getAttribute('id');
-        }
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          if (scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
       });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
 
-
-
-
-    console.log("test")
-  </script>
-
-</body>
+      console.log("test");
+    </script>
+  </body>
 </html>
