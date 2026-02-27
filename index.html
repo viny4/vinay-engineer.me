@@ -25,7 +25,11 @@
       href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link href="assets/css/main.css?v=1.1" rel="stylesheet" />
+    <link href="assets/css/main.css?v=1.1" rel="stylesheet">
+  
+  <!-- GitHub Calendar Library -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
   </head>
 
   <body>
@@ -581,13 +585,19 @@
                   </div>
                 </div>
 
-                <!-- Activity Graph - Full Width -->
-                <div class="activity-graph-wrapper" style="margin-top: 2rem; border: 1px solid var(--color-border); padding: 10px; background: var(--color-bg);">
-                  <div class="output-line" style="margin-bottom: 10px;">
+                <!-- Full Activity Calendar -->
+                <div class="calendar-terminal-wrapper" style="margin-top: 2rem; border: 1px solid var(--color-border); padding: 20px; background: var(--color-bg);">
+                  <div class="output-line" style="margin-bottom: 1.5rem;">
                     <span class="prompt">$</span>
-                    <span class="command">visualize --activity-graph</span>
+                    <span class="command">visualize --calendar --full-history</span>
                   </div>
-                  <img src="https://github-readme-activity-graph.vercel.app/graph?username=vinaynural&bg_color=0a0a0a&color=ffcc00&line=ffcc00&point=e8e8e8&area=true&hide_border=true&custom_title=GitHub%20Contribution%20Graph" alt="GitHub Activity Graph" style="width: 100%; height: auto; display: block;">
+                  <!-- The calendar container -->
+                  <div class="calendar" id="github-calendar">
+                    <!-- Loading stuff -->
+                    <div style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">
+                      Loading GitHub Contribution Data...
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -725,6 +735,15 @@
     </audio>
 
     <script src="assets/js/main.js?v=1.1"></script>
+
+    <script>
+      // Initialize GitHub Calendar
+      GitHubCalendar("#github-calendar", "vinaynural", {
+        responsive: true,
+        tooltips: true,
+        summary_text: "Summary of pull requests, issues, and commits by vinaynural"
+      });
+    </script>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
