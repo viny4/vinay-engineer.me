@@ -586,9 +586,10 @@
                 </div>
 
                 <!-- Professional GitHub Calendar Layout -->
+                <!-- Professional GitHub-Faithful Layout -->
                 <div class="calendar-dashboard" style="margin-top: 2rem;">
-                  <div class="row g-4">
-                    <!-- Left: Year Selection Sidebar -->
+                  <div class="row g-4 flex-row-reverse">
+                    <!-- Right: Year Selection (GitHub Style) -->
                     <div class="col-lg-2">
                       <div class="year-sidebar-terminal">
                         <div class="year-list" id="year-selector">
@@ -600,8 +601,13 @@
                       </div>
                     </div>
                     
-                    <!-- Right: Main Calendar Area -->
+                    <!-- Left: Main Calendar Area -->
                     <div class="col-lg-10">
+                      <!-- Contributions Header (Real GitHub Style) -->
+                      <div id="contribution-header" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--color-text); margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                        <span id="contribution-count">...</span> contributions in <span id="current-selected-year">2026</span>
+                      </div>
+
                       <div class="calendar-terminal-wrapper" style="border: 1px solid var(--color-border); padding: 25px; background: var(--color-bg); position: relative;">
                         <div class="output-line" style="margin-bottom: 1.5rem;">
                           <span class="prompt">$</span>
@@ -615,8 +621,11 @@
                           </div>
                         </div>
 
-                        <!-- Manual Refresh / View Link -->
-                        <div style="margin-top: 1.5rem; text-align: right;">
+                        <!-- Manual View Link -->
+                        <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                          <div class="legend-terminal" id="github-legend">
+                            <!-- Legend will be styled via CSS -->
+                          </div>
                           <a href="https://github.com/vinaynural" target="_blank" class="nav-cmd" style="font-size: 0.7rem; opacity: 0.6;">
                             [ VIEW_ON_GITHUB.sh ]
                           </a>
@@ -767,12 +776,16 @@
       const calendarInit = (year = "2026") => {
         const container = document.querySelector("#github-calendar");
         const cmdText = document.querySelector("#calendar-cmd");
+        const countDisplay = document.querySelector("#contribution-count");
+        const yearDisplay = document.querySelector("#current-selected-year");
         
-        // Update terminal text
+        // Update UI
         if(cmdText) cmdText.textContent = `visualize --calendar --year ${year}`;
+        if(yearDisplay) yearDisplay.textContent = year;
+        if(countDisplay) countDisplay.textContent = "...";
         
         // Clear and show loading
-        container.innerHTML = `<div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">[ FETCHING_${year}_ACTUAL_DATA... ]</div>`;
+        container.innerHTML = `<div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">[ FETCHING_${year}_CORE_DATA... ]</div>`;
         
         GitHubCalendar("#github-calendar", "vinaynural", {
           responsive: true,
@@ -780,37 +793,66 @@
           summary_text: "Contributions",
           proxy: (url) => {
             const dateParams = `?from=${year}-01-01&to=${year}-12-31`;
-            // USE CORSPROXY.IO FOR RELIABLE FETCHING
+            // USE CORSPROXY.IO (FALLBACK TO OTHER PROXIES IF NEEDED)
             return `https://corsproxy.io/?url=${encodeURIComponent(url + dateParams)}`;
           }
         }).then(() => {
-          // AGGRESSIVE CLEANUP & MANUAL STATS FIX
-          const cleanup = () => {
-            // Hide junk
-            ['.sr-only', '.ContributionCalendar-nav', '#skip-to-content', '.js-year-link', '.position-relative > .float-left'].forEach(s => {
-              container.querySelectorAll(s).forEach(el => el.style.display = "none");
-            });
-
-            // FIX: Manually calculate stats if they show 0 or don't change
+          // ROBUST DATA PARSING & CLEANUP
+          const processCalendar = () => {
+            // 1. Calculate REAL contribution count from SVG squares
             const rects = container.querySelectorAll('rect.ContributionCalendar-day');
             let total = 0;
+            
             rects.forEach(r => {
-              const count = parseInt(r.getAttribute('data-count') || r.getAttribute('data-level') || 0);
-              total += count;
+              // GitHub changes attributes often: try data-count first, then parse level, then fallback
+              const countAttr = r.getAttribute('data-count');
+              if (countAttr !== null) {
+                total += parseInt(countAttr);
+              } else {
+                // Parse label/title if data-count is missing (common in some versions)
+                const title = r.querySelector('title') || r.getAttribute('title');
+                if (title) {
+                  const match = title.match(/(\d+)\s+contribution/);
+                  if (match) total += parseInt(match[1]);
+                }
+              }
             });
 
-            // Update the display if total is found
-            if (total > 0) {
-              const totalDisplay = container.querySelector('.contrib-number');
-              if (totalDisplay) {
-                totalDisplay.textContent = `${total} total`;
+            // 2. Update Header Count
+            if (countDisplay) countDisplay.textContent = total;
+
+            // 3. Update Summary Boxes at the bottom
+            const totalBox = container.querySelector('.contrib-number');
+            if (totalBox) totalBox.textContent = `${total} total`;
+
+            // 4. Kill Accessibility Junk (Aggressive)
+            const junkSelectors = [
+              '.sr-only', 
+              '.ContributionCalendar-nav', 
+              '#skip-to-content', 
+              '.js-year-link', 
+              '.position-relative > .float-left',
+              'a[href*="skip-to-contributions"]'
+            ];
+            junkSelectors.forEach(s => {
+              container.querySelectorAll(s).forEach(el => el.remove());
+            });
+
+            // Also check for text nodes containing "Skip to"
+            const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            const nodesToRemove = [];
+            while (node = walker.nextNode()) {
+              if (node.textContent.toLowerCase().includes('skip to')) {
+                nodesToRemove.push(node.parentElement);
               }
             }
+            nodesToRemove.forEach(p => { if(p) p.style.display = "none"; });
           };
           
-          cleanup();
-          // Small delay to catch any late rendering
-          setTimeout(cleanup, 500);
+          processCalendar();
+          // Double tap to catch late rendering
+          setTimeout(processCalendar, 1000);
         });
       };
 
