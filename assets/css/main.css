@@ -1502,7 +1502,50 @@ a:hover {
   }
 }
 
-/* === GITHUB CALENDAR CUSTOM STYLING === */
+/* === GITHUB CALENDAR DASHBOARD === */
+.calendar-dashboard {
+  font-family: var(--font-mono) !important;
+}
+
+.year-sidebar-terminal {
+  border: 1px solid var(--color-border);
+  padding: 15px;
+  background: var(--color-bg);
+  height: 100%;
+}
+
+.year-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.year-btn {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.year-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.year-btn.active {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+/* === CALENDAR CONTENT POLISH === */
 .calendar-terminal-wrapper {
   transition: all 0.3s ease;
 }
@@ -1513,43 +1556,50 @@ a:hover {
   font-size: 0.75rem;
 }
 
+/* Hide Accessibility "Junk" */
+#github-calendar .sr-only,
+#github-calendar .ContributionCalendar-nav {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+#github-calendar .width-full > .float-left {
+  display: none !important;
+}
+
+/* Stats Colors */
 #github-calendar .contrib-number {
   color: var(--color-accent) !important;
   font-family: var(--font-mono) !important;
   font-weight: 700;
+  font-size: 1.2rem;
 }
 
 #github-calendar .text-muted {
   color: var(--color-text-muted) !important;
 }
 
-#github-calendar .ContributionCalendar-day[data-level="0"] {
-  fill: #1a1a1a !important;
+/* Color Overrides (Brutalist Yellow Theme) */
+#github-calendar [data-level="0"] { fill: #1a1a1a !important; }
+#github-calendar [data-level="1"] { fill: #4d4400 !important; }
+#github-calendar [data-level="2"] { fill: #998800 !important; }
+#github-calendar [data-level="3"] { fill: #ccb900 !important; }
+#github-calendar [data-level="4"] { fill: var(--color-accent) !important; }
+
+/* Legend Fix */
+#github-calendar .ContributionCalendar-label {
+  fill: var(--color-text-muted) !important;
 }
 
-#github-calendar .ContributionCalendar-day[data-level="1"] {
-  fill: #4d3d00 !important;
+/* Summary Box Styling */
+#github-calendar .contrib-column {
+  border-left: 1px solid var(--color-border) !important;
+  border-bottom: none !important;
+  padding: 15px !important;
 }
 
-#github-calendar .ContributionCalendar-day[data-level="2"] {
-  fill: #997a00 !important;
-}
-
-#github-calendar .ContributionCalendar-day[data-level="3"] {
-  fill: #cc9900 !important;
-}
-
-#github-calendar .ContributionCalendar-day[data-level="4"] {
-  fill: var(--color-accent) !important;
-}
-
-/* Hide some default GitHub styling that doesn't fit */
-#github-calendar .width-full > .float-left {
-  display: none;
-}
-
-#github-calendar .github-calendar-graph {
-  border: none !important;
+#github-calendar .contrib-column:first-child {
+  border-left: none !important;
 }
 
 /* Tile animations */
@@ -1559,29 +1609,26 @@ a:hover {
 }
 
 @keyframes tileFadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
 }
 
 /* Stagger tile animations */
-#github-calendar rect:nth-child(5n + 1) {
-  animation-delay: 0.1s;
-}
-#github-calendar rect:nth-child(5n + 2) {
-  animation-delay: 0.2s;
-}
-#github-calendar rect:nth-child(5n + 3) {
-  animation-delay: 0.3s;
-}
-#github-calendar rect:nth-child(5n + 4) {
-  animation-delay: 0.4s;
-}
-#github-calendar rect:nth-child(5n + 5) {
-  animation-delay: 0.5s;
+#github-calendar rect:nth-child(7n + 1) { animation-delay: 0.1s; }
+#github-calendar rect:nth-child(7n + 2) { animation-delay: 0.15s; }
+#github-calendar rect:nth-child(7n + 3) { animation-delay: 0.2s; }
+#github-calendar rect:nth-child(7n + 4) { animation-delay: 0.25s; }
+#github-calendar rect:nth-child(7n + 5) { animation-delay: 0.3s; }
+
+/* Responsive Years */
+@media (max-width: 991px) {
+  .year-list {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .year-btn {
+    width: auto;
+    white-space: nowrap;
+  }
 }
