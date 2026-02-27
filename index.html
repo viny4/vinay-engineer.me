@@ -788,7 +788,7 @@
         container.innerHTML = `<div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">[ FETCHING_${year}_ACTUAL_GRID... ]</div>`;
         
         const targetUrl = `https://github.com/users/${username}/contributions?from=${year}-01-01&to=${year}-12-31`;
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`;
+        const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`;
         
         try {
           const response = await fetch(proxyUrl);
@@ -798,47 +798,42 @@
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
           
-          // GitHub's main grid container
-          const calendarDiv = doc.querySelector('.js-yearly-contributions');
-          
-          if (!calendarDiv) {
-            // Fallback for different GitHub UI versions
-            const altCalendar = doc.querySelector('.ContributionCalendar');
-            if (altCalendar) {
-              container.innerHTML = altCalendar.outerHTML;
-            } else {
-              throw new Error("GRID_NOT_FOUND");
-            }
-          } else {
-            // Clean the scraped HTML before injecting
-            // We only want the grid and the summary
-            container.innerHTML = calendarDiv.innerHTML;
-          }
-
-          // 1. Total Calculation (Scrape the text directly)
+          // Select ONLY the graph part for 100% cleanliness
+          const graph = doc.querySelector('.js-calendar-graph');
           const header = doc.querySelector('h2.f4.text-normal.mb-2');
+          
+          if (!graph) throw new Error("GRAPH_NOT_FOUND");
+
+          // Inject content
+          container.innerHTML = graph.innerHTML;
+
+          // 1. Total Calculation (Scrape from the GitHub header text)
           if (header) {
             const match = header.textContent.match(/(\d+)\s+contribution/);
-            if (match && countDisplay) {
-              countDisplay.textContent = match[1];
-            }
-          } else {
-            // Manual count fallback
-            let total = 0;
-            container.querySelectorAll('rect.ContributionCalendar-day').forEach(r => {
-              total += parseInt(r.getAttribute('data-count') || 0);
-            });
-            if (countDisplay) countDisplay.textContent = total;
+            if (match && countDisplay) countDisplay.textContent = match[1];
           }
 
-          // 2. Kill Junk (GitHub navigation and accessibility stuff)
-          const junk = ['.sr-only', '.ContributionCalendar-nav', 'h2', 'tool-tip', '.float-left', '.float-right'];
-          junk.forEach(s => {
-            container.querySelectorAll(s).forEach(el => el.remove());
-          });
+          // 2. Kill Junk (Strictly purge accessibility links and nav)
+          const cleanUp = () => {
+            const junkSelectors = [
+              '.sr-only', 
+              '.show-on-focus', 
+              '.ContributionCalendar-nav', 
+              'h2', 
+              'tool-tip', 
+              'summary',
+              'details',
+              '#skip-to-content',
+              '[href*="skip-to"]'
+            ];
+            junkSelectors.forEach(s => {
+              container.querySelectorAll(s).forEach(el => el.remove());
+            });
+          };
 
-          // 3. Ensure the legend is at the bottom right (if needed)
-          // (Our CSS already handles the general layout)
+          cleanUp();
+          // Real-time cleanup for any late-rendered elements
+          setTimeout(cleanUp, 500);
 
           console.log(`[CALENDAR] Year ${year} rendered successfully.`);
 
