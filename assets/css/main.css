@@ -9,7 +9,7 @@
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
   --font-display: "Archivo Black", sans-serif;
   --font-serif: "Fraunces", Georgia, serif;
-  
+
   /* Colors - Yellow/Amber Accent (Unique!) */
   --color-bg: #0a0a0a;
   --color-paper: #f5f5f0;
@@ -19,7 +19,7 @@
   --color-text: #e8e8e8;
   --color-text-muted: #999999;
   --color-border: #333333;
-  
+
   /* Spacing */
   --gap-sm: 1rem;
   --gap-md: 2rem;
@@ -55,12 +55,20 @@ body {
   }
 }
 
-a, button, .project-card, .stat-box, .nav-cmd {
+a,
+button,
+.project-card,
+.stat-box,
+.nav-cmd {
   cursor: none; /* Hide default cursor on interactive elements */
 }
 
 @media (max-width: 991px) {
-  a, button, .project-card, .stat-box, .nav-cmd {
+  a,
+  button,
+  .project-card,
+  .stat-box,
+  .nav-cmd {
     cursor: pointer;
   }
 }
@@ -84,14 +92,13 @@ a:hover {
   height: 100%;
   z-index: -1;
   opacity: 0.03;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 2px,
-      var(--color-text) 2px,
-      var(--color-text) 4px
-    );
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    var(--color-text) 2px,
+    var(--color-text) 4px
+  );
   pointer-events: none;
 }
 
@@ -254,7 +261,8 @@ a:hover {
 }
 
 @keyframes float-orb {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) scale(1);
   }
   33% {
@@ -324,7 +332,7 @@ a:hover {
 }
 
 .nav-cmd.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -0.5rem;
   left: 0;
@@ -352,8 +360,13 @@ a:hover {
 }
 
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
 }
 
 /* === MAIN WRAPPER === */
@@ -466,7 +479,7 @@ a:hover {
 }
 
 .btn-terminal::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -561,9 +574,15 @@ a:hover {
   border-radius: 50%;
 }
 
-.control-red { background: #ff5f56; }
-.control-yellow { background: #ffbd2e; }
-.control-green { background: #27c93f; }
+.control-red {
+  background: #ff5f56;
+}
+.control-yellow {
+  background: #ffbd2e;
+}
+.control-green {
+  background: #27c93f;
+}
 
 .terminal-title {
   font-size: 0.85rem;
@@ -599,15 +618,24 @@ a:hover {
   left: 0;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-accent),
+    transparent
+  );
   animation: scan 4s linear infinite;
   opacity: 0.3;
   z-index: 2;
 }
 
 @keyframes scan {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(500px); }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(500px);
+  }
 }
 
 /* Glitch Overlay */
@@ -679,7 +707,8 @@ a:hover {
 }
 
 @keyframes cornerPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -1075,7 +1104,7 @@ a:hover {
 }
 
 .skill-bar::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -1083,9 +1112,15 @@ a:hover {
   background: var(--color-accent);
 }
 
-.skill-bar.expert::after { width: 90%; }
-.skill-bar.advanced::after { width: 75%; }
-.skill-bar.intermediate::after { width: 60%; }
+.skill-bar.expert::after {
+  width: 90%;
+}
+.skill-bar.advanced::after {
+  width: 75%;
+}
+.skill-bar.intermediate::after {
+  width: 60%;
+}
 
 .skill-level {
   color: var(--color-text-muted);
@@ -1295,8 +1330,13 @@ a:hover {
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* === FOOTER === */
@@ -1341,55 +1381,55 @@ a:hover {
   .nav-menu {
     display: none;
   }
-  
+
   .display-title {
     font-size: 4rem;
   }
-  
+
   .bento-stats {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .stat-large,
   .stat-wide {
     grid-column: span 2;
   }
-  
+
   .stat-box {
     min-height: 150px;
   }
-  
+
   .stat-number {
     font-size: 2.5rem;
   }
-  
+
   .projects-editorial {
     grid-template-columns: 1fr;
   }
-  
+
   .project-hero {
     grid-column: span 1;
   }
-  
+
   .project-metrics-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .metrics-grid-dash {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .exp-item {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .contact-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
-  
+
   .footer-content-minimal {
     flex-direction: column;
     gap: 1rem;
@@ -1400,50 +1440,50 @@ a:hover {
   .display-title {
     font-size: 3rem;
   }
-  
+
   .section-title-editorial {
     font-size: 2.5rem;
   }
-  
+
   .project-title-big {
     font-size: 2rem;
   }
-  
+
   .bento-stats {
     grid-template-columns: 1fr;
   }
-  
+
   .stat-large,
   .stat-wide {
     grid-column: span 1;
   }
-  
+
   .stat-box {
     min-height: 180px;
   }
-  
+
   .stat-number {
     font-size: 2.5rem;
   }
-  
+
   .stack-list {
     gap: 0.4rem;
   }
-  
+
   .stack-list span {
     font-size: 0.75rem;
     padding: 0.4rem 0.8rem;
   }
-  
+
   .skills-row {
     grid-template-columns: 1fr;
   }
-  
+
   .skill-item-terminal {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
-  
+
   .metrics-grid-dash {
     grid-template-columns: 1fr;
   }
@@ -1455,9 +1495,93 @@ a:hover {
   .footer-minimal {
     display: none;
   }
-  
+
   body {
     background: white;
     color: black;
   }
+}
+
+/* === GITHUB CALENDAR CUSTOM STYLING === */
+.calendar-terminal-wrapper {
+  transition: all 0.3s ease;
+}
+
+#github-calendar {
+  color: var(--color-text);
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem;
+}
+
+#github-calendar .contrib-number {
+  color: var(--color-accent) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 700;
+}
+
+#github-calendar .text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+#github-calendar .ContributionCalendar-day[data-level="0"] {
+  fill: #1a1a1a !important;
+}
+
+#github-calendar .ContributionCalendar-day[data-level="1"] {
+  fill: #4d3d00 !important;
+}
+
+#github-calendar .ContributionCalendar-day[data-level="2"] {
+  fill: #997a00 !important;
+}
+
+#github-calendar .ContributionCalendar-day[data-level="3"] {
+  fill: #cc9900 !important;
+}
+
+#github-calendar .ContributionCalendar-day[data-level="4"] {
+  fill: var(--color-accent) !important;
+}
+
+/* Hide some default GitHub styling that doesn't fit */
+#github-calendar .width-full > .float-left {
+  display: none;
+}
+
+#github-calendar .github-calendar-graph {
+  border: none !important;
+}
+
+/* Tile animations */
+#github-calendar rect {
+  opacity: 0;
+  animation: tileFadeIn 0.5s ease forwards;
+}
+
+@keyframes tileFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Stagger tile animations */
+#github-calendar rect:nth-child(5n + 1) {
+  animation-delay: 0.1s;
+}
+#github-calendar rect:nth-child(5n + 2) {
+  animation-delay: 0.2s;
+}
+#github-calendar rect:nth-child(5n + 3) {
+  animation-delay: 0.3s;
+}
+#github-calendar rect:nth-child(5n + 4) {
+  animation-delay: 0.4s;
+}
+#github-calendar rect:nth-child(5n + 5) {
+  animation-delay: 0.5s;
 }
