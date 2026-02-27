@@ -1587,10 +1587,6 @@ a:hover {
 #github-calendar [data-level="4"] { fill: var(--color-accent) !important; }
 
 /* Legend Fix */
-#github-calendar .ContributionCalendar-label {
-  fill: var(--color-text-muted) !important;
-}
-
 /* Summary Box Styling */
 #github-calendar .contrib-column {
   border-left: 1px solid var(--color-border) !important;
@@ -1602,23 +1598,33 @@ a:hover {
   border-left: none !important;
 }
 
-/* Tile animations */
+/* Cleaner, faster fade animation (No Scale) */
 #github-calendar rect {
   opacity: 0;
-  animation: tileFadeIn 0.5s ease forwards;
+  animation: tileFadeIn 0.3s ease-in-out forwards;
 }
 
 @keyframes tileFadeIn {
-  from { opacity: 0; transform: scale(0.8); }
-  to { opacity: 1; transform: scale(1); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Stagger tile animations */
-#github-calendar rect:nth-child(7n + 1) { animation-delay: 0.1s; }
-#github-calendar rect:nth-child(7n + 2) { animation-delay: 0.15s; }
-#github-calendar rect:nth-child(7n + 3) { animation-delay: 0.2s; }
-#github-calendar rect:nth-child(7n + 4) { animation-delay: 0.25s; }
-#github-calendar rect:nth-child(7n + 5) { animation-delay: 0.3s; }
+/* Stagger tile animations (Faster speed) */
+#github-calendar rect:nth-child(7n + 1) { animation-delay: 0.05s; }
+#github-calendar rect:nth-child(7n + 2) { animation-delay: 0.1s; }
+#github-calendar rect:nth-child(7n + 3) { animation-delay: 0.15s; }
+#github-calendar rect:nth-child(7n + 4) { animation-delay: 0.2s; }
+#github-calendar rect:nth-child(7n + 5) { animation-delay: 0.25s; }
+
+/* Aggressively Hide Accessibility Junk */
+.sr-only,
+#skip-to-content,
+.ContributionCalendar-nav,
+.js-year-link {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 
 /* Responsive Years */
 @media (max-width: 991px) {
