@@ -779,38 +779,38 @@
           tooltips: true,
           summary_text: "Contributions",
           proxy: (url) => {
-            // MANUALLY APPEND YEAR PARAMETERS TO THE GITHUB USER PAGE URL
-            // This forces GitHub to return the specific year's contribution grid
             const dateParams = `?from=${year}-01-01&to=${year}-12-31`;
-            const proxyUrl = `https://proxy.meticulous.workers.dev/?url=${encodeURIComponent(url + dateParams)}`;
-            return proxyUrl;
+            // USE CORSPROXY.IO FOR RELIABLE FETCHING
+            return `https://corsproxy.io/?url=${encodeURIComponent(url + dateParams)}`;
           }
         }).then(() => {
-          // AGGRESSIVE CLEANUP OF GITHUB ARTIFACTS
-          // This removes "Skip to content", accessibility links, and broken navs
-          const elementsToHide = [
-            '.sr-only',
-            '.ContributionCalendar-nav',
-            '#skip-to-content',
-            '.js-year-link',
-            '.position-relative > .float-left'
-          ];
-          
-          elementsToHide.forEach(selector => {
-            container.querySelectorAll(selector).forEach(el => {
-              el.style.display = "none";
-              el.style.visibility = "hidden";
-              el.style.opacity = "0";
+          // AGGRESSIVE CLEANUP & MANUAL STATS FIX
+          const cleanup = () => {
+            // Hide junk
+            ['.sr-only', '.ContributionCalendar-nav', '#skip-to-content', '.js-year-link', '.position-relative > .float-left'].forEach(s => {
+              container.querySelectorAll(s).forEach(el => el.style.display = "none");
             });
-          });
 
-          // Also remove any text that starts with "Skip to"
-          const allText = container.querySelectorAll('*');
-          allText.forEach(el => {
-            if (el.textContent.includes('Skip to')) {
-              el.style.display = "none";
+            // FIX: Manually calculate stats if they show 0 or don't change
+            const rects = container.querySelectorAll('rect.ContributionCalendar-day');
+            let total = 0;
+            rects.forEach(r => {
+              const count = parseInt(r.getAttribute('data-count') || r.getAttribute('data-level') || 0);
+              total += count;
+            });
+
+            // Update the display if total is found
+            if (total > 0) {
+              const totalDisplay = container.querySelector('.contrib-number');
+              if (totalDisplay) {
+                totalDisplay.textContent = `${total} total`;
+              }
             }
-          });
+          };
+          
+          cleanup();
+          // Small delay to catch any late rendering
+          setTimeout(cleanup, 500);
         });
       };
 

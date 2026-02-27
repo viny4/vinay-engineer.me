@@ -1589,38 +1589,37 @@ a:hover {
 /* Legend Fix */
 /* Summary Box Styling */
 #github-calendar .contrib-column {
-  border-left: 1px solid var(--color-border) !important;
-  border-bottom: none !important;
-  padding: 15px !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 20px !important;
+  background: rgba(255, 204, 0, 0.03);
+  text-align: center;
 }
 
 #github-calendar .contrib-column:first-child {
-  border-left: none !important;
+  border-left: 1px solid var(--color-border) !important;
 }
 
-/* Cleaner, faster fade animation (No Scale) */
+/* Faster, professional fade animation */
 #github-calendar rect {
   opacity: 0;
-  animation: tileFadeIn 0.3s ease-in-out forwards;
+  animation: tileQuickFade 0.2s ease-out forwards;
 }
 
-@keyframes tileFadeIn {
+@keyframes tileQuickFade {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* Stagger tile animations (Faster speed) */
-#github-calendar rect:nth-child(7n + 1) { animation-delay: 0.05s; }
-#github-calendar rect:nth-child(7n + 2) { animation-delay: 0.1s; }
-#github-calendar rect:nth-child(7n + 3) { animation-delay: 0.15s; }
-#github-calendar rect:nth-child(7n + 4) { animation-delay: 0.2s; }
-#github-calendar rect:nth-child(7n + 5) { animation-delay: 0.25s; }
+/* Very subtle staggering */
+#github-calendar rect:nth-child(10n + 1) { animation-delay: 0.01s; }
+#github-calendar rect:nth-child(10n + 5) { animation-delay: 0.05s; }
 
 /* Aggressively Hide Accessibility Junk */
-.sr-only,
+.sr-only, 
 #skip-to-content,
 .ContributionCalendar-nav,
-.js-year-link {
+.js-year-link,
+[href="#skip-to-content"] {
   display: none !important;
   visibility: hidden !important;
   pointer-events: none !important;
