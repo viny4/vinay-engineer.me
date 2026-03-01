@@ -788,12 +788,33 @@
         container.innerHTML = `<div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">[ FETCHING_${year}_ACTUAL_GRID... ]</div>`;
         
         const targetUrl = `https://github.com/users/${username}/contributions?from=${year}-01-01&to=${year}-12-31`;
-        const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`;
+        
+        // Multi-proxy fallback system to ensure data always loads
+        const proxies = [
+          `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+          `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`
+        ];
         
         try {
-          const response = await fetch(proxyUrl);
-          if (!response.ok) throw new Error(`HTTP_${response.status}`);
-          const html = await response.text();
+          let html = null;
+          for (const proxyUrl of proxies) {
+            try {
+              console.log(`[CALENDAR] Trying proxy: ${proxyUrl.split('?')[0]}`);
+              const response = await fetch(proxyUrl);
+              if (response.ok) {
+                html = await response.text();
+                console.log(`[CALENDAR] Success with proxy: ${proxyUrl.split('?')[0]}`);
+                break; // Stop trying if successful
+              } else {
+                 console.warn(`[CALENDAR] Proxy returned ${response.status}: ${proxyUrl.split('?')[0]}`);
+              }
+            } catch (e) {
+              console.warn(`[CALENDAR] Proxy fetch failed: ${proxyUrl.split('?')[0]}`, e);
+            }
+          }
+
+          if (!html) throw new Error("ALL_PROXIES_FAILED");
           
           const parser = new DOMParser();
           const doc = parser.parseFromString(html, 'text/html');
