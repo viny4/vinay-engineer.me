@@ -572,15 +572,10 @@
                 <span class="command">fetch --github-stats vinaynural</span>
               </div>
               <div class="output-content">
-                <div class="stats-grid-editorial" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;">
-                  <!-- GitHub Stats Card -->
-                  <div class="stats-card-wrapper" style="border: 1px solid var(--color-border); padding: 5px; background: var(--color-bg); overflow: hidden;">
-                    <img src="https://github-readme-stats-one.vercel.app/api?username=vinaynural&show_icons=true&bg_color=0a0a0a&text_color=e8e8e8&icon_color=ffcc00&title_color=ffcc00&hide_border=true" alt="GitHub Stats" style="width: 100%; height: auto; display: block;">
-                  </div>
-                  
-                  <!-- Top Languages Card -->
-                  <div class="stats-card-wrapper" style="border: 1px solid var(--color-border); padding: 5px; background: var(--color-bg); overflow: hidden;">
-                    <img src="https://github-readme-stats-one.vercel.app/api/top-langs?username=vinaynural&layout=compact&bg_color=0a0a0a&text_color=e8e8e8&icon_color=ffcc00&title_color=ffcc00&hide_border=true" alt="Top Languages" style="width: 100%; height: auto; display: block;">
+                <!-- Dynamic GitHub API Dashboard -->
+                <div id="github-dynamic-dashboard">
+                  <div class="loading-spinner" style="text-align: center; color: var(--color-accent); font-family: var(--font-mono); margin: 2rem 0;">
+                    [ INITIALIZING_GITHUB_API_DASHBOARD... ]
                   </div>
                 </div>
 
@@ -845,7 +840,11 @@
               'summary',
               'details',
               '#skip-to-content',
-              '[href*="skip-to"]'
+              '[href*="skip-to"]',
+              '.text-small',
+              '.Link--muted',
+              '.d-md-flex',
+              '.d-flex.flex-md-row'
             ];
             junkSelectors.forEach(s => {
               container.querySelectorAll(s).forEach(el => el.remove());

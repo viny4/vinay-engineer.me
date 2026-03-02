@@ -1657,3 +1657,216 @@ a:hover {
     white-space: nowrap;
   }
 }
+
+/* =========================================
+   DYNAMIC GITHUB API DASHBOARD
+   ========================================= */
+
+.gh-dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: var(--font-mono);
+  animation: tileQuickFade 0.5s ease-out forwards;
+}
+
+/* Profile Header */
+.gh-profile-header {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  padding: 1.5rem;
+}
+
+.gh-profile-info {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.gh-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 0;
+  border: 2px solid var(--color-accent);
+}
+
+.gh-user-details {
+  flex: 1;
+}
+
+.gh-name {
+  font-family: var(--font-editorial);
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1;
+}
+
+.gh-handle {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.gh-handle:hover {
+  text-decoration: underline;
+}
+
+.gh-bio {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.gh-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.gh-stats strong {
+  color: var(--color-text);
+}
+
+/* Section Titles */
+.gh-section-title {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.gh-section-title::before {
+  content: "> ";
+}
+
+/* Repo Grid */
+.gh-repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.gh-repo-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.2s ease;
+}
+
+.gh-repo-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  background: rgba(255, 204, 0, 0.05);
+}
+
+.gh-repo-name {
+  color: var(--color-text);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.gh-repo-desc {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.gh-repo-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* Event Log */
+.gh-event-log {
+  border: 1px solid var(--color-border);
+  padding: 1rem;
+  background: var(--color-bg);
+}
+
+.gh-event-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.gh-event-row:last-child {
+  border-bottom: none;
+}
+
+.gh-event-date {
+  color: var(--color-text-muted);
+  min-width: 110px;
+}
+
+.gh-event-action {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.gh-event-repo {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.gh-event-repo:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+.gh-event-details {
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+/* Network */
+.gh-network-panel {
+  margin-top: 2rem;
+}
+
+.gh-orgs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.gh-org-avatar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  transition: border-color 0.2s ease;
+}
+
+.gh-org-avatar:hover {
+  border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .gh-profile-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .gh-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
