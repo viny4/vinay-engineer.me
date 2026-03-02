@@ -859,6 +859,224 @@
   }
 
   // ========================================
+  // DYNAMIC GITHUB API DASHBOARD
+  // ========================================
+  class GitHubDataFetcher {
+    constructor(username) {
+      this.username = username;
+      this.baseUrl = 'https://api.github.com/users/';
+      this.cacheKeyPrefix = 'github_api_cache_';
+      this.cacheExpiry = 60 * 60 * 1000; // 1 hour
+      this.container = document.getElementById('github-dynamic-dashboard');
+      
+      this.endpoints = {
+        profile: '',
+        events: '/events?per_page=10',
+        followers: '/followers?per_page=10',
+        following: '/following?per_page=10',
+        repos: '/repos?sort=updated&per_page=20',
+        orgs: '/orgs',
+        starred: '/starred?per_page=10',
+        subscriptions: '/subscriptions',
+        received_events: '/received_events?per_page=5'
+      };
+    }
+
+    async fetchWithCache(endpointName, path) {
+      const cacheKey = this.cacheKeyPrefix + endpointName;
+      const cachedData = sessionStorage.getItem(cacheKey);
+      const cacheTimestamp = sessionStorage.getItem(cacheKey + '_time');
+
+      if (cachedData && cacheTimestamp) {
+        const now = new Date().getTime();
+        if (now - parseInt(cacheTimestamp) < this.cacheExpiry) {
+          console.log(`[GH_API] Using cached data for: ${endpointName}`);
+          return JSON.parse(cachedData);
+        }
+      }
+
+      console.log(`[GH_API] Fetching fresh data for: ${endpointName}`);
+      try {
+        const response = await fetch(`${this.baseUrl}${this.username}${path}`);
+        if (!response.ok) {
+          if (response.status === 403) throw new Error("API_RATE_LIMIT_EXCEEDED");
+          throw new Error(`HTTP_${response.status}`);
+        }
+        const data = await response.json();
+        
+        // Save to cache
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        sessionStorage.setItem(cacheKey + '_time', new Date().getTime().toString());
+        
+        return data;
+      } catch (err) {
+        console.error(`[GH_API] Error fetching ${endpointName}:`, err);
+        return null;
+      }
+    }
+
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    }
+
+    renderProfileHeader(profile) {
+      if (!profile) return '';
+      return `
+        <div class="gh-profile-header">
+          <div class="gh-profile-info">
+            <img src="${profile.avatar_url}" alt="${profile.login}" class="gh-avatar">
+            <div class="gh-user-details">
+              <h3 class="gh-name">${profile.name || profile.login}</h3>
+              <a href="${profile.html_url}" target="_blank" class="gh-handle">@${profile.login}</a>
+              <p class="gh-bio">${profile.bio || 'Backend Engineer'}</p>
+              <div class="gh-stats">
+                <span><strong>${profile.followers}</strong> Followers</span>
+                <span><strong>${profile.following}</strong> Following</span>
+                <span><strong>${profile.public_repos}</strong> Repos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    renderRepoGrid(repos, starred) {
+      if (!repos) return '';
+      // Filter out forks and get top 4 by stars, or just recent
+      const topRepos = repos.filter(r => !r.fork)
+                            .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                            .slice(0, 4);
+      
+      let html = `<div class="gh-section-title">FEATURED_REPOSITORIES</div><div class="gh-repo-grid">`;
+      topRepos.forEach(repo => {
+        html += `
+          <a href="${repo.html_url}" target="_blank" class="gh-repo-card">
+            <div class="gh-repo-name">${repo.name}</div>
+            <div class="gh-repo-desc">${repo.description || 'No description provided.'}</div>
+            <div class="gh-repo-meta">
+              <span><i class="fas fa-circle" style="color: var(--color-accent); font-size: 8px; margin-right: 4px;"></i>${repo.language || 'Code'}</span>
+              <span>⭐ ${repo.stargazers_count}</span>
+              <span>🍴 ${repo.forks_count}</span>
+            </div>
+          </a>
+        `;
+      });
+      html += `</div>`;
+      return html;
+    }
+
+    renderEventLog(events) {
+      if (!events || events.length === 0) return '';
+      let html = `<div class="gh-section-title">TERMINAL_ACTIVITY_LOG</div><div class="gh-event-log">`;
+      
+      events.slice(0, 5).forEach(ev => {
+        let action = ev.type;
+        let details = '';
+        
+        switch(ev.type) {
+          case 'PushEvent': 
+            action = 'PUSHED_TO'; 
+            details = `${ev.payload.commits.length} commit(s)`;
+            break;
+          case 'CreateEvent': 
+            action = `CREATED_${ev.payload.ref_type.toUpperCase()}`; 
+            break;
+          case 'WatchEvent': 
+            action = 'STARRED'; 
+            break;
+          case 'PullRequestEvent': 
+            action = `${ev.payload.action.toUpperCase()}_PR`; 
+            break;
+          case 'IssuesEvent':
+            action = `${ev.payload.action.toUpperCase()}_ISSUE`;
+            break;
+        }
+
+        html += `
+          <div class="gh-event-row">
+            <span class="gh-event-date">[${this.formatDate(ev.created_at)}]</span>
+            <span class="gh-event-action">${action}</span>
+            <a href="https://github.com/${ev.repo.name}" target="_blank" class="gh-event-repo">${ev.repo.name}</a>
+            <span class="gh-event-details">${details}</span>
+          </div>
+        `;
+      });
+      html += `</div>`;
+      return html;
+    }
+
+    renderNetworkInfo(orgs, following) {
+      let html = `<div class="gh-network-panel">`;
+      
+      if (orgs && orgs.length > 0) {
+        html += `<div class="gh-section-title">ORGANIZATIONS</div><div class="gh-orgs">`;
+        orgs.forEach(org => {
+          html += `<a href="https://github.com/${org.login}" target="_blank" title="${org.login}"><img src="${org.avatar_url}" class="gh-org-avatar"></a>`;
+        });
+        html += `</div>`;
+      }
+
+      html += `</div>`;
+      return html;
+    }
+
+    async init() {
+      if (!this.container) return;
+
+      try {
+        // Fetch all required data concurrently
+        const [profile, events, repos, orgs, starred, following] = await Promise.all([
+          this.fetchWithCache('profile', this.endpoints.profile),
+          this.fetchWithCache('events', this.endpoints.events),
+          this.fetchWithCache('repos', this.endpoints.repos),
+          this.fetchWithCache('orgs', this.endpoints.orgs),
+          this.fetchWithCache('starred', this.endpoints.starred),
+          this.fetchWithCache('following', this.endpoints.following)
+        ]);
+
+        if (!profile) {
+          throw new Error("API_RATE_LIMIT_EXCEEDED");
+        }
+
+        // Build the dashboard HTML
+        const html = `
+          <div class="gh-dashboard-container">
+            ${this.renderProfileHeader(profile)}
+            <div class="gh-dashboard-body">
+              <div class="gh-main-col">
+                ${this.renderRepoGrid(repos, starred)}
+                ${this.renderEventLog(events)}
+              </div>
+            </div>
+          </div>
+        `;
+
+        this.container.innerHTML = html;
+
+      } catch (err) {
+        console.error("[GH_DASHBOARD] Initialization failed:", err);
+        let errorMsg = "API Connection Error";
+        if (err.message.includes("RATE_LIMIT")) {
+          errorMsg = "GitHub API Rate Limit Exceeded (60 req/hr). Please wait or try again later.";
+        }
+        this.container.innerHTML = `
+          <div style="border: 1px solid #ff4444; padding: 20px; color: #ff4444; font-family: var(--font-mono); background: rgba(255,0,0,0.05); text-align: center; margin-top: 1rem;">
+            [ FATAL_ERROR: ${errorMsg} ]<br><br>
+            <span style="font-size: 0.8rem; opacity: 0.8;">> RUNTIME_HALTED_UNTIL_QUOTA_RESETS</span>
+          </div>
+        `;
+      }
+    }
+  }
+
+  // Initialize the fetcher
+  window.addEventListener('DOMContentLoaded', () => {
+    const fetcher = new GitHubDataFetcher('vinaynural');
+    fetcher.init();
+  });
+
+  // ========================================
   console.log('%c$ Portfolio initialized successfully!', 'color: #ffcc00; font-family: monospace;');
   // ========================================
 
