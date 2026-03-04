@@ -1077,6 +1077,31 @@
   });
 
   // ========================================
+  // SCROLL-TRIGGERED TUBE LIGHT ANIMATION
+  // ========================================
+  const animateOnScroll = () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('tube-light-active');
+          observer.unobserve(entry.target); // Optional: animate only once
+        }
+      });
+    }, {
+      threshold: 0.1 // Trigger when 10% visible
+    });
+
+    const elementsToAnimate = document.querySelectorAll('.tube-light, .section-title-editorial, .category-title, .exp-title, .gh-section-title');
+    elementsToAnimate.forEach(el => observer.observe(el));
+  };
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', animateOnScroll);
+  } else {
+    animateOnScroll();
+  }
+
+  // ========================================
   console.log('%c$ Portfolio initialized successfully!', 'color: #ffcc00; font-family: monospace;');
   // ========================================
 
