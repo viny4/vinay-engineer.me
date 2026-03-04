@@ -6,9 +6,9 @@
 /* === ROOT VARIABLES === */
 :root {
   /* Typography - Unique combinations */
-  --font-mono: "IBM Plex Mono", "Courier New", monospace;
-  --font-display: "Archivo Black", sans-serif;
-  --font-serif: "Fraunces", Georgia, serif;
+  --font-mono: "Montserrat", sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-serif: "Montserrat", sans-serif;
 
   /* Colors - Yellow/Amber Accent (Unique!) */
   --color-bg: #0a0a0a;
@@ -1779,6 +1779,7 @@ a:hover {
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1868,5 +1869,92 @@ a:hover {
   .gh-stats {
     justify-content: center;
     flex-wrap: wrap;
+  }
+}
+
+/* =========================================
+   TUBE LIGHT / NEON TURN ON ANIMATION
+   ========================================= */
+
+.tube-light,
+.section-title-editorial,
+.category-title,
+.exp-title,
+.gh-section-title {
+  opacity: 0;
+  position: relative;
+  /* Palantir Gotham glowing effect */
+}
+
+.tube-light-active {
+  opacity: 1;
+  animation: tubeLightTurnOn 2s forwards;
+}
+
+@keyframes tubeLightTurnOn {
+  0% {
+    opacity: 0;
+    text-shadow: none;
+    color: transparent;
+  }
+  12% {
+    opacity: 0;
+    text-shadow: none;
+    color: transparent;
+  }
+  15% {
+    opacity: 0.1;
+    text-shadow: none;
+    color: var(--color-text-muted);
+  }
+  16% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+    color: #fff;
+  }
+  18% {
+    opacity: 0.1;
+    text-shadow: none;
+    color: var(--color-text-muted);
+  }
+  20% {
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  22% {
+    opacity: 0.1;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0.1;
+    text-shadow: none;
+  }
+  32% {
+    opacity: 0.5;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+  }
+  34% {
+    opacity: 0.1;
+    text-shadow: none;
+  }
+  38% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.6), 0 0 30px rgba(255, 204, 0, 0.3);
+  }
+  42% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(255, 204, 0, 0.6), 0 0 30px rgba(255, 204, 0, 0.3);
+  }
+  55% {
+    opacity: 0.5;
+    text-shadow: 0 0 5px rgba(255, 204, 0, 0.2);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 20px rgba(255, 204, 0, 0.6), 0 0 40px rgba(255, 204, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   }
 }
