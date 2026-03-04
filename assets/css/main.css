@@ -1883,13 +1883,19 @@ a:hover {
 
 @keyframes tubeLightTurnOn {
   0% {
-    opacity: 0.1;
+    opacity: 0;
     text-shadow: none;
-    color: var(--color-text-muted);
+    color: transparent;
+  }
+  12% {
+    opacity: 0;
+    text-shadow: none;
+    color: transparent;
   }
   15% {
     opacity: 0.1;
     text-shadow: none;
+    color: var(--color-text-muted);
   }
   16% {
     opacity: 1;
