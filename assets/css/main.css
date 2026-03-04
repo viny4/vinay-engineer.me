@@ -1779,6 +1779,7 @@ a:hover {
   margin-bottom: 1rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -1880,9 +1881,13 @@ a:hover {
 .category-title,
 .exp-title,
 .gh-section-title {
-  animation: tubeLightTurnOn 2s forwards;
+  opacity: 0;
   position: relative;
   /* Palantir Gotham glowing effect */
+}
+
+.tube-light-active {
+  animation: tubeLightTurnOn 2s forwards;
 }
 
 @keyframes tubeLightTurnOn {
