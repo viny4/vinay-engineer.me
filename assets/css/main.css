@@ -1875,7 +1875,11 @@ a:hover {
    TUBE LIGHT / NEON TURN ON ANIMATION
    ========================================= */
 
-.tube-light {
+.tube-light,
+.section-title-editorial,
+.category-title,
+.exp-title,
+.gh-section-title {
   animation: tubeLightTurnOn 2s forwards;
   position: relative;
   /* Palantir Gotham glowing effect */
