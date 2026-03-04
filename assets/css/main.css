@@ -1887,6 +1887,7 @@ a:hover {
 }
 
 .tube-light-active {
+  opacity: 1;
   animation: tubeLightTurnOn 2s forwards;
 }
 
