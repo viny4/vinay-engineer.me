@@ -26,6 +26,10 @@
       rel="stylesheet"
     />
     <link href="assets/css/main.css?v=1.1" rel="stylesheet">
+    <link href="assets/css/mobile.css" rel="stylesheet">
+    
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css">
   
   <!-- Manual GitHub Scraping - No library needed -->
 
@@ -880,9 +884,40 @@
         });
       });
 
-      // Initial load
-      calendarInit("2026");
-    </script>
+        // Initial load
+        calendarInit("2026");
+      </script>
+
+      <!-- Lenis Smooth Scroll Library -->
+      <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+      <script>
+        // Initialize Lenis
+        const lenis = new Lenis({
+          duration: 1.2,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+          direction: 'vertical',
+          gestureDirection: 'vertical',
+          smooth: true,
+          mouseMultiplier: 1,
+          smoothTouch: false,
+          touchMultiplier: 2,
+          infinite: false,
+        });
+
+        // Get scroll value
+        /*
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+          console.log({ scroll, limit, velocity, direction, progress })
+        })
+        */
+
+        function raf(time) {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+      </script>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
