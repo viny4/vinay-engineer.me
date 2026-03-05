@@ -34,7 +34,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; (Removed to prevent conflict with Lenis) */
 }
 
 body {
