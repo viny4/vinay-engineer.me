@@ -80,28 +80,7 @@
   };
 
   // ========================================
-  // SMOOTH SCROLL FOR NAVIGATION
-  // ========================================
-  
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      
-      if (target) {
-        const navHeight = document.querySelector('.terminal-nav')?.offsetHeight || 80;
-        const targetPosition = target.offsetTop - navHeight - 20;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
-
-  // ========================================
-  // ACTIVE NAVIGATION HIGHLIGHTING
+  // ACTIVE NAVIGATION HIGHLIGHTING (Scroll handled by Lenis)
   // ========================================
   
   const sections = document.querySelectorAll('section[id]');
