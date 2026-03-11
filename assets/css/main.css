@@ -33,9 +33,7 @@
   box-sizing: border-box;
 }
 
-html {
-  /* scroll-behavior: smooth; (Removed to prevent conflict with Lenis) */
-}
+ 
 
 body {
   font-family: var(--font-mono);
@@ -43,7 +41,6 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   font-size: 15px;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   cursor: none; /* Hide default cursor for custom cursor */
 }
@@ -372,6 +369,7 @@ a:hover {
 /* === MAIN WRAPPER === */
 .main-wrapper {
   padding-top: 80px;
+  overflow-x: hidden;
 }
 
 /* === HERO EDITORIAL === */
