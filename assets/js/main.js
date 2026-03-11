@@ -1014,7 +1014,7 @@
           this.fetchWithCache('following', this.endpoints.following)
         ]);
 
-        if (!profile) {
+        if (!profile || profile.message) {
           throw new Error("API_RATE_LIMIT_EXCEEDED");
         }
 
@@ -1035,10 +1035,8 @@
 
       } catch (err) {
         console.error("[GH_DASHBOARD] Initialization failed:", err);
-        let errorMsg = "API Connection Error";
-        if (err.message.includes("RATE_LIMIT")) {
-          errorMsg = "GitHub API Rate Limit Exceeded (60 req/hr). Please wait or try again later.";
-        }
+        let errorMsg = "GitHub API Rate Limit Exceeded or Connection Error (60 req/hr). Please wait or try again later.";
+        
         this.container.innerHTML = `
           <div style="border: 1px solid #ff4444; padding: 20px; color: #ff4444; font-family: var(--font-mono); background: rgba(255,0,0,0.05); text-align: center; margin-top: 1rem;">
             [ FATAL_ERROR: ${errorMsg} ]<br><br>
