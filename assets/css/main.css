@@ -2142,3 +2142,385 @@ a:hover {
     text-shadow: 0 0 20px rgba(255, 204, 0, 0.6), 0 0 40px rgba(255, 204, 0, 0.3), 0 0 60px rgba(255, 204, 0, 0.1);
   }
 }
+
+/* =========================================
+   CASE STUDY GRID — PROJECT CARDS v2
+   ========================================= */
+
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.case-block {
+  padding: 1.25rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+}
+
+.case-block-full {
+  grid-column: span 2;
+}
+
+.case-label {
+  font-size: 0.65rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.case-text {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Architecture flow inside case studies */
+.arch-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  padding: 1rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.arch-flow-compact {
+  font-size: 0.75rem;
+}
+
+.arch-node {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: #1a1a1a;
+  white-space: nowrap;
+}
+
+.arch-node-primary {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(255,204,0,0.05);
+}
+
+.arch-arrow {
+  color: var(--color-accent);
+  opacity: 0.5;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 991px) {
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-block-full {
+    grid-column: span 1;
+  }
+  .arch-flow {
+    gap: 0.3rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* =========================================
+   SYSTEM ARCHITECTURE SECTION
+   ========================================= */
+
+.arch-diagram-block {
+  margin-bottom: 3rem;
+}
+
+.arch-diagram-label {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.arch-diagram-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: 800px;
+}
+
+.arch-layer {
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.5rem;
+  background: #1a1a1a;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.arch-layer:hover {
+  border-color: var(--color-accent);
+}
+
+.arch-layer-node {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.arch-layer-node--accent {
+  color: var(--color-accent);
+}
+
+.arch-layer-node--green {
+  color: #4caf50;
+}
+
+.arch-layer-node--blue {
+  color: #64b5f6;
+}
+
+.arch-layer-desc {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.arch-layer-arrow-v {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  opacity: 0.4;
+  padding: 0.2rem 1.5rem;
+  line-height: 1;
+}
+
+.arch-layer-arrow-split {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+}
+
+.arch-split-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.arch-split-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+.arch-split-row .arch-layer-side {
+  flex: 1;
+}
+
+.arch-split-connector {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.arch-layer-side {
+  border: 1px solid var(--color-border);
+  padding: 1rem 1.5rem;
+  background: #1a1a1a;
+  transition: border-color 0.2s;
+}
+
+.arch-layer-side:hover {
+  border-color: var(--color-accent);
+}
+
+/* Design Decision blocks */
+.arch-decisions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.arch-decision-item {
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.015);
+}
+
+.arch-decision-title {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.arch-decision-text {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .arch-decisions {
+    grid-template-columns: 1fr;
+  }
+  .arch-split-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .arch-split-connector {
+    justify-content: center;
+    padding: 0.3rem;
+    transform: rotate(90deg);
+  }
+}
+
+/* =========================================
+   PINNED GITHUB REPOS
+   ========================================= */
+
+.pinned-repos-block {
+  margin-bottom: 3rem;
+}
+
+.pinned-repos-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.pinned-repos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.pinned-repo-card {
+  display: block;
+  border: 1px solid var(--color-border);
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.02);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.pinned-repo-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.pinned-repo-card:hover {
+  border-color: var(--color-accent);
+  background: rgba(255,204,0,0.03);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,204,0,0.1);
+}
+
+.pinned-repo-card:hover::before {
+  background: var(--color-accent);
+}
+
+.pinned-repo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.pinned-repo-icon {
+  color: var(--color-accent);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.pinned-repo-name {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-weight: 600;
+  word-break: break-all;
+}
+
+.pinned-repo-desc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.pinned-repo-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pinned-repo-lang {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.lang-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.lang-python { background: #3776ab; }
+
+.pinned-repo-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 991px) {
+  .pinned-repos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .pinned-repos-grid {
+    grid-template-columns: 1fr;
+  }
+}
