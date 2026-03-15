@@ -507,6 +507,192 @@ a:hover {
   transform: translateY(2px);
 }
 
+/* === HERO TAGLINE & INTRO === */
+.hero-tagline {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--color-accent);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+.hero-intro {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+
+/* === HERO ACTIONS — MULTI-BUTTON === */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-terminal.btn-outline {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+  margin-top: 0;
+}
+
+.btn-terminal.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  box-shadow: none;
+}
+
+.btn-terminal.btn-outline:hover::before {
+  display: none;
+}
+
+.btn-terminal i {
+  font-size: 1rem;
+}
+
+/* Override the top margin on the base btn when used in flex row */
+.hero-actions .btn-terminal {
+  margin-top: 0;
+}
+
+/* === IMPACT STRIP === */
+.impact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 2px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.impact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0 3rem 0 0;
+}
+
+.impact-divider {
+  color: var(--color-border);
+  font-size: 1.5rem;
+  padding: 0 2rem 0 0;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.impact-num {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.impact-label {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .impact-strip {
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+  .impact-divider { display: none; }
+  .impact-item { padding: 0; }
+}
+
+/* === EXPERIENCE TECH TAGS === */
+.exp-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-tech-tags span {
+  padding: 0.25rem 0.65rem;
+  background: rgba(255, 204, 0, 0.05);
+  border: 1px solid var(--color-border);
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.exp-tech-tags span:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* === EXPERIENCE INLINE METRICS === */
+.exp-metrics {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 204, 0, 0.03);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+}
+
+.exp-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.exp-metric-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--color-accent);
+  line-height: 1;
+}
+
+.exp-metric-label {
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 576px) {
+  .exp-metrics {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* === PROJECT PROBLEM BLOCK === */
+.project-problem-block {
+  margin-bottom: 1.5rem;
+}
+
+.problem-label,
+.arch-label {
+  font-size: 0.7rem;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.project-arch-block {
+  margin-bottom: 1.5rem;
+}
+
 /* === TERMINAL BOX === */
 .terminal-box {
   background: #1a1a1a;
