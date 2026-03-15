@@ -41,7 +41,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Vinayagam D",
-      "jobTitle": "Python Backend Engineer",
+      "jobTitle": " Backend Engineer",
       "url": "https://vinay-engineer.me/",
       "sameAs": [
         "https://github.com/vinaynural",
@@ -94,6 +94,7 @@
             <a href="#experience" class="nav-cmd">./experience</a>
             <a href="#projects" class="nav-cmd">./projects</a>
             <a href="#architecture" class="nav-cmd">./arch</a>
+            <a href="#design-notes" class="nav-cmd">./notes</a>
             <a href="#stack" class="nav-cmd">./stack</a>
             <a href="#stats" class="nav-cmd">./stats</a>
             <a href="#contact" class="nav-cmd">./contact</a>
@@ -128,7 +129,7 @@
               <div class="col-lg-7">
                 <div class="issue-label">ISSUE #001 →  BACKEND ENGINEER</div>
                 <h1 class="display-title tube-light">
-                  PYTHON<br />
+                  <br />
                   <span class="highlight-text">BACKEND</span>
                 </h1>
                 <p class="hero-tagline">Building scalable systems and APIs.</p>
@@ -703,11 +704,186 @@
         </div>
       </section>
 
+      <!-- ===================== SYSTEM DESIGN NOTES ===================== -->
+      <section id="design-notes" class="skills-section design-notes-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">05</div>
+            <h2 class="section-title-editorial">SYSTEM<br />DESIGN NOTES</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat notes/system-design.md</span>
+              </div>
+              <div class="output-content">
+
+                <p class="notes-intro">
+                  Short technical notes on backend architecture patterns and system design decisions — drawn from real production work across webhook systems, caching layers, and messaging infrastructure.
+                </p>
+
+                <div class="design-notes-grid">
+
+                  <!-- NOTE 01 ─ Webhook Processing -->
+                  <div class="design-note-card">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_01</span>
+                      <span class="note-category">EVENT-DRIVEN SYSTEMS</span>
+                    </div>
+                    <h3 class="note-title">Designing Webhook Processing Systems</h3>
+
+                    <p class="note-body">
+                      Webhooks deliver events from external services — payment gateways, messaging APIs, identity providers — as HTTP POST requests to your endpoint. The core engineering constraint is that the external provider expects a <code class="note-code">200 OK</code> response within a tight timeout window (typically 5–10 seconds). If your endpoint is slow or fails, the provider retries — often at increasing intervals. This means your webhook handler cannot synchronously execute business logic, write to the database, call external APIs, or do anything that blocks.
+                    </p>
+                    <p class="note-body">
+                      The correct pattern: the webhook endpoint does exactly two things — validates the payload signature and enqueues the raw event into a Redis queue. It then returns <code class="note-code">200 OK</code> immediately. A Celery worker picks up the event asynchronously, processes it, updates the database, and triggers any downstream effects. Failed jobs are retried with exponential backoff without the provider ever seeing the failure.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">PROCESSING FLOW</div>
+                      <div class="note-flow">
+                        <div class="note-flow-node note-flow-node--external">External Service<br/><span class="note-flow-sub">WhatsApp / Razorpay / Stripe</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Webhook Endpoint<br/><span class="note-flow-sub">Validate sig → Enqueue → 200 OK</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue">Redis Queue<br/><span class="note-flow-sub">Raw event payload</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--worker">Celery Worker<br/><span class="note-flow-sub">Process · Retry on fail</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Persist with idempotency key</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts">
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHY ASYNC</span>
+                        <span class="note-callout-text">Webhook endpoints must respond in under 5s. Any processing that could fail or block — database writes, API calls, file processing — must run outside the request cycle.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHY IDEMPOTENCY</span>
+                        <span class="note-callout-text">Providers retry on network failure. Processing the same event twice must produce the same result. Use the event ID as an idempotency key — check before writing, skip if already processed.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">USED IN</span>
+                        <span class="note-callout-text">Commai (WhatsApp / Instagram / FB webhooks), Donation System (Razorpay / PayU payment confirmations)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- NOTE 02 ─ Redis Caching Strategy -->
+                  <div class="design-note-card">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_02</span>
+                      <span class="note-category">PERFORMANCE ENGINEERING</span>
+                    </div>
+                    <h3 class="note-title">Redis Caching Strategy</h3>
+
+                    <p class="note-body">
+                      Not all data changes at the same rate. A user's profile, a list of country codes, a permission matrix — these change rarely but are read on every request. Fetching them from PostgreSQL on every hit is wasteful: it adds 5–50ms of latency per query, consumes database connections, and degrades under concurrent load. Redis sits between your API and PostgreSQL as an in-memory cache, serving these reads in under 1ms with no database involvement.
+                    </p>
+                    <p class="note-body">
+                      The hard problem isn't caching — it's invalidation. The wrong strategy (TTL-only expiry) means stale data or cache stampedes. The correct approach ties cache invalidation to model lifecycle events: Django's <code class="note-code">post_save</code> and <code class="note-code">post_delete</code> signals delete or update the cache key the moment the data changes. This gives you sub-millisecond reads with guaranteed consistency — you get the performance of in-memory storage without serving stale records.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">CACHE READ PATH</div>
+                      <div class="note-flow">
+                        <div class="note-flow-node">Client Request<br/><span class="note-flow-sub">GET /api/profile/</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Django API<br/><span class="note-flow-sub">Check Redis first</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue" style="border-color:#4caf50;color:#4caf50;">Redis Cache<br/><span class="note-flow-sub">HIT → return &lt;1ms</span></div>
+                        <div class="note-flow-arrow note-flow-arrow--miss">→ MISS →</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Query + warm cache</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts">
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHAT TO CACHE</span>
+                        <span class="note-callout-text">High-read, low-write data: user profiles, permission sets, dropdown data, aggregated dashboard stats, third-party API responses with a known validity window.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">INVALIDATION</span>
+                        <span class="note-callout-text">Use Django <code class="note-code">post_save</code> signals to delete the cache key on write. Never rely on TTL alone for data correctness — TTL is a safety net, not a strategy.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">RESULT</span>
+                        <span class="note-callout-text">200% API response time improvement in production across report generation endpoints and high-frequency dashboard reads at Thaagam Foundation.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- NOTE 03 ─ Scaling Messaging Platforms -->
+                  <div class="design-note-card design-note-card--wide">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_03</span>
+                      <span class="note-category">DISTRIBUTED SYSTEMS</span>
+                    </div>
+                    <h3 class="note-title">Scaling Messaging Platforms</h3>
+
+                    <p class="note-body">
+                      A messaging platform that processes inbound events from WhatsApp, Instagram, Messenger, and Email simultaneously faces a fundamental throughput problem: message arrival is bursty and unpredictable, while database writes, AI processing, and outbound API calls have variable latency. If you process each event synchronously in-request, a spike in inbound volume or a slow downstream API stalls the entire system.
+                    </p>
+                    <p class="note-body">
+                      The solution is event-driven architecture with queue-backed workers. Each inbound channel publishes events to a dedicated Redis queue rather than processing inline. Workers consume from these queues at their own pace — independently scalable based on queue depth. Priority queues ensure that payment confirmations and user-facing messages are processed before analytics events. The system never applies backpressure to the event source; it accepts everything and processes everything, eventually, correctly.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">MULTI-CHANNEL EVENT FLOW</div>
+                      <div class="note-flow note-flow--wide">
+                        <div class="note-flow-col">
+                          <div class="note-flow-sources">
+                            <div class="note-flow-source">WhatsApp API</div>
+                            <div class="note-flow-source">Instagram API</div>
+                            <div class="note-flow-source">Facebook API</div>
+                            <div class="note-flow-source">Email API</div>
+                          </div>
+                        </div>
+                        <div class="note-flow-arrow note-flow-arrow--v">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Webhook Gateway<br/><span class="note-flow-sub">Normalise + Enqueue</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue">Redis Queues<br/><span class="note-flow-sub">Per-channel priority lanes</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--worker">Worker Pool<br/><span class="note-flow-sub">Celery · Auto-scale on depth</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Thread-safe conversation store</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--external">AI + Response<br/><span class="note-flow-sub">Auto-reply generation</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts note-callouts--three">
+                      <div class="note-callout">
+                        <span class="note-callout-label">QUEUE ISOLATION</span>
+                        <span class="note-callout-text">Each channel gets its own queue. A backlog on Email processing never delays WhatsApp message delivery. Workers are assigned to queues based on priority, not round-robin across all tasks.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">WORKER SCALING</span>
+                        <span class="note-callout-text">Worker concurrency is configured per queue. During peak traffic, additional Celery processes spin up against the same Redis broker without changing application code or restarting the API server.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">USED IN</span>
+                        <span class="note-callout-text">Commai platform — four independent webhook receivers feeding a unified normalisation pipeline with per-channel Redis queues and AI response workers.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ===================== TECH STACK ===================== -->
       <section id="stack" class="skills-section">
         <div class="container-fluid">
           <div class="section-header-editorial">
-            <div class="section-number">05</div>
+            <div class="section-number">06</div>
             <h2 class="section-title-editorial">TECH<br />STACK</h2>
             <div class="section-line"></div>
           </div>
@@ -884,7 +1060,7 @@
       <section class="skills-section" style="background: #0d0d0d;">
         <div class="container-fluid">
           <div class="section-header-editorial">
-            <div class="section-number">06</div>
+            <div class="section-number">07</div>
             <h2 class="section-title-editorial">WHAT I'M<br />FOCUSED ON</h2>
             <div class="section-line"></div>
           </div>
@@ -934,7 +1110,7 @@
       <section id="stats" class="skills-section">
         <div class="container-fluid">
           <div class="section-header-editorial">
-            <div class="section-number">07</div>
+            <div class="section-number">08</div>
             <h2 class="section-title-editorial">GITHUB<br />ANALYTICS</h2>
             <div class="section-line"></div>
           </div>
@@ -956,7 +1132,7 @@
                     <div class="gh-static-info">
                       <div class="gh-static-name">Vinayagam D</div>
                       <a href="https://github.com/vinaynural" target="_blank" rel="noopener" class="gh-static-handle">@vinaynural</a>
-                      <div class="gh-static-bio">Python Backend Engineer · Webhook systems · Async processing · Scalable Django APIs · PostgreSQL · Redis · AWS</div>
+                      <div class="gh-static-bio"> Backend Engineer · Webhook systems · Async processing · Scalable Django APIs · PostgreSQL · Redis · AWS</div>
                       <div class="gh-static-stats">
                         <span><strong class="gh-stat-accent">8+</strong> Production Repositories</span>
                         <span><strong class="gh-stat-accent">2+</strong> Years Active</span>
@@ -1075,7 +1251,7 @@
       <section id="contact" class="contact-section">
         <div class="container-fluid">
           <div class="section-header-editorial">
-            <div class="section-number">08</div>
+            <div class="section-number">09</div>
             <h2 class="section-title-editorial">GET IN<br />TOUCH</h2>
             <div class="section-line"></div>
           </div>
