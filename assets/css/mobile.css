@@ -104,3 +104,83 @@
   .hero-actions .btn-terminal { width: 100%; text-align: center; }
   .ascii-art { font-size: 0.3rem; }
 }
+
+/* --- CASE STUDY GRID MOBILE --- */
+@media (max-width: 768px) {
+  .case-study-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-block-full {
+    grid-column: span 1;
+  }
+  .arch-flow {
+    font-size: 0.7rem;
+    padding: 0.75rem;
+  }
+  .arch-node { padding: 0.25rem 0.5rem; font-size: 0.7rem; }
+}
+
+/* --- SYSTEM ARCHITECTURE MOBILE --- */
+@media (max-width: 768px) {
+  .arch-decisions {
+    grid-template-columns: 1fr;
+  }
+  .arch-split-row {
+    flex-direction: column;
+  }
+  .arch-split-connector {
+    justify-content: center;
+    padding: 0.3rem 0;
+    transform: none;
+  }
+  .arch-split-connector::before { content: '↓'; }
+  .arch-layer-arrow-split { padding: 0; }
+}
+
+/* --- PINNED REPOS MOBILE --- */
+@media (max-width: 768px) {
+  .pinned-repos-grid {
+    grid-template-columns: 1fr;
+  }
+  .pinned-repo-card { padding: 1.25rem; }
+}
+
+/* --- GENERAL MOBILE SPACING IMPROVEMENTS --- */
+@media (max-width: 576px) {
+  .section-header-editorial {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .exp-item {
+    gap: 0.75rem;
+  }
+  .terminal-skills {
+    padding: 1.25rem;
+  }
+  .contact-terminal {
+    max-width: 100%;
+  }
+  .contact-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.75rem 0;
+  }
+  .contact-key {
+    font-size: 0.7rem;
+  }
+  .footer-content-minimal {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  .footer-right {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .project-title-big {
+    font-size: 2.2rem;
+  }
+  .project-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
