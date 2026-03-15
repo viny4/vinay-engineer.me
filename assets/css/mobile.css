@@ -68,6 +68,36 @@
   .stat-box { min-width: 100%; }
 }
 
+/* --- IMPACT STRIP RESPONSIVE --- */
+@media (max-width: 991px) {
+  .impact-strip { flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+  .impact-divider { display: none; }
+  .impact-item { padding: 0; flex: 1 1 calc(50% - 1rem); }
+}
+
+@media (max-width: 576px) {
+  .impact-strip { flex-direction: column; gap: 1rem; }
+  .impact-item { flex: 1 1 100%; }
+  .impact-num { font-size: 1.8rem; }
+}
+
+/* --- HERO ACTIONS RESPONSIVE --- */
+@media (max-width: 576px) {
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn-terminal { width: 100%; justify-content: center; text-align: center; }
+}
+
+/* --- EXP METRICS RESPONSIVE --- */
+@media (max-width: 576px) {
+  .exp-metrics { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .exp-metric-item { flex: 1 1 calc(50% - 1rem); }
+}
+
+/* --- PROJECT METRICS RESPONSIVE --- */
+@media (max-width: 576px) {
+  .project-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* --- EXTRA SMALL MOBILES (max 360px) --- */
 @media (max-width: 360px) {
   .display-title { font-size: 1.5rem; }
