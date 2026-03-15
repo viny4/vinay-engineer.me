@@ -2872,3 +2872,295 @@ a:hover {
   border-color: #64b5f6 !important;
   color: #64b5f6 !important;
 }
+
+/* =========================================
+   SYSTEM DESIGN NOTES SECTION
+   ========================================= */
+
+.design-notes-section {
+  background: #070707;
+}
+
+.notes-intro {
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  max-width: 700px;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ── Grid ── */
+.design-notes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* ── Card ── */
+.design-note-card {
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-accent);
+  background: #111111;
+  padding: 2rem 2rem 1.75rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.design-note-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 4px 32px rgba(255, 204, 0, 0.07);
+}
+
+.design-note-card--wide {
+  border-left-color: var(--color-accent);
+}
+
+/* ── Card Header ── */
+.note-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 0.85rem;
+}
+
+.note-num {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.note-category {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-border);
+}
+
+/* ── Card Title ── */
+.note-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Body paragraphs ── */
+.note-body {
+  font-family: var(--font-mono);
+  font-size: 0.87rem;
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin: 0 0 0.9rem;
+  max-width: 820px;
+}
+
+.note-code {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--color-accent);
+  background: rgba(255, 204, 0, 0.07);
+  padding: 0.1em 0.4em;
+  border-radius: 2px;
+}
+
+/* ── Flow diagram ── */
+.note-flow-block {
+  margin: 1.75rem 0;
+  padding: 1.5rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.note-flow-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--color-accent);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1.1rem;
+  opacity: 0.75;
+}
+
+.note-flow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.note-flow--wide {
+  align-items: center;
+}
+
+.note-flow-node {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  background: #1a1a1a;
+  padding: 0.55rem 0.9rem;
+  text-align: center;
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+
+.note-flow-node:hover {
+  border-color: var(--color-accent);
+}
+
+.note-flow-sub {
+  display: block;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  opacity: 0.6;
+  margin-top: 0.15rem;
+  white-space: nowrap;
+}
+
+/* Node colour variants */
+.note-flow-node--accent {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(255, 204, 0, 0.04);
+}
+
+.note-flow-node--queue {
+  border-color: #4caf50;
+  color: #4caf50;
+  background: rgba(76, 175, 80, 0.04);
+}
+
+.note-flow-node--worker {
+  border-color: #64b5f6;
+  color: #64b5f6;
+  background: rgba(100, 181, 246, 0.04);
+}
+
+.note-flow-node--db {
+  border-color: #ba68c8;
+  color: #ba68c8;
+  background: rgba(186, 104, 200, 0.04);
+}
+
+.note-flow-node--external {
+  border-color: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.note-flow-arrow {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-accent);
+  opacity: 0.45;
+  padding: 0 0.1rem;
+  flex-shrink: 0;
+}
+
+.note-flow-arrow--miss {
+  font-size: 0.62rem;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+  padding: 0 0.25rem;
+}
+
+/* Wide flow — multi-source column */
+.note-flow-col {
+  display: flex;
+  align-items: center;
+}
+
+.note-flow-sources {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.note-flow-source {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  background: #1a1a1a;
+  padding: 0.4rem 0.75rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.note-flow-arrow--v {
+  align-self: center;
+}
+
+/* ── Callout pills ── */
+.note-callouts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.note-callouts--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.note-callout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.note-callout-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.note-callout-text {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .note-callouts,
+  .note-callouts--three {
+    grid-template-columns: 1fr;
+  }
+  .note-flow {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .note-flow-node { white-space: normal; text-align: left; }
+  .note-flow-sub  { white-space: normal; }
+  .note-flow--wide { flex-direction: column; align-items: flex-start; }
+  .note-flow-col  { width: 100%; }
+  .note-flow-sources { flex-direction: row; flex-wrap: wrap; }
+  .note-flow-arrow--v { transform: rotate(90deg); align-self: center; }
+}
+
+@media (max-width: 576px) {
+  .design-note-card { padding: 1.25rem; }
+  .note-title { font-size: 1.1rem; }
+  .note-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .note-flow-block { padding: 1rem; overflow-x: auto; }
+}
