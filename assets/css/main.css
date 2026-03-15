@@ -2524,3 +2524,351 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================
+   GITHUB STATIC PROFILE BLOCK
+   ========================================= */
+
+.gh-static-profile {
+  margin-bottom: 2.5rem;
+  border: 1px solid var(--color-border);
+  background: rgba(255,255,255,0.02);
+}
+
+.gh-static-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem 2rem;
+  flex-wrap: wrap;
+}
+
+.gh-static-avatar {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--color-accent);
+  background: rgba(255,204,0,0.05);
+  flex-shrink: 0;
+}
+
+.gh-static-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.gh-static-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-text);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.gh-static-handle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+.gh-static-handle:hover { color: #fff; }
+
+.gh-static-bio {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.gh-static-stats {
+  display: flex;
+  gap: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+
+.gh-stat-accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.gh-static-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.8rem;
+  margin-top: 0;
+  align-self: center;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .gh-static-header { flex-direction: column; align-items: flex-start; }
+  .gh-static-btn { width: 100%; justify-content: center; }
+}
+
+/* =========================================
+   PROJECT LIVE LINK
+   ========================================= */
+
+.project-live-link {
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1px;
+  transition: all 0.2s;
+}
+
+.project-live-link:hover {
+  color: #fff;
+  border-color: #fff;
+}
+
+/* =========================================
+   FEATURED PROJECT BADGE
+   ========================================= */
+
+.project-featured {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 1px var(--color-accent), 0 20px 60px rgba(255,204,0,0.12);
+}
+
+.project-featured-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  padding: 0.35rem 0.85rem;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.featured-badge-icon {
+  font-size: 0.7rem;
+}
+
+/* =========================================
+   HORIZONTAL ARCHITECTURE DIAGRAM
+   ========================================= */
+
+.arch-section {
+  background: #080808;
+}
+
+.arch-intro-text {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 2.5rem;
+  max-width: 720px;
+  line-height: 1.8;
+  font-family: var(--font-mono);
+}
+
+.arch-horizontal-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+}
+
+.arch-h-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 1rem;
+  border: 1px solid var(--color-border);
+  background: #1a1a1a;
+  min-width: 110px;
+  text-align: center;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.arch-h-node:hover { border-color: var(--color-accent); }
+
+.arch-h-node--accent {
+  border-color: var(--color-accent);
+  background: rgba(255,204,0,0.04);
+}
+
+.arch-h-node--green {
+  border-color: #4caf50;
+  background: rgba(76,175,80,0.04);
+}
+
+.arch-h-node--blue {
+  border-color: #64b5f6;
+  background: rgba(100,181,246,0.04);
+}
+
+.arch-h-icon {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+  opacity: 0.4;
+}
+
+.arch-h-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+}
+
+.arch-h-node--accent .arch-h-title { color: var(--color-accent); }
+.arch-h-node--green .arch-h-title  { color: #4caf50; }
+.arch-h-node--blue .arch-h-title   { color: #64b5f6; }
+
+.arch-h-sub {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.arch-h-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 0.4rem;
+  color: var(--color-accent);
+  font-size: 1rem;
+  opacity: 0.5;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Async worker row */
+.arch-worker-row {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px dashed var(--color-border);
+  background: rgba(255,255,255,0.01);
+}
+
+.arch-worker-label {
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.arch-worker-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+}
+
+/* Explainer grid */
+.arch-explainer-block {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.arch-explainer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.arch-explainer-item {
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  background: rgba(255,255,255,0.015);
+}
+
+.arch-explainer-num {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.4rem;
+  opacity: 0.6;
+}
+
+.arch-explainer-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+
+.arch-explainer-text {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .arch-explainer-grid { grid-template-columns: 1fr; }
+  .arch-horizontal-flow { flex-direction: column; align-items: stretch; }
+  .arch-h-arrow { transform: rotate(90deg); align-self: center; padding: 0.2rem 0; }
+  .arch-h-node { min-width: unset; }
+}
+
+/* =========================================
+   HIGHLIGHTED REPOS SUBHEADING
+   ========================================= */
+
+.pinned-repos-subheading {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.pinned-repo-live-badge {
+  margin-left: auto;
+  font-size: 0.6rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 0.15rem 0.45rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* arch-node colour variants used inside case study flow blocks */
+.arch-node-green {
+  border-color: #4caf50 !important;
+  color: #4caf50 !important;
+}
+
+.arch-node-blue {
+  border-color: #64b5f6 !important;
+  color: #64b5f6 !important;
+}
