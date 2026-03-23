@@ -88,7 +88,19 @@
             <span class="prompt-symbol">$</span>
             <span class="nav-path">~/vinayagam.d</span>
           </div>
-          <div class="nav-menu">
+          
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+          </button>
+
+          <div class="nav-menu" id="nav-menu">
+            <div class="mobile-menu-header">
+              <span class="prompt-symbol">$</span> ls menu/
+              <button class="close-menu" id="close-menu">&times;</button>
+            </div>
             <a href="#home" class="nav-cmd">./home</a>
             <a href="#about" class="nav-cmd">./about</a>
             <a href="#experience" class="nav-cmd">./experience</a>
@@ -99,13 +111,16 @@
             <a href="#stats" class="nav-cmd">./stats</a>
             <a href="#contact" class="nav-cmd">./contact</a>
           </div>
-          <div class="nav-status">
-            <div id="audio-control" class="nav-cmd" style="margin-right: 1.5rem; cursor: pointer">
+
+          <div class="nav-status-group">
+            <div id="audio-control" class="nav-cmd" style="cursor: pointer">
               <i class="bi bi-volume-up" id="audio-icon"></i>
-              <span id="audio-status">SOUND: ON</span>
+              <span id="audio-status" class="d-none d-md-inline">SOUND: ON</span>
             </div>
-            <span class="status-dot"></span>
-            <span>AVAILABLE</span>
+            <div class="nav-status">
+              <span class="status-dot"></span>
+              <span class="d-none d-sm-inline">AVAILABLE</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1448,6 +1463,27 @@
     </script>
 
     <script>
+      // Mobile Nav Toggle
+      const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+      const closeMenu = document.getElementById('close-menu');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinksMobile = document.querySelectorAll('.nav-menu .nav-cmd');
+
+      const toggleMenu = () => {
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      };
+
+      mobileNavToggle.addEventListener('click', toggleMenu);
+      closeMenu.addEventListener('click', toggleMenu);
+
+      navLinksMobile.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
       document.getElementById("year").textContent = new Date().getFullYear();
 
       const sections = document.querySelectorAll("section[id]");
