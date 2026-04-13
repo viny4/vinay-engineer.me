@@ -1,0 +1,1519 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vinayagam D —  Backend Engineer | Django, REST APIs, AWS</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Vinayagam D — Python Backend Engineer from Chennai with 2+ years building scalable Django systems, REST APIs, PostgreSQL, Redis caching, and AWS deployments." />
+    <meta name="keywords" content="Python Backend Developer, Django Developer, API Engineer, Backend Systems Engineer, REST API Developer, PostgreSQL, Redis, AWS, Chennai" />
+    <meta name="author" content="Vinayagam D" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Vinayagam D — Python Backend Engineer" />
+    <meta property="og:description" content="Building scalable backend systems with Python, Django, and cloud-native infrastructure." />
+    <meta property="og:url" content="https://vinay-engineer.me/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Vinayagam D — Python Backend Engineer" />
+    <meta name="twitter:description" content="Building scalable backend systems with Python, Django, and cloud-native infrastructure." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600;700&family=Fraunces:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet" />
+
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/css/main.css?v=2.0" rel="stylesheet" />
+    <link href="assets/css/mobile.css?v=2.0" rel="stylesheet" />
+    <link href="assets/css/upgrade.css?v=3.0" rel="stylesheet" />
+
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.9/dist/lenis.css" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Vinayagam D",
+      "jobTitle": " Backend Engineer",
+      "url": "https://vinay-engineer.me/",
+      "sameAs": [
+        "https://github.com/viny4",
+        "https://www.linkedin.com/in/vinjr/"
+      ],
+      "knowsAbout": ["Python", "Django", "REST APIs", "PostgreSQL", "Redis", "AWS"]
+    }
+    </script>
+  </head>
+
+  <body>
+    <!-- ASCII Art Background Pattern -->
+    <div class="ascii-pattern"></div>
+
+    <!-- Floating Particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <!-- Matrix Rain Effect -->
+    <canvas id="matrix-canvas" class="matrix-background"></canvas>
+
+    <!-- Gradient Orbs -->
+    <div class="gradient-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="terminal-nav">
+      <div class="container-fluid">
+        <div class="nav-content">
+          <div class="nav-prompt">
+            <span class="prompt-symbol">$</span>
+            <span class="nav-path">~/vinayagam.d</span>
+          </div>
+          
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+            <span class="toggle-line"></span>
+          </button>
+
+          <div class="nav-menu" id="nav-menu">
+            <div class="mobile-menu-header">
+              <span class="prompt-symbol">$</span> ls menu/
+              <button class="close-menu" id="close-menu">&times;</button>
+            </div>
+            <a href="#home" class="nav-cmd">./home</a>
+            <a href="#about" class="nav-cmd">./about</a>
+            <a href="#experience" class="nav-cmd">./experience</a>
+            <a href="#projects" class="nav-cmd">./projects</a>
+            <a href="#architecture" class="nav-cmd">./arch</a>
+            <a href="#design-notes" class="nav-cmd">./notes</a>
+            <a href="#stack" class="nav-cmd">./stack</a>
+            <a href="#stats" class="nav-cmd">./stats</a>
+            <a href="#contact" class="nav-cmd">./contact</a>
+          </div>
+
+          <div class="nav-status-group">
+            <div id="audio-control" class="nav-cmd" style="cursor: pointer">
+              <i class="bi bi-volume-up" id="audio-icon"></i>
+              <span id="audio-status" class="d-none d-md-inline">SOUND: ON</span>
+            </div>
+            <div class="nav-status">
+              <span class="status-dot"></span>
+              <span class="d-none d-sm-inline">AVAILABLE</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="main-wrapper">
+      <!-- ===================== HERO ===================== -->
+      <section id="home" class="hero-editorial">
+        <div class="container-fluid">
+          <!-- ASCII Art Header -->
+          <div class="ascii-header">
+            <pre class="ascii-art">
+╦  ╦╦╔╗╔╔═╗╦ ╦╔═╗╔═╗╔═╗╔╦╗  ╔╦╗
+╚╗╔╝║║║║╠═╣╚╦╝╠═╣║ ╦╠═╣║║║   ║║
+ ╚╝ ╩╝╚╝╩ ╩ ╩ ╩ ╩╚═╝╩ ╩╩ ╩  ═╩╝</pre>
+          </div>
+
+          <!-- Main Title Block -->
+          <div class="title-block">
+            <div class="row align-items-end">
+              <div class="col-lg-7">
+                <div class="issue-label">ISSUE #001 →  BACKEND ENGINEER</div>
+                <h1 class="display-title tube-light">
+                  <br />
+                  <span class="highlight-text">BACKEND</span>
+                </h1>
+                <p class="hero-tagline">Building scalable systems and APIs.</p>
+
+                <p class="hero-intro">
+                  I'm a  Backend Engineer from Chennai with 2+ years of production experience.
+                  I specialise in Django, REST APIs, PostgreSQL, Redis, and AWS — shipping backend
+                  systems that handle real load, real users, and real problems.
+                </p>
+
+                <div class="subtitle-meta">
+                  <div class="meta-grid">
+                    <div class="meta-item">
+                      <span class="meta-label">LOCATION</span>
+                      <span class="meta-value">Chennai, IN</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">EXPERIENCE</span>
+                      <span class="meta-value">2+ Years</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">CURRENT ROLE</span>
+                      <span class="meta-value">Trames Pvt Ltd</span>
+                    </div>
+                    <div class="meta-item">
+                      <span class="meta-label">STATUS</span>
+                      <span class="meta-value status-active">EMPLOYED</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hero-actions">
+                  <a href="assets/resume/Vinayagam_CV.pdf" download="Vinayagam_CV.pdf" class="btn-terminal">
+                    <span class="btn-text">DOWNLOAD_CV.pdf</span>
+                    <span class="btn-icon">⬇</span>
+                  </a>
+                  <a href="https://github.com/viny4" target="_blank" rel="noopener" class="btn-terminal btn-outline">
+                    <i class="bi bi-github"></i>
+                    <span class="btn-text">GITHUB</span>
+                  </a>
+                  <a href="https://discord.gg/VWEhEWxDKE" target="_blank" rel="noopener" class="btn-terminal btn-outline">
+                    <i class="bi bi-discord"></i>
+                    <span class="btn-text">DISCORD</span>
+                  </a>
+                  <a href="/cdn-cgi/l/email-protection#97e1fef9f6eef6f0f6faf3b9f3f2e1d7f0faf6fefbb9f4f8fa" class="btn-terminal btn-outline">
+                    <i class="bi bi-envelope"></i>
+                    <span class="btn-text">EMAIL</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-lg-5">
+                <!-- Profile Image Terminal Frame -->
+                <div class="profile-terminal">
+                  <div class="terminal-header">
+                    <div class="terminal-controls">
+                      <span class="control-red"></span>
+                      <span class="control-yellow"></span>
+                      <span class="control-green"></span>
+                    </div>
+                    <span class="terminal-title">vinayagam@backend:~$</span>
+                  </div>
+                  <div class="profile-image-wrapper">
+                    <div class="scan-line"></div>
+                    <div class="glitch-overlay"></div>
+                    <img src="assets/img/me and ana.png?v=1.1" alt="Vinayagam D — Python Backend Engineer" class="profile-image" />
+                    <div class="image-border-effects">
+                      <div class="corner corner-tl"></div>
+                      <div class="corner corner-tr"></div>
+                      <div class="corner corner-bl"></div>
+                      <div class="corner corner-br"></div>
+                    </div>
+                  </div>
+                  <div class="profile-stats-bar">
+                    <span class="stat-item"><i class="bi bi-geo-alt"></i> Chennai</span>
+                    <span class="stat-separator">|</span>
+                    <span class="stat-item"><i class="bi bi-briefcase"></i> Backend Eng</span>
+                    <span class="stat-separator">|</span>
+                    <span class="stat-item"><i class="bi bi-code-slash"></i> Python</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics Strip -->
+          <div class="impact-strip">
+            <div class="impact-item">
+              <span class="impact-num">200K+</span>
+              <span class="impact-label">Users Served</span>
+            </div>
+            <div class="impact-divider">//</div>
+            <div class="impact-item">
+              <span class="impact-num">200%</span>
+              <span class="impact-label">API Performance Gain</span>
+            </div>
+            <div class="impact-divider">//</div>
+            <div class="impact-item">
+              <span class="impact-num">60%</span>
+              <span class="impact-label">Manual Work Automated</span>
+            </div>
+            <div class="impact-divider">//</div>
+            <div class="impact-item">
+              <span class="impact-num">8+</span>
+              <span class="impact-label">Production Apps Shipped</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ME ===================== -->
+      <section id="about" class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">01</div>
+            <h2 class="section-title-editorial">ABOUT<br />ME</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat about/vinayagam.txt</span>
+              </div>
+              <div class="output-content">
+                <div class="skill-category-terminal">
+                  <p style="color: var(--color-text-muted); line-height: 2; font-size: 1rem; max-width: 720px;">
+                    I'm a  Backend Engineer based in Chennai, India with 2+ years of production experience
+                    designing and shipping scalable backend systems. I specialise in Django and Django REST Framework —
+                    building structured REST APIs, designing PostgreSQL schemas, implementing Redis caching strategies,
+                    and deploying production workloads on AWS. I build for correctness first, then optimise for scale.
+                  </p>
+                  <br />
+                  <p style="color: var(--color-text-muted); line-height: 2; font-size: 1rem; max-width: 720px;">
+                    Currently at <span style="color: var(--color-accent)">Trames Private Limited</span>
+                    — a Singapore-based logistics technology company — building Node.js and TypeScript backend services
+                    for global freight operations, real-time shipment tracking, and supply chain data infrastructure.
+                  </p>
+                  <br />
+                  <p style="color: var(--color-text-muted); line-height: 2; font-size: 1rem; max-width: 720px;">
+                    Previously at <span style="color: var(--color-accent)">Thaagam Foundation</span>, I architected 8+
+                    production Django backends serving 200K+ users — including webhook-driven messaging systems,
+                    AI-powered document validation pipelines, multi-gateway payment backends, and real-time features
+                    via Django Channels and WebSockets. I also built <span style="color: var(--color-accent)">Commai</span>,
+                    a multi-tenant SaaS omnichannel communication platform integrating WhatsApp, Instagram,
+                    Facebook Messenger, and Email APIs into a unified AI-assisted dashboard.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section id="experience" class="experience-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">02</div>
+            <h2 class="section-title-editorial">WORK<br />HISTORY</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="experience-timeline-editorial">
+
+            <!-- Trames -->
+            <div class="exp-item">
+              <div class="exp-period">FEB 2026 — PRESENT</div>
+              <div class="exp-content">
+                <h3 class="exp-title">Backend Engineer</h3>
+                <div class="exp-company">TRAMES PRIVATE LIMITED · Singapore (Remote)</div>
+                <div class="exp-tech-tags">
+                  <span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>AWS</span>
+                </div>
+                <div class="exp-highlights">
+                  <p>→ Contributing to a logistics technology platform that uses AI, blockchain, and cloud infrastructure for global supply chain and freight management.</p>
+                  <p>→ Building and maintaining backend services in TypeScript and Node.js supporting global freight operations and real-time shipment tracking.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thaagam Foundation -->
+            <div class="exp-item">
+              <div class="exp-period">OCT 2023 — OCT 2025</div>
+              <div class="exp-content">
+                <h3 class="exp-title">Python Django Developer</h3>
+                <div class="exp-company">THAAGAM FOUNDATION · Chennai, India</div>
+                <div class="exp-tech-tags">
+                  <span>Python</span><span>Django</span><span>DRF</span><span>PostgreSQL</span>
+                  <span>Redis</span><span>AWS EC2</span><span>S3</span><span>SES</span><span>SNS</span>
+                  <span>WhatsApp API</span><span>Gemini AI</span><span>Django Channels</span>
+                </div>
+                <div class="exp-highlights">
+                  <p>→ Built 8+ scalable production Django backends serving <strong>200K+ users</strong> with 99%+ uptime across CRM, HR management, and civic service platforms.</p>
+                  <p>→ Developed a WhatsApp automation platform using the WhatsApp Business API and AWS SNS/SES — <strong>reduced manual communication workload by 60%</strong>.</p>
+                  <p>→ Integrated Google Gemini AI for document and ID validation — built an AI-powered fraud detection layer for donation and registration workflows.</p>
+                  <p>→ Optimised database queries and implemented Redis caching strategies — <strong>improved API response times and report generation performance by 200%</strong>.</p>
+                  <p>→ Deployed all applications on AWS (EC2, S3, Route53) and implemented WebSocket real-time features using Django Channels.</p>
+                  <p>→ Built multi-platform payment integration across Razorpay and PayU gateways for donation and event management systems.</p>
+                </div>
+
+                <!-- Inline metrics for this role -->
+                <div class="exp-metrics">
+                  <div class="exp-metric-item">
+                    <span class="exp-metric-num">200K+</span>
+                    <span class="exp-metric-label">Users</span>
+                  </div>
+                  <div class="exp-metric-item">
+                    <span class="exp-metric-num">200%</span>
+                    <span class="exp-metric-label">Perf. Gain</span>
+                  </div>
+                  <div class="exp-metric-item">
+                    <span class="exp-metric-num">60%</span>
+                    <span class="exp-metric-label">Work Automated</span>
+                  </div>
+                  <div class="exp-metric-item">
+                    <span class="exp-metric-num">8+</span>
+                    <span class="exp-metric-label">Apps Shipped</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Internship -->
+            <div class="exp-item">
+              <div class="exp-period">FEB 2023 — JUL 2023</div>
+              <div class="exp-content">
+                <h3 class="exp-title">PHP Development Intern</h3>
+                <div class="exp-company">CADD CENTRE · Chennai, India</div>
+                <div class="exp-tech-tags">
+                  <span>PHP</span><span>MySQL</span><span>MVC Architecture</span>
+                </div>
+                <div class="exp-highlights">
+                  <p>→ Trained in PHP web development, MVC architecture, and MySQL database design.</p>
+                  <p>→ Developed multiple training projects and earned professional certification.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section id="projects" class="work-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">03</div>
+            <h2 class="section-title-editorial">SELECTED<br />PROJECTS</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="projects-editorial">
+
+            <!-- ★ FEATURED PROJECT: Commai – Omnichannel AI Communication SaaS ★ -->
+            <div class="project-card project-hero project-featured">
+              <div class="project-featured-badge">
+                <span class="featured-badge-icon">★</span>
+                <span>FEATURED PROJECT</span>
+              </div>
+              <div class="project-number">PROJECT_01 / 2024</div>
+              <div class="project-meta-bar">
+                <span>SAAS · OMNICHANNEL · AI · MULTI-TENANT</span>
+                <span><a href="https://commai.m7corporation.com/" target="_blank" rel="noopener" class="project-live-link">↗ LIVE PRODUCT</a></span>
+              </div>
+              <h3 class="project-title-big">COMMAI —<br />OMNICHANNEL AI</h3>
+              <p class="project-lead">A production SaaS platform that unifies customer communication across WhatsApp, Instagram, Facebook Messenger, and Email into a single AI-powered business dashboard — built on a multi-tenant Django backend with webhook-driven real-time message processing.</p>
+
+              <div class="case-study-grid">
+                <div class="case-block">
+                  <div class="case-label">PROBLEM</div>
+                  <p class="case-text">Businesses manage customer conversations across four separate platforms — WhatsApp, Instagram, Facebook Messenger, and Email — each requiring a distinct tool, credential set, and workflow. Support teams lose context switching between interfaces, responses are delayed, messages fall through the cracks, and there is no unified audit trail of customer interactions across channels.</p>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">SOLUTION</div>
+                  <p class="case-text">Designed and built a multi-tenant SaaS backend in Django where each channel (WhatsApp Business API, Instagram Graph API, Facebook Messenger API, Email) has a dedicated webhook endpoint. Inbound events are normalised into a unified message schema, enqueued in Redis for async processing, persisted to PostgreSQL with full conversation threading per tenant, and surfaced via a single dashboard API. An AI layer analyses inbound message content and generates automated reply suggestions to reduce first-response time and manual support workload.</p>
+                </div>
+
+                <div class="case-block case-block-full">
+                  <div class="case-label">SYSTEM ARCHITECTURE</div>
+                  <div class="arch-flow">
+                    <span class="arch-node">Customer</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">WA / IG / FB / Email</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-primary">Webhook Gateway</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-primary">Django API (DRF)</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-green">Redis Queue</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-blue">PostgreSQL</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">AI Processing</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">Response Service</span>
+                  </div>
+                  <p class="case-text" style="margin-top: 1rem;">
+                    Each tenant's data is isolated at the schema level — webhook endpoints are channel-specific but converge into a shared message normalisation pipeline before entering the queue. This keeps all business logic channel-agnostic: adding a new messaging integration requires only a new webhook handler; the core processing pipeline, database schema, and AI layer remain untouched. Celery workers handle async dispatch so webhook endpoints return <code style="color:var(--color-accent);font-size:0.8rem;">200 OK</code> immediately — the platform never blocks on outbound message delivery.
+                  </p>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">TECH STACK</div>
+                  <div class="tech-tags-editorial" style="margin: 0.5rem 0 0;">
+                    <span>Python</span><span>Django</span><span>DRF</span><span>PostgreSQL</span>
+                    <span>Redis</span><span>Celery</span><span>WhatsApp Business API</span>
+                    <span>Instagram Graph API</span><span>Facebook Messenger API</span>
+                    <span>Email APIs</span><span>AWS</span><span>Docker</span><span>Nginx</span>
+                  </div>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">IMPACT</div>
+                  <div class="project-metrics-grid" style="border: none; padding: 0; margin: 0.5rem 0 0;">
+                    <div class="metric-cell">
+                      <div class="metric-num">4</div>
+                      <div class="metric-txt">Channels Unified</div>
+                    </div>
+                    <div class="metric-cell">
+                      <div class="metric-num">SaaS</div>
+                      <div class="metric-txt">Multi-Tenant</div>
+                    </div>
+                    <div class="metric-cell">
+                      <div class="metric-num">AI</div>
+                      <div class="metric-txt">Auto-Response</div>
+                    </div>
+                  </div>
+                  <p class="case-text" style="margin-top: 0.75rem;">Eliminated the operational overhead of managing 4 separate communication platforms. Webhook-driven architecture ensures zero message loss under load. AI-assisted responses reduce average first-response time and allow support teams to handle higher conversation volume without scaling headcount.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 02: AI Civic Services Platform -->
+            <div class="project-card">
+              <div class="project-number">PROJECT_02 / 2024</div>
+              <div class="project-meta-bar">
+                <span>AI · CIVIC TECH · DJANGO</span>
+                <span>200K+ USERS</span>
+              </div>
+              <h3 class="project-title-editorial">AI-Powered Civic<br />Services Platform</h3>
+
+              <div class="case-study-grid">
+                <div class="case-block case-block-full">
+                  <div class="case-label">PROBLEM</div>
+                  <p class="case-text">A large NGO serving 200K+ citizens had no digital infrastructure for service requests or identity verification. Staff manually reviewed ID documents, processed complaints on paper, and routed them across departments — creating multi-day processing backlogs and high error rates in identity validation workflows.</p>
+                </div>
+
+                <div class="case-block case-block-full">
+                  <div class="case-label">SOLUTION</div>
+                  <p class="case-text">Built a production Django backend with DRF exposing structured REST endpoints for citizen registration, service request submission, and grievance tracking. Integrated Google Gemini AI to validate uploaded identity documents — extracting fields, verifying authenticity, and flagging anomalies asynchronously via Celery before persisting records. Redis caching serves read-heavy endpoints; document binaries are stored in AWS S3 with presigned URL access.</p>
+                </div>
+
+                <div class="case-block case-block-full">
+                  <div class="case-label">ARCHITECTURE</div>
+                  <div class="arch-flow arch-flow-compact">
+                    <span class="arch-node">Client</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">Nginx</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-primary">Django API</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-green">Redis Cache</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-blue">PostgreSQL</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">Gemini AI</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">AWS S3</span>
+                  </div>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">TECH STACK</div>
+                  <div class="tech-tags-editorial" style="margin: 0.5rem 0 0;">
+                    <span>Python</span><span>Django</span><span>DRF</span><span>PostgreSQL</span>
+                    <span>Redis</span><span>Celery</span><span>Google Gemini AI</span>
+                    <span>AWS EC2</span><span>AWS S3</span><span>Nginx</span>
+                  </div>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">IMPACT</div>
+                  <div class="project-metrics-grid" style="border: none; padding: 0; margin: 0.5rem 0 0;">
+                    <div class="metric-cell">
+                      <div class="metric-num">200K+</div>
+                      <div class="metric-txt">Active Users</div>
+                    </div>
+                    <div class="metric-cell">
+                      <div class="metric-num">99%+</div>
+                      <div class="metric-txt">Uptime SLA</div>
+                    </div>
+                    <div class="metric-cell">
+                      <div class="metric-num">~0</div>
+                      <div class="metric-txt">Manual ID Reviews</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT 03: Donation Management System -->
+            <div class="project-card">
+              <div class="project-number">PROJECT_03 / 2023</div>
+              <div class="project-meta-bar">
+                <span>FINTECH · PAYMENTS · COMPLIANCE</span>
+              </div>
+              <h3 class="project-title-editorial">Thaagam Donation<br />Management System</h3>
+
+              <div class="case-study-grid">
+                <div class="case-block case-block-full">
+                  <div class="case-label">PROBLEM</div>
+                  <p class="case-text">Donations arrived through multiple channels — online, UPI, and bank transfer — with no centralised tracking, no automated receipting, and no reconciliation workflow. Manual 80G tax receipt generation took days, and there was no audit trail for compliance reporting.</p>
+                </div>
+
+                <div class="case-block case-block-full">
+                  <div class="case-label">SOLUTION</div>
+                  <p class="case-text">Built a payment collection backend integrating Razorpay and PayU via signed webhook handlers. Each payment confirmation is processed asynchronously — transaction state is updated in PostgreSQL with idempotency checks to prevent double-processing, and AWS SES dispatches 80G-compliant tax receipts automatically. A Django admin interface provides finance teams with real-time reconciliation views and exportable transaction logs.</p>
+                </div>
+
+                <div class="case-block case-block-full">
+                  <div class="case-label">ARCHITECTURE</div>
+                  <div class="arch-flow arch-flow-compact">
+                    <span class="arch-node">Donor</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-primary">Django API</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">Razorpay / PayU</span>
+                    <span class="arch-arrow">↩</span>
+                    <span class="arch-node">Webhook Handler</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node arch-node-blue">PostgreSQL</span>
+                    <span class="arch-arrow">→</span>
+                    <span class="arch-node">AWS SES Receipt</span>
+                  </div>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">TECH STACK</div>
+                  <div class="tech-tags-editorial" style="margin: 0.5rem 0 0;">
+                    <span>Django</span><span>DRF</span><span>PostgreSQL</span>
+                    <span>Razorpay</span><span>PayU</span><span>Redis</span><span>AWS SES</span>
+                  </div>
+                </div>
+
+                <div class="case-block">
+                  <div class="case-label">IMPACT</div>
+                  <p class="case-text" style="margin-top: 0.5rem;">Reconciliation time reduced from days to under five minutes. Zero manual receipt generation — the complete post-payment workflow runs without human intervention. Full 80G-compliant transaction audit trail maintained in PostgreSQL.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SYSTEM ARCHITECTURE ===================== -->
+      <section id="architecture" class="skills-section arch-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">04</div>
+            <h2 class="section-title-editorial">SYSTEM<br />DESIGN</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat architecture/scalable-backend.txt</span>
+              </div>
+              <div class="output-content">
+
+                <p class="arch-intro-text">
+                  The architecture pattern below reflects how I design and deploy production backend systems — used across 8+ applications serving 200K+ users. Each layer has a single, well-defined responsibility. No layer bleeds into another's concern.
+                </p>
+
+                <!-- ── HORIZONTAL FLOW DIAGRAM ── -->
+                <div class="arch-diagram-block">
+                  <div class="arch-diagram-label">REQUEST FLOW — SCALABLE PRODUCTION BACKEND</div>
+
+                  <div class="arch-horizontal-flow">
+                    <div class="arch-h-node">
+                      <div class="arch-h-icon">⬛</div>
+                      <div class="arch-h-title">Client</div>
+                      <div class="arch-h-sub">Browser · Mobile · API consumer</div>
+                    </div>
+                    <div class="arch-h-arrow">→</div>
+                    <div class="arch-h-node arch-h-node--accent">
+                      <div class="arch-h-icon">⬡</div>
+                      <div class="arch-h-title">Nginx</div>
+                      <div class="arch-h-sub">API Gateway / Reverse Proxy</div>
+                    </div>
+                    <div class="arch-h-arrow">→</div>
+                    <div class="arch-h-node arch-h-node--accent">
+                      <div class="arch-h-icon">⬡</div>
+                      <div class="arch-h-title">Django API</div>
+                      <div class="arch-h-sub">DRF · Business Logic · Auth</div>
+                    </div>
+                    <div class="arch-h-arrow">→</div>
+                    <div class="arch-h-node arch-h-node--green">
+                      <div class="arch-h-icon">⬡</div>
+                      <div class="arch-h-title">Redis</div>
+                      <div class="arch-h-sub">Cache · Queue · Session</div>
+                    </div>
+                    <div class="arch-h-arrow">→</div>
+                    <div class="arch-h-node arch-h-node--blue">
+                      <div class="arch-h-icon">⬡</div>
+                      <div class="arch-h-title">PostgreSQL</div>
+                      <div class="arch-h-sub">Primary Datastore · ACID</div>
+                    </div>
+                    <div class="arch-h-arrow">→</div>
+                    <div class="arch-h-node">
+                      <div class="arch-h-icon">⬛</div>
+                      <div class="arch-h-title">External APIs</div>
+                      <div class="arch-h-sub">WhatsApp · AI · S3 · SES</div>
+                    </div>
+                  </div>
+
+                  <!-- Async worker row below main flow -->
+                  <div class="arch-worker-row">
+                    <div class="arch-worker-label">ASYNC LAYER</div>
+                    <div class="arch-worker-flow">
+                      <span class="arch-node">Redis Queue (Broker)</span>
+                      <span class="arch-arrow">→</span>
+                      <span class="arch-node arch-node-primary">Celery Workers</span>
+                      <span class="arch-arrow">→</span>
+                      <span class="arch-node">Email Dispatch</span>
+                      <span class="arch-arrow">·</span>
+                      <span class="arch-node">AI Processing</span>
+                      <span class="arch-arrow">·</span>
+                      <span class="arch-node">Webhook Handlers</span>
+                      <span class="arch-arrow">·</span>
+                      <span class="arch-node">File Processing</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- ── HOW IT WORKS ── -->
+                <div class="arch-explainer-block">
+                  <div class="arch-diagram-label" style="margin-bottom: 1.5rem;">HOW THE SYSTEM WORKS</div>
+
+                  <div class="arch-explainer-grid">
+                    <div class="arch-explainer-item">
+                      <div class="arch-explainer-num">01</div>
+                      <div class="arch-explainer-title">REQUEST FLOW</div>
+                      <p class="arch-explainer-text">Every inbound HTTP or WebSocket request hits Nginx first. Nginx handles TLS termination, rate limiting, and connection management at the OS level — Python never sees raw connections. Nginx proxies qualified requests to Gunicorn/Daphne, which runs Django workers. Django processes authentication, validates input, executes business logic, and returns a structured response — typically in under 150ms for cached paths.</p>
+                    </div>
+
+                    <div class="arch-explainer-item">
+                      <div class="arch-explainer-num">02</div>
+                      <div class="arch-explainer-title">REDIS CACHING</div>
+                      <p class="arch-explainer-text">Read-heavy endpoints — dashboard aggregates, user profiles, dropdown data, permission sets — are expensive to recompute on every request. Django checks Redis before hitting PostgreSQL. On a cache hit, the response is returned in sub-millisecond latency with zero database load. Cache keys are invalidated via Django signal handlers on model writes, keeping data consistent without polling. This is what delivered a 200% API performance improvement in production.</p>
+                    </div>
+
+                    <div class="arch-explainer-item">
+                      <div class="arch-explainer-num">03</div>
+                      <div class="arch-explainer-title">ASYNC WORKERS</div>
+                      <p class="arch-explainer-text">Any operation involving network I/O — sending emails, calling AI APIs, processing uploaded documents, dispatching WhatsApp messages — is offloaded to Celery workers via Redis as the message broker. The HTTP request cycle returns immediately with a task ID. Workers retry failed tasks with exponential backoff. This is what keeps API response times consistent regardless of downstream service latency — and what made zero-blocking webhook processing possible in Commai.</p>
+                    </div>
+
+                    <div class="arch-explainer-item">
+                      <div class="arch-explainer-num">04</div>
+                      <div class="arch-explainer-title">SCALABILITY</div>
+                      <p class="arch-explainer-text">Each layer scales independently. Gunicorn workers scale horizontally behind Nginx without changing application code. Celery worker concurrency is adjusted per queue priority — high-priority queues (webhooks, payments) get dedicated workers. PostgreSQL read replicas serve analytics queries without competing with write traffic. Redis cluster mode handles cache and queue load separately. This layered scalability is what allows 200K+ users to be served from the same architectural pattern.</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SYSTEM DESIGN NOTES ===================== -->
+      <section id="design-notes" class="skills-section design-notes-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">05</div>
+            <h2 class="section-title-editorial">SYSTEM<br />DESIGN NOTES</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat notes/system-design.md</span>
+              </div>
+              <div class="output-content">
+
+                <p class="notes-intro">
+                  Short technical notes on backend architecture patterns and system design decisions — drawn from real production work across webhook systems, caching layers, and messaging infrastructure.
+                </p>
+
+                <div class="design-notes-grid">
+
+                  <!-- NOTE 01 ─ Webhook Processing -->
+                  <div class="design-note-card">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_01</span>
+                      <span class="note-category">EVENT-DRIVEN SYSTEMS</span>
+                    </div>
+                    <h3 class="note-title">Designing Webhook Processing Systems</h3>
+
+                    <p class="note-body">
+                      Webhooks deliver events from external services — payment gateways, messaging APIs, identity providers — as HTTP POST requests to your endpoint. The core engineering constraint is that the external provider expects a <code class="note-code">200 OK</code> response within a tight timeout window (typically 5–10 seconds). If your endpoint is slow or fails, the provider retries — often at increasing intervals. This means your webhook handler cannot synchronously execute business logic, write to the database, call external APIs, or do anything that blocks.
+                    </p>
+                    <p class="note-body">
+                      The correct pattern: the webhook endpoint does exactly two things — validates the payload signature and enqueues the raw event into a Redis queue. It then returns <code class="note-code">200 OK</code> immediately. A Celery worker picks up the event asynchronously, processes it, updates the database, and triggers any downstream effects. Failed jobs are retried with exponential backoff without the provider ever seeing the failure.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">PROCESSING FLOW</div>
+                      <div class="note-flow">
+                        <div class="note-flow-node note-flow-node--external">External Service<br/><span class="note-flow-sub">WhatsApp / Razorpay / Stripe</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Webhook Endpoint<br/><span class="note-flow-sub">Validate sig → Enqueue → 200 OK</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue">Redis Queue<br/><span class="note-flow-sub">Raw event payload</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--worker">Celery Worker<br/><span class="note-flow-sub">Process · Retry on fail</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Persist with idempotency key</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts">
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHY ASYNC</span>
+                        <span class="note-callout-text">Webhook endpoints must respond in under 5s. Any processing that could fail or block — database writes, API calls, file processing — must run outside the request cycle.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHY IDEMPOTENCY</span>
+                        <span class="note-callout-text">Providers retry on network failure. Processing the same event twice must produce the same result. Use the event ID as an idempotency key — check before writing, skip if already processed.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">USED IN</span>
+                        <span class="note-callout-text">Commai (WhatsApp / Instagram / FB webhooks), Donation System (Razorpay / PayU payment confirmations)</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- NOTE 02 ─ Redis Caching Strategy -->
+                  <div class="design-note-card">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_02</span>
+                      <span class="note-category">PERFORMANCE ENGINEERING</span>
+                    </div>
+                    <h3 class="note-title">Redis Caching Strategy</h3>
+
+                    <p class="note-body">
+                      Not all data changes at the same rate. A user's profile, a list of country codes, a permission matrix — these change rarely but are read on every request. Fetching them from PostgreSQL on every hit is wasteful: it adds 5–50ms of latency per query, consumes database connections, and degrades under concurrent load. Redis sits between your API and PostgreSQL as an in-memory cache, serving these reads in under 1ms with no database involvement.
+                    </p>
+                    <p class="note-body">
+                      The hard problem isn't caching — it's invalidation. The wrong strategy (TTL-only expiry) means stale data or cache stampedes. The correct approach ties cache invalidation to model lifecycle events: Django's <code class="note-code">post_save</code> and <code class="note-code">post_delete</code> signals delete or update the cache key the moment the data changes. This gives you sub-millisecond reads with guaranteed consistency — you get the performance of in-memory storage without serving stale records.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">CACHE READ PATH</div>
+                      <div class="note-flow">
+                        <div class="note-flow-node">Client Request<br/><span class="note-flow-sub">GET /api/profile/</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Django API<br/><span class="note-flow-sub">Check Redis first</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue" style="border-color:#4caf50;color:#4caf50;">Redis Cache<br/><span class="note-flow-sub">HIT → return &lt;1ms</span></div>
+                        <div class="note-flow-arrow note-flow-arrow--miss">→ MISS →</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Query + warm cache</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts">
+                      <div class="note-callout">
+                        <span class="note-callout-label">WHAT TO CACHE</span>
+                        <span class="note-callout-text">High-read, low-write data: user profiles, permission sets, dropdown data, aggregated dashboard stats, third-party API responses with a known validity window.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">INVALIDATION</span>
+                        <span class="note-callout-text">Use Django <code class="note-code">post_save</code> signals to delete the cache key on write. Never rely on TTL alone for data correctness — TTL is a safety net, not a strategy.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">RESULT</span>
+                        <span class="note-callout-text">200% API response time improvement in production across report generation endpoints and high-frequency dashboard reads at Thaagam Foundation.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- NOTE 03 ─ Scaling Messaging Platforms -->
+                  <div class="design-note-card design-note-card--wide">
+                    <div class="note-header">
+                      <span class="note-num">NOTE_03</span>
+                      <span class="note-category">DISTRIBUTED SYSTEMS</span>
+                    </div>
+                    <h3 class="note-title">Scaling Messaging Platforms</h3>
+
+                    <p class="note-body">
+                      A messaging platform that processes inbound events from WhatsApp, Instagram, Messenger, and Email simultaneously faces a fundamental throughput problem: message arrival is bursty and unpredictable, while database writes, AI processing, and outbound API calls have variable latency. If you process each event synchronously in-request, a spike in inbound volume or a slow downstream API stalls the entire system.
+                    </p>
+                    <p class="note-body">
+                      The solution is event-driven architecture with queue-backed workers. Each inbound channel publishes events to a dedicated Redis queue rather than processing inline. Workers consume from these queues at their own pace — independently scalable based on queue depth. Priority queues ensure that payment confirmations and user-facing messages are processed before analytics events. The system never applies backpressure to the event source; it accepts everything and processes everything, eventually, correctly.
+                    </p>
+
+                    <div class="note-flow-block">
+                      <div class="note-flow-label">MULTI-CHANNEL EVENT FLOW</div>
+                      <div class="note-flow note-flow--wide">
+                        <div class="note-flow-col">
+                          <div class="note-flow-sources">
+                            <div class="note-flow-source">WhatsApp API</div>
+                            <div class="note-flow-source">Instagram API</div>
+                            <div class="note-flow-source">Facebook API</div>
+                            <div class="note-flow-source">Email API</div>
+                          </div>
+                        </div>
+                        <div class="note-flow-arrow note-flow-arrow--v">→</div>
+                        <div class="note-flow-node note-flow-node--accent">Webhook Gateway<br/><span class="note-flow-sub">Normalise + Enqueue</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--queue">Redis Queues<br/><span class="note-flow-sub">Per-channel priority lanes</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--worker">Worker Pool<br/><span class="note-flow-sub">Celery · Auto-scale on depth</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--db">PostgreSQL<br/><span class="note-flow-sub">Thread-safe conversation store</span></div>
+                        <div class="note-flow-arrow">→</div>
+                        <div class="note-flow-node note-flow-node--external">AI + Response<br/><span class="note-flow-sub">Auto-reply generation</span></div>
+                      </div>
+                    </div>
+
+                    <div class="note-callouts note-callouts--three">
+                      <div class="note-callout">
+                        <span class="note-callout-label">QUEUE ISOLATION</span>
+                        <span class="note-callout-text">Each channel gets its own queue. A backlog on Email processing never delays WhatsApp message delivery. Workers are assigned to queues based on priority, not round-robin across all tasks.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">WORKER SCALING</span>
+                        <span class="note-callout-text">Worker concurrency is configured per queue. During peak traffic, additional Celery processes spin up against the same Redis broker without changing application code or restarting the API server.</span>
+                      </div>
+                      <div class="note-callout">
+                        <span class="note-callout-label">USED IN</span>
+                        <span class="note-callout-text">Commai platform — four independent webhook receivers feeding a unified normalisation pipeline with per-channel Redis queues and AI response workers.</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== TECH STACK ===================== -->
+      <section id="stack" class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">06</div>
+            <h2 class="section-title-editorial">TECH<br />STACK</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat skills/all.txt</span>
+              </div>
+              <div class="output-content">
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## BACKEND — LANGUAGES & FRAMEWORKS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Python</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Django</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Django REST Framework</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Flask / FastAPI</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Django Channels</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## DATABASES & CACHING</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">PostgreSQL</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">MySQL</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Redis (Caching & Queues)</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## CLOUD & DEVOPS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">AWS EC2 / S3</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">AWS Route53 / SES / SNS</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Docker</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Nginx</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## ARCHITECTURE & PATTERNS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">REST API Design</span>
+                      <span class="skill-bar expert"></span>
+                      <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">WebSockets (Async)</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Redis Caching Strategies</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Async Task Processing</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skill-category-terminal">
+                  <div class="category-title">## AI & INTEGRATIONS</div>
+                  <div class="skills-row">
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Google Gemini AI</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">Prompt Engineering</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">RAG / LangChain</span>
+                      <span class="skill-bar intermediate"></span>
+                      <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="skill-item-terminal">
+                      <span class="skill-name">WhatsApp Business API</span>
+                      <span class="skill-bar advanced"></span>
+                      <span class="skill-level">Advanced</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Stack Bento -->
+          <div class="bento-stats" style="margin-top: 3rem;">
+            <div class="stat-box stat-large">
+              <div class="stat-number">2+</div>
+              <div class="stat-label">YEARS OF PRODUCTION EXPERIENCE</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">PRODUCTION APPS SHIPPED</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">200K+</div>
+              <div class="stat-label">USERS ACROSS DEPLOYED SYSTEMS</div>
+            </div>
+            <div class="stat-box stat-wide">
+              <div class="stat-label" style="margin-bottom: 1rem;">PRIMARY STACK</div>
+              <div class="stack-list">
+                <span>Python</span><span>Django</span><span>DRF</span>
+                <span>PostgreSQL</span><span>Redis</span><span>AWS</span>
+                <span>Docker</span><span>Nginx</span><span>Celery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== WHAT I'M FOCUSED ON ===================== -->
+      <section class="skills-section" style="background: #0d0d0d;">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">07</div>
+            <h2 class="section-title-editorial">WHAT I'M<br />FOCUSED ON</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">cat focus/current.txt</span>
+              </div>
+              <div class="output-content">
+                <div class="skill-category-terminal">
+                  <div class="skills-row" style="flex-direction: column; gap: 1.5rem">
+                    <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
+                      <div class="category-title" style="margin-bottom: 0.5rem">→ BUILDING AT TRAMES</div>
+                      <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
+                        Contributing to a global freight management platform — learning how large-scale logistics systems are architected and operated in production.
+                      </p>
+                    </div>
+                    <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
+                      <div class="category-title" style="margin-bottom: 0.5rem">→ DEEPENING SYSTEM DESIGN</div>
+                      <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
+                        Focused on distributed systems, high-availability architectures, and building backends that scale under real-world pressure.
+                      </p>
+                    </div>
+                    <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
+                      <div class="category-title" style="margin-bottom: 0.5rem">→ EXPLORING AI INTEGRATION</div>
+                      <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
+                        Integrating AI into backend workflows — from intelligent APIs to RAG pipelines — to build smarter, more adaptive systems.
+                      </p>
+                    </div>
+                    <div style="border-left: 3px solid var(--accent); padding-left: 1.5rem;">
+                      <div class="category-title" style="margin-bottom: 0.5rem">→ GROWING AS AN ENGINEER</div>
+                      <p style="color: var(--text-secondary); line-height: 1.8; margin: 0;">
+                        Reading, building side projects, and sharpening my craft every day. Still early in my journey — excited about what's ahead.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== GITHUB ANALYTICS ===================== -->
+      <section id="stats" class="skills-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">08</div>
+            <h2 class="section-title-editorial">GITHUB<br />ANALYTICS</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="terminal-skills">
+            <div class="terminal-output">
+              <div class="output-line">
+                <span class="prompt">$</span>
+                <span class="command">fetch --github-stats viny4</span>
+              </div>
+              <div class="output-content">
+
+                <!-- GitHub Profile Summary — Static (no API rate limit issues) -->
+                <div class="gh-static-profile">
+                  <div class="gh-static-header">
+                    <div class="gh-static-avatar">
+                      <i class="bi bi-github"></i>
+                    </div>
+                    <div class="gh-static-info">
+                      <div class="gh-static-name">Vinayagam D</div>
+                      <a href="https://github.com/viny4" target="_blank" rel="noopener" class="gh-static-handle">@viny4</a>
+                      <div class="gh-static-bio"> Backend Engineer · Webhook systems · Async processing · Scalable Django APIs · PostgreSQL · Redis · AWS</div>
+                      <div class="gh-static-stats">
+                        <span><strong class="gh-stat-accent">8+</strong> Production Repositories</span>
+                        <span><strong class="gh-stat-accent">2+</strong> Years Active</span>
+                        <span><strong class="gh-stat-accent">Chennai</strong>, India</span>
+                      </div>
+                    </div>
+                    <a href="https://github.com/viny4" target="_blank" rel="noopener" class="btn-terminal btn-outline gh-static-btn">
+                      <i class="bi bi-github"></i>
+                      <span>VIEW PROFILE</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Highlighted Repositories -->
+                <div class="pinned-repos-block">
+                  <div class="pinned-repos-label">
+                    <span class="prompt">$</span>
+                    <span class="command">gh repo list viny4 --highlighted --limit 3</span>
+                  </div>
+                  <div class="pinned-repos-subheading">HIGHLIGHTED REPOSITORIES</div>
+                  <div class="pinned-repos-grid">
+
+                    <a href="https://commai.m7corporation.com/" target="_blank" rel="noopener" class="pinned-repo-card">
+                      <div class="pinned-repo-header">
+                        <i class="bi bi-chat-square-dots pinned-repo-icon"></i>
+                        <span class="pinned-repo-name">commai-omnichannel-platform</span>
+                        <span class="pinned-repo-live-badge">↗ LIVE</span>
+                      </div>
+                      <p class="pinned-repo-desc">Multi-tenant SaaS backend unifying WhatsApp Business API, Instagram Graph API, Facebook Messenger API, and Email into a single webhook-driven Django platform with AI-powered automated response generation.</p>
+                      <div class="pinned-repo-meta">
+                        <span class="pinned-repo-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="pinned-repo-tag">Django</span>
+                        <span class="pinned-repo-tag">SaaS</span>
+                        <span class="pinned-repo-tag">Webhooks</span>
+                        <span class="pinned-repo-tag">Redis</span>
+                      </div>
+                    </a>
+
+                    <a href="https://github.com/viny4" target="_blank" rel="noopener" class="pinned-repo-card">
+                      <div class="pinned-repo-header">
+                        <i class="bi bi-journal-code pinned-repo-icon"></i>
+                        <span class="pinned-repo-name">civic-services-platform</span>
+                      </div>
+                      <p class="pinned-repo-desc">AI-powered civic services backend serving 200K+ citizens — Django + Gemini AI + PostgreSQL. Asynchronous identity document validation via Celery; Redis caching on read-heavy citizen profile endpoints.</p>
+                      <div class="pinned-repo-meta">
+                        <span class="pinned-repo-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="pinned-repo-tag">Django</span>
+                        <span class="pinned-repo-tag">Gemini AI</span>
+                        <span class="pinned-repo-tag">REST API</span>
+                      </div>
+                    </a>
+
+                    <a href="https://github.com/viny4" target="_blank" rel="noopener" class="pinned-repo-card">
+                      <div class="pinned-repo-header">
+                        <i class="bi bi-credit-card pinned-repo-icon"></i>
+                        <span class="pinned-repo-name">donation-payment-system</span>
+                      </div>
+                      <p class="pinned-repo-desc">Webhook-driven payment backend integrating Razorpay and PayU with idempotency guarantees, signature verification, async receipt dispatch via AWS SES, and a full 80G-compliant transaction audit trail in PostgreSQL.</p>
+                      <div class="pinned-repo-meta">
+                        <span class="pinned-repo-lang"><span class="lang-dot lang-python"></span>Python</span>
+                        <span class="pinned-repo-tag">Razorpay</span>
+                        <span class="pinned-repo-tag">PayU</span>
+                        <span class="pinned-repo-tag">Webhooks</span>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+
+                <!-- GitHub Contribution Calendar -->
+                <div class="calendar-dashboard" style="margin-top: 2rem;">
+                  <div class="row g-4 flex-row-reverse">
+                    <!-- Year Selection Sidebar -->
+                    <div class="col-lg-2">
+                      <div class="year-sidebar-terminal">
+                        <div class="year-list" id="year-selector">
+                          <button class="year-btn active" data-year="2026">2026</button>
+                          <button class="year-btn" data-year="2025">2025</button>
+                          <button class="year-btn" data-year="2024">2024</button>
+                          <button class="year-btn" data-year="2023">2023</button>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Calendar Area -->
+                    <div class="col-lg-10">
+                      <div id="contribution-header" style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--color-text); margin-bottom: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">
+                        <span id="contribution-count">...</span> contributions in <span id="current-selected-year">2026</span>
+                      </div>
+                      <div class="calendar-terminal-wrapper" style="border: 1px solid var(--color-border); padding: 25px; background: var(--color-bg); position: relative;">
+                        <div class="output-line" style="margin-bottom: 1.5rem;">
+                          <span class="prompt">$</span>
+                          <span class="command" id="calendar-cmd">visualize --calendar --year 2026</span>
+                        </div>
+                        <div class="calendar" id="github-calendar">
+                          <div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">
+                            [ FETCHING_GITHUB_DATA... ]
+                          </div>
+                        </div>
+                        <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+                          <div class="legend-terminal" id="github-legend"></div>
+                          <a href="https://github.com/viny4" target="_blank" rel="noopener" class="nav-cmd" style="font-size: 0.7rem; opacity: 0.6;">
+                            [ VIEW_ON_GITHUB.sh ]
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="contact-section">
+        <div class="container-fluid">
+          <div class="section-header-editorial">
+            <div class="section-number">09</div>
+            <h2 class="section-title-editorial">GET IN<br />TOUCH</h2>
+            <div class="section-line"></div>
+          </div>
+
+          <div class="contact-terminal">
+            <div class="terminal-window-large">
+              <div class="terminal-header-large">
+                <div class="terminal-buttons">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="terminal-title">connect.sh</span>
+              </div>
+              <div class="terminal-body-large">
+                <div class="terminal-line">
+                  <span class="prompt">$</span>
+                  <span class="command">./contact --info</span>
+                </div>
+                <div class="terminal-output-large">
+                  <div class="contact-info-grid">
+                    <div class="contact-row">
+                      <span class="contact-key">EMAIL</span>
+                      <a href="/cdn-cgi/l/email-protection#a9dfc0c7c8d0c8cec8c4cd87cdccdfe9cec4c8c0c587cac6c4" class="contact-value"><span class="__cf_email__" data-cfemail="74021d1a150d15131519105a101102341319151d185a171b19">[email&#160;protected]</span></a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">PHONE</span>
+                      <a href="tel:+919025533402" class="contact-value">+91 9025533402</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">LINKEDIN</span>
+                      <a href="https://www.linkedin.com/in/vinjr/" target="_blank" rel="noopener" class="contact-value">linkedin.com/in/vinjr</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">GITHUB</span>
+                      <a href="https://github.com/viny4" target="_blank" rel="noopener" class="contact-value">github.com/viny4</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">X / TWITTER</span>
+                      <a href="https://x.com/_vinyjr" target="_blank" rel="noopener" class="contact-value">x.com/_vinyjr</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">DISCORD</span>
+                      <a href="https://discord.gg/VWEhEWxDKE" target="_blank" rel="noopener" class="contact-value">discord.gg/VWEhEWxDKE</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">RESUME</span>
+                      <a href="assets/resume/Vinayagam_CV.pdf" download="Vinayagam_CV.pdf" class="contact-value">Download Vinayagam_CV.pdf ⬇</a>
+                    </div>
+                    <div class="contact-row">
+                      <span class="contact-key">LOCATION</span>
+                      <span class="contact-value">Chennai, Tamil Nadu, India</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="terminal-line terminal-cursor">
+                  <span class="prompt">$</span>
+                  <span class="cursor-blink">_</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer-minimal">
+        <div class="container-fluid">
+          <div class="footer-content-minimal">
+            <div class="footer-left">
+              <span>© <span id="year"></span> VINAYAGAM.D</span>
+              <span class="footer-sep">·</span>
+              <span> BACKEND ENGINEER</span>
+            </div>
+            <div class="footer-right">
+              <a href="https://github.com/viny4" target="_blank" rel="noopener">GITHUB</a>
+              <span class="footer-sep">·</span>
+              <a href="https://www.linkedin.com/in/vinjr/" target="_blank" rel="noopener">LINKEDIN</a>
+              <span class="footer-sep">·</span>
+              <a href="https://x.com/_vinyjr" target="_blank" rel="noopener">X</a>
+              <span class="footer-sep">·</span>
+              <a href="https://discord.gg/VWEhEWxDKE" target="_blank" rel="noopener">DISCORD</a>
+              <span class="footer-sep">·</span>
+              <a href="/cdn-cgi/l/email-protection#5e2837303f273f393f333a703a3b281e39333f3732703d3133">EMAIL</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="assets/audio/bg-music.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="assets/js/main.js?v=2.0"></script>
+
+    <script>
+      // GitHub Calendar Scraper
+      const calendarInit = async (year = "2026") => {
+        const container = document.querySelector("#github-calendar");
+        const cmdText = document.querySelector("#calendar-cmd");
+        const countDisplay = document.querySelector("#contribution-count");
+        const yearDisplay = document.querySelector("#current-selected-year");
+        const username = "viny4";
+
+        if(cmdText) cmdText.textContent = `visualize --calendar --year ${year}`;
+        if(yearDisplay) yearDisplay.textContent = year;
+        if(countDisplay) countDisplay.textContent = "...";
+
+        container.innerHTML = `<div class="loading-spinner" style="color: var(--color-accent); font-family: var(--font-mono); font-size: 0.8rem;">[ FETCHING_${year}_ACTUAL_GRID... ]</div>`;
+
+        const targetUrl = `https://github.com/users/${username}/contributions?from=${year}-01-01&to=${year}-12-31`;
+
+        const proxies = [
+          `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`,
+          `https://api.allorigins.win/raw?url=${encodeURIComponent(targetUrl)}`,
+          `https://corsproxy.io/?url=${encodeURIComponent(targetUrl)}`
+        ];
+
+        try {
+          let html = null;
+          for (const proxyUrl of proxies) {
+            try {
+              const response = await fetch(proxyUrl);
+              if (response.ok) {
+                html = await response.text();
+                break;
+              }
+            } catch (e) { /* try next */ }
+          }
+
+          if (!html) throw new Error("ALL_PROXIES_FAILED");
+
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const graph = doc.querySelector('.js-calendar-graph');
+          const header = doc.querySelector('h2.f4.text-normal.mb-2');
+
+          if (!graph) throw new Error("GRAPH_NOT_FOUND");
+
+          container.innerHTML = graph.innerHTML;
+
+          if (header) {
+            const match = header.textContent.match(/(\d+)\s+contribution/);
+            if (match && countDisplay) countDisplay.textContent = match[1];
+          }
+
+          const cleanUp = () => {
+            const junkSelectors = ['.sr-only', '.show-on-focus', '.ContributionCalendar-nav', 'h2', 'tool-tip', 'summary', 'details', '#skip-to-content', '[href*="skip-to"]', '.Link--muted'];
+            junkSelectors.forEach(s => container.querySelectorAll(s).forEach(el => el.remove()));
+          };
+          cleanUp();
+          setTimeout(cleanUp, 500);
+
+        } catch (err) {
+          container.innerHTML = `<div style="color: #ff4444; font-family: var(--font-mono); font-size: 0.8rem;">[ ERROR: ${err.message} ]<br><span style="font-size: 0.6rem; opacity: 0.7;">SCRAPE_FAILED</span></div>`;
+        }
+      };
+
+      document.querySelectorAll('.year-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.year-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          calendarInit(btn.getAttribute('data-year'));
+        });
+      });
+
+      calendarInit("2026");
+    </script>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.9/dist/lenis.min.js"></script>
+    <script>
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+        infinite: false,
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) lenis.scrollTo(target, { offset: 0 });
+        });
+      });
+    </script>
+
+    <script>
+      // Mobile Nav Toggle
+      const mobileNavToggle = document.getElementById('mobile-nav-toggle');
+      const closeMenu = document.getElementById('close-menu');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinksMobile = document.querySelectorAll('.nav-menu .nav-cmd');
+
+      const toggleMenu = () => {
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+      };
+
+      mobileNavToggle.addEventListener('click', toggleMenu);
+      closeMenu.addEventListener('click', toggleMenu);
+
+      navLinksMobile.forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-cmd");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((section) => {
+          if (scrollY >= section.offsetTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
