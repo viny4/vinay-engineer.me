@@ -1,103 +1,122 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vinayagam D</title>
-    <meta name="description" content="Vinayagam D — Backend Engineer from Chennai." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
-    <style>
-      :root {
-        --bg: #0a0a0f;
-        --text: #e8e9ee;
-        --dim: #9ca0ad;
-        --accent: #7c5cff;
-      }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-      html, body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: 'Inter', system-ui, sans-serif;
-        font-size: 17px;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-      }
-      main {
-        max-width: 640px;
-        margin: 0 auto;
-        padding: 14vh 2rem 6rem;
-      }
-      h1 {
-        font-family: 'Fraunces', serif;
-        font-weight: 700;
-        font-size: clamp(2.2rem, 5vw, 3rem);
-        letter-spacing: -0.03em;
-        line-height: 1.05;
-        margin-bottom: 0.4rem;
-      }
-      h1 .dot { color: var(--accent); }
-      .sub {
-        font-family: 'Fraunces', serif;
-        font-style: italic;
-        color: var(--dim);
-        font-size: 1.15rem;
-        margin-bottom: 2.5rem;
-      }
-      p {
-        color: var(--dim);
-        margin-bottom: 1.25rem;
-      }
-      p strong { color: var(--text); font-weight: 500; }
-      a {
-        color: var(--text);
-        text-decoration: none;
-        border-bottom: 1px solid rgba(124, 92, 255, 0.5);
-        transition: border-color 0.2s ease;
-      }
-      a:hover { border-bottom-color: var(--accent); }
-      footer {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        font-size: 0.9rem;
-        color: var(--dim);
-        display: flex;
-        gap: 1.25rem;
-        flex-wrap: wrap;
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>Vinayagam D<span class="dot">.</span></h1>
-      <p class="sub">Backend Engineer · Chennai, India</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinayagam D</title>
 
-      <p>
-        I'm a backend engineer with 2+ years of production experience building scalable
-        systems and APIs.
-      </p>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-      <p>
-        My stack is <strong>Python, Django, Node.js, TypeScript, PostgreSQL, Redis, and AWS</strong>.
-        I build for correctness first, then optimise for scale — designing REST APIs, caching
-        strategies, async workers, and webhook pipelines that hold up under real load.
-      </p>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-      <p>
-        Right now I'm deepening my system design skills and exploring how AI fits into
-        backend workflows.
-      </p>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #000;
+      font-size: 1.15rem;
+      
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      <footer>
-        <a href="https://github.com/viny4" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/vinjr/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://x.com/_vinyjr" target="_blank" rel="noopener">X</a>
-        <a href="https://www.instagram.com/_vinay__jr/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://discord.gg/VWEhEWxDKE" target="_blank" rel="noopener">Discord</a>
-        <a href="assets/resume/Vinayagam_CV.pdf" download>Resume</a>
-      </footer>
-    </main>
-  </body>
+    .wrap {
+      width: min(560px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 72px 0 96px;
+    }
+
+    .name {
+      font-size: 1.15rem;
+      
+      font-weight: 500;
+      margin-bottom: 52px;
+      letter-spacing: 0.01em;
+    }
+
+    p {
+      margin-bottom: 1.3em;
+      color: #111;
+    }
+
+    p:last-of-type { margin-bottom: 0; }
+
+    .links {
+      margin-top: 56px;
+      display: flex;
+      gap: 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+      border-bottom: 1px solid #000;
+      padding-bottom: 1px;
+    }
+
+    .links a:hover { opacity: 0.45; }
+
+    @media (max-width: 480px) {
+      .wrap { padding: 48px 0 72px; }
+      .name { margin-bottom: 36px; }
+      body { font-size: 1.05rem; }
+      .links { gap: 1.2rem; margin-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="name">Vinayagam</div>
+
+    <p>
+      I'm a software engineer from Chennai.
+    </p>
+
+    <p>
+      I'm not the most talented person in the room. But I'm probably the most
+      obsessed. When something catches my attention, I don't let go — I go deep,
+      stay late, and keep going until I actually understand it.
+    </p>
+
+    <p>
+      I put in the hours quietly. And when someone around me is stuck,
+      I show up — that part has never felt optional to me.
+    </p>
+
+    <p>
+      I don't ask people for help easily. When I hit a wall, I figure it out —
+      documentation, AI tools, whatever it takes. I'd rather spend three hours
+      solving something myself than interrupt someone for a five-minute answer.
+      That's just how I'm wired.
+    </p>
+
+    <p>
+      I'm drawn to how things work beneath the surface — systems, infrastructure,
+      the kind of engineering nobody sees but everything depends on.
+    </p>
+
+    <p>
+      Space is the one thing that never gets old for me. The scale of it —
+      a small planet circling an ordinary star in one of two trillion galaxies —
+      and yet here we are, writing code. I think about that more than I probably should.
+    </p>
+
+    <p>
+      I also read about history and philosophy. Civilizations rise, collapse,
+      and get forgotten. It's a useful thing to sit with.
+    </p>
+
+    <div class="links">
+      <a href="https://github.com/vinaynural" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/vinjr/" target="_blank">LinkedIn</a>
+      <a href="https://x.com/_vinyjr" target="_blank">X</a>
+      <a href="mailto:vinayagam.python@gmail.com">Email</a>
+      <a href="assets/resume/Vinayagam_CV.pdf" download>Resume</a>
+    </div>
+  </div>
+</body>
 </html>
