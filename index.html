@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vinayagam  | Backend Engineer</title>
+<title>Vinayagam | Backend Engineer</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,6 +99,13 @@ h2{
     font-size:.95rem;
 }
 
+.stat-context{
+    color:#999;
+    font-size:.82rem;
+    margin-top:4px;
+    line-height:1.4;
+}
+
 .tech-stack{
     display:flex;
     flex-wrap:wrap;
@@ -129,6 +136,7 @@ h2{
 
 .experience-item p{
     color:#333;
+    margin-bottom:8px;
 }
 
 .projects{
@@ -142,13 +150,45 @@ h2{
     padding:24px;
 }
 
-.project h3{
+.project-header{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
     margin-bottom:10px;
+    flex-wrap:wrap;
+}
+
+.project h3{
     font-size:1.1rem;
+}
+
+.project-link{
+    color:var(--muted);
+    text-decoration:none;
+    font-size:.85rem;
+    border-bottom:1px solid var(--border);
+    padding-bottom:1px;
+    transition:.2s;
+}
+
+.project-link:hover{
+    color:var(--text);
+    border-color:var(--text);
 }
 
 .project p{
     color:#444;
+    margin-bottom:8px;
+}
+
+.project p:last-child{
+    margin-bottom:0;
+}
+
+.project-stack{
+    color:#999;
+    font-size:.82rem;
+    margin-top:10px;
 }
 
 .links{
@@ -167,6 +207,12 @@ h2{
 
 .links a:hover{
     opacity:.5;
+}
+
+.cta{
+    margin-bottom:24px;
+    font-size:1.05rem;
+    color:#222;
 }
 
 .footer{
@@ -200,7 +246,7 @@ h2{
 
     <section class="hero">
 
-        <h1 class="name">Vinayagam </h1>
+        <h1 class="name">Vinayagam</h1>
 
         <div class="role">
             Backend Engineer · Chennai, India
@@ -239,21 +285,25 @@ h2{
             <div class="stat">
                 <div class="stat-number">8+</div>
                 <div class="stat-label">Production Systems</div>
+                <div class="stat-context">Shipped across civic tech, SaaS, and fintech</div>
             </div>
 
             <div class="stat">
                 <div class="stat-number">200K+</div>
                 <div class="stat-label">Users Served</div>
+                <div class="stat-context">Registered users across deployed platforms</div>
             </div>
 
             <div class="stat">
                 <div class="stat-number">200%</div>
                 <div class="stat-label">API Performance Gain</div>
+                <div class="stat-context">Via Redis caching with signal-based invalidation</div>
             </div>
 
             <div class="stat">
                 <div class="stat-number">60%</div>
                 <div class="stat-label">Workload Reduction</div>
+                <div class="stat-context">Automated notification pipelines replacing manual ops</div>
             </div>
 
         </div>
@@ -288,37 +338,46 @@ h2{
 
         <div class="experience-item">
 
-            <div class="company">
-                Trames
-            </div>
+            <div class="company">Trames</div>
 
             <div class="duration">
-                Backend Engineer · Feb 2026 – Present
+                Backend Engineer · Feb 2026 – Present · Singapore (Remote)
             </div>
 
             <p>
-                Building backend services in TypeScript and Node.js for
-                a global logistics and freight management platform handling
-                real-time shipment tracking and operational automation.
+                Building backend services in TypeScript and Node.js for a logistics and
+                freight management platform handling real-time shipment tracking and
+                operational automation.
             </p>
 
         </div>
 
         <div class="experience-item">
 
-            <div class="company">
-                Thaagam Foundation
-            </div>
+            <div class="company">Thaagam Foundation</div>
 
             <div class="duration">
-                Python Django Developer · Oct 2023 – Oct 2025
+                Python Django Developer · Oct 2023 – Oct 2025 · Chennai, India
             </div>
 
             <p>
-                Designed and deployed production Django systems, AI-powered
-                validation platforms, communication automation pipelines,
-                payment systems, and cloud infrastructure supporting
-                large-scale users.
+                Architected and deployed 8 production Django backend systems across
+                government civic platforms, NGO operations, and e-commerce applications.
+            </p>
+
+            <p>
+                Delivered a 200% API performance improvement by implementing Redis caching
+                with Django signal-based cache invalidation, eliminating redundant database
+                queries on high-read endpoints. Reduced manual notification workloads by 60%
+                by engineering automated pipelines over WhatsApp Business API, AWS SES, and SNS.
+            </p>
+
+            <p>
+                Designed webhook processing architectures for real-time payment events from
+                Razorpay and PayU with idempotency keys and signature verification for
+                exactly-once processing guarantees. Built real-time messaging dashboards
+                using Django Channels, WebSockets, and Redis Pub/Sub. Managed AWS infrastructure
+                (EC2, S3, IAM, Route53) supporting 200,000+ users at 99%+ uptime.
             </p>
 
         </div>
@@ -332,33 +391,66 @@ h2{
         <div class="projects">
 
             <div class="project">
-                <h3>Commai</h3>
+                <div class="project-header">
+                    <h3>Commai</h3>
+                    <a class="project-link" href="https://commai.m7corporation.com/" target="_blank">commai.m7corporation.com ↗</a>
+                </div>
 
                 <p>
-                    Multi-tenant communication platform integrating WhatsApp,
-                    Instagram, Messenger, and Email into a unified
-                    conversation system.
+                    Multi-tenant SaaS backend unifying WhatsApp, Instagram, Facebook Messenger,
+                    and Email into a single business communication platform — one dashboard,
+                    four real-time channels, one unified conversation store.
                 </p>
+
+                <p>
+                    Designed a webhook-driven ingestion architecture: channel-specific endpoints
+                    validate payload signatures, normalise events into a unified schema, and
+                    enqueue in Redis — returning 200 OK immediately to prevent provider retries
+                    under load. Celery workers persist threaded conversations per tenant and
+                    trigger AI-powered automated replies.
+                </p>
+
+                <div class="project-stack">
+                    Django · DRF · PostgreSQL · Redis · Celery · WhatsApp Business API · Instagram Graph API · AWS · Docker · Nginx
+                </div>
             </div>
 
             <div class="project">
-                <h3>AI Image Analysis Platform</h3>
+                <div class="project-header">
+                    <h3>AI Image Analysis Platform</h3>
+                    <a class="project-link" href="https://imageanalysis.gccservices.in" target="_blank">imageanalysis.gccservices.in ↗</a>
+                </div>
 
                 <p>
-                    AI-powered civic verification platform built for Chennai
-                    Corporation to validate complaint resolution images and
-                    reduce fraudulent submissions.
+                    AI-powered civic verification system built for Greater Chennai Corporation —
+                    validates before-and-after complaint resolution images to detect fraudulent
+                    submissions. Integrated OpenAI Vision API into an async Celery pipeline;
+                    Redis caching eliminates redundant API calls on frequently re-checked image
+                    signatures.
                 </p>
+
+                <div class="project-stack">
+                    Django · OpenAI Vision API · PostgreSQL · Redis · AWS EC2 · S3
+                </div>
             </div>
 
             <div class="project">
-                <h3>Donation Management Platform</h3>
+                <div class="project-header">
+                    <h3>Donation Management Platform</h3>
+                    <a class="project-link" href="https://thaagam.org" target="_blank">thaagam.org ↗</a>
+                </div>
 
                 <p>
-                    End-to-end donation processing system with payment
-                    gateways, automated tax receipts, reconciliation,
-                    and communication workflows.
+                    Full donation lifecycle backend — donor management, multi-gateway payment
+                    processing (Razorpay + PayU), automated 80G tax receipt generation, and
+                    finance reconciliation dashboards. Reconciliation time reduced from days to
+                    under 5 minutes with zero manual receipt generation; full compliance audit
+                    trail maintained in PostgreSQL.
                 </p>
+
+                <div class="project-stack">
+                    Django · DRF · PostgreSQL · Redis · Razorpay · PayU · AWS SES · WhatsApp API
+                </div>
             </div>
 
         </div>
@@ -381,23 +473,18 @@ h2{
 
         <h2>Contact</h2>
 
+        <p class="cta">
+            I'm open to full-time backend engineering roles, product-focused teams,
+            and early-stage startups. If you're building something that needs
+            reliable systems at scale, I'd like to hear about it.
+        </p>
+
         <div class="links">
 
-            <a href="https://github.com/viny4" target="_blank">
-                GitHub
-            </a>
-
-            <a href="https://linkedin.com/in/vinjr" target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="mailto:vinayagam.python@gmail.com">
-                Email
-            </a>
-
-            <a href="/resume.pdf" target="_blank">
-                Resume
-            </a>
+            <a href="https://github.com/viny4" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/vinjr" target="_blank">LinkedIn</a>
+            <a href="mailto:vinayagam.python@gmail.com">Email</a>
+            <a href="/resume.pdf" target="_blank">Resume</a>
 
         </div>
 
