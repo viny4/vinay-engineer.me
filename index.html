@@ -1,122 +1,413 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vinayagam D</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<title>Vinayagam  | Backend Engineer</title>
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #000;
-      font-size: 1.15rem;
-      
-      line-height: 1.8;
-      -webkit-font-smoothing: antialiased;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --text:#111;
+    --muted:#666;
+    --border:#e5e5e5;
+    --bg:#ffffff;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+}
+
+.container{
+    width:min(820px, calc(100% - 48px));
+    margin:auto;
+    padding:80px 0;
+}
+
+section{
+    margin-top:90px;
+}
+
+h2{
+    font-size:1rem;
+    font-weight:600;
+    margin-bottom:24px;
+    letter-spacing:0.02em;
+}
+
+.hero{
+    margin-bottom:80px;
+}
+
+.name{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.role{
+    color:var(--muted);
+    font-size:1rem;
+    margin-bottom:40px;
+}
+
+.intro{
+    max-width:700px;
+}
+
+.intro p{
+    margin-bottom:20px;
+    font-size:1.08rem;
+    color:#222;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:20px;
+    margin-top:50px;
+}
+
+.stat{
+    border:1px solid var(--border);
+    padding:22px;
+    border-radius:10px;
+}
+
+.stat-number{
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.tech-stack span{
+    border:1px solid var(--border);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:.95rem;
+}
+
+.experience-item{
+    margin-bottom:40px;
+}
+
+.company{
+    font-weight:600;
+    margin-bottom:4px;
+}
+
+.duration{
+    color:var(--muted);
+    margin-bottom:12px;
+    font-size:.95rem;
+}
+
+.experience-item p{
+    color:#333;
+}
+
+.projects{
+    display:grid;
+    gap:24px;
+}
+
+.project{
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:24px;
+}
+
+.project h3{
+    margin-bottom:10px;
+    font-size:1.1rem;
+}
+
+.project p{
+    color:#444;
+}
+
+.links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.links a{
+    color:var(--text);
+    text-decoration:none;
+    border-bottom:1px solid var(--text);
+    padding-bottom:2px;
+    transition:.2s;
+}
+
+.links a:hover{
+    opacity:.5;
+}
+
+.footer{
+    margin-top:100px;
+    color:var(--muted);
+    font-size:.95rem;
+}
+
+@media(max-width:768px){
+
+    .container{
+        width:min(100% - 32px);
+        padding:50px 0;
     }
 
-    .wrap {
-      width: min(560px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 72px 0 96px;
+    .name{
+        font-size:2.2rem;
     }
 
-    .name {
-      font-size: 1.15rem;
-      
-      font-weight: 500;
-      margin-bottom: 52px;
-      letter-spacing: 0.01em;
+    .stats{
+        grid-template-columns:1fr 1fr;
     }
 
-    p {
-      margin-bottom: 1.3em;
-      color: #111;
-    }
+}
 
-    p:last-of-type { margin-bottom: 0; }
-
-    .links {
-      margin-top: 56px;
-      display: flex;
-      gap: 1.6rem;
-      flex-wrap: wrap;
-    }
-
-    .links a {
-      color: #000;
-      text-decoration: none;
-      font-size: 1rem;
-      border-bottom: 1px solid #000;
-      padding-bottom: 1px;
-    }
-
-    .links a:hover { opacity: 0.45; }
-
-    @media (max-width: 480px) {
-      .wrap { padding: 48px 0 72px; }
-      .name { margin-bottom: 36px; }
-      body { font-size: 1.05rem; }
-      .links { gap: 1.2rem; margin-top: 40px; }
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="name">Vinayagam</div>
 
-    <p>
-      I'm a software engineer from Chennai.
-    </p>
+<div class="container">
 
-    <p>
-      I'm not the most talented person in the room. But I'm probably the most
-      obsessed. When something catches my attention, I don't let go — I go deep,
-      stay late, and keep going until I actually understand it.
-    </p>
+    <section class="hero">
 
-    <p>
-      I put in the hours quietly. And when someone around me is stuck,
-      I show up — that part has never felt optional to me.
-    </p>
+        <h1 class="name">Vinayagam </h1>
 
-    <p>
-      I don't ask people for help easily. When I hit a wall, I figure it out —
-      documentation, AI tools, whatever it takes. I'd rather spend three hours
-      solving something myself than interrupt someone for a five-minute answer.
-      That's just how I'm wired.
-    </p>
+        <div class="role">
+            Backend Engineer · Chennai, India
+        </div>
 
-    <p>
-      I'm drawn to how things work beneath the surface — systems, infrastructure,
-      the kind of engineering nobody sees but everything depends on.
-    </p>
+        <div class="intro">
 
-    <p>
-      Space is the one thing that never gets old for me. The scale of it —
-      a small planet circling an ordinary star in one of two trillion galaxies —
-      and yet here we are, writing code. I think about that more than I probably should.
-    </p>
+            <p>
+                I build scalable backend systems, APIs, cloud infrastructure,
+                and real-time applications.
+            </p>
 
-    <p>
-      I also read about history and philosophy. Civilizations rise, collapse,
-      and get forgotten. It's a useful thing to sit with.
-    </p>
+            <p>
+                Over the last 2+ years, I've designed and shipped production
+                software across civic technology, fintech, SaaS communication
+                platforms, and AI-powered systems serving more than 200,000 users.
+            </p>
 
-    <div class="links">
-      <a href="https://github.com/viny4" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/vinjr/" target="_blank">LinkedIn</a>
-      <a href="https://x.com/_vinyjr" target="_blank">X</a>
-      <a href="mailto:vinayagam.python@gmail.com">Email</a>
-      <a href="assets/resume/Vinayagam_CV.pdf" download>Resume</a>
+            <p>
+                My work focuses on Python, Django, PostgreSQL, Redis, AWS,
+                TypeScript, and Node.js. I enjoy building reliable systems,
+                designing event-driven architectures, and solving complex
+                backend engineering challenges.
+            </p>
+
+            <p>
+                Currently working as a Backend Engineer at Trames,
+                building logistics and freight management systems that
+                process real-time operational data at scale.
+            </p>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="stat">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Production Systems</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">200K+</div>
+                <div class="stat-label">Users Served</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">200%</div>
+                <div class="stat-label">API Performance Gain</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">60%</div>
+                <div class="stat-label">Workload Reduction</div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Tech Stack</h2>
+
+        <div class="tech-stack">
+            <span>Python</span>
+            <span>Django</span>
+            <span>Django REST Framework</span>
+            <span>TypeScript</span>
+            <span>Node.js</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+            <span>AWS</span>
+            <span>Docker</span>
+            <span>Linux</span>
+            <span>Celery</span>
+            <span>WebSockets</span>
+            <span>REST APIs</span>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Experience</h2>
+
+        <div class="experience-item">
+
+            <div class="company">
+                Trames
+            </div>
+
+            <div class="duration">
+                Backend Engineer · Feb 2026 – Present
+            </div>
+
+            <p>
+                Building backend services in TypeScript and Node.js for
+                a global logistics and freight management platform handling
+                real-time shipment tracking and operational automation.
+            </p>
+
+        </div>
+
+        <div class="experience-item">
+
+            <div class="company">
+                Thaagam Foundation
+            </div>
+
+            <div class="duration">
+                Python Django Developer · Oct 2023 – Oct 2025
+            </div>
+
+            <p>
+                Designed and deployed production Django systems, AI-powered
+                validation platforms, communication automation pipelines,
+                payment systems, and cloud infrastructure supporting
+                large-scale users.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Featured Projects</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <h3>Commai</h3>
+
+                <p>
+                    Multi-tenant communication platform integrating WhatsApp,
+                    Instagram, Messenger, and Email into a unified
+                    conversation system.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>AI Image Analysis Platform</h3>
+
+                <p>
+                    AI-powered civic verification platform built for Chennai
+                    Corporation to validate complaint resolution images and
+                    reduce fraudulent submissions.
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>Donation Management Platform</h3>
+
+                <p>
+                    End-to-end donation processing system with payment
+                    gateways, automated tax receipts, reconciliation,
+                    and communication workflows.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2>Interests</h2>
+
+        <p>
+            Distributed systems, infrastructure engineering,
+            cloud architecture, machine learning, large-scale backend
+            systems, space exploration, and history.
+        </p>
+
+    </section>
+
+    <section>
+
+        <h2>Contact</h2>
+
+        <div class="links">
+
+            <a href="https://github.com/vinaynural" target="_blank">
+                GitHub
+            </a>
+
+            <a href="https://linkedin.com/in/vinjr" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="mailto:vinayagam.python@gmail.com">
+                Email
+            </a>
+
+            <a href="/resume.pdf" target="_blank">
+                Resume
+            </a>
+
+        </div>
+
+    </section>
+
+    <div class="footer">
+        © 2026 Vinayagam | Built with HTML & CSS
     </div>
-  </div>
+
+</div>
+
 </body>
 </html>
