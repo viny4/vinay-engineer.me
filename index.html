@@ -459,6 +459,121 @@ h2{
 
     <section>
 
+        <h2>Open Source</h2>
+
+        <div class="projects">
+
+            <div class="project">
+                <div class="project-header">
+                    <h3>Orbica</h3>
+                    <a class="project-link" href="https://orbica.space" target="_blank">orbica.space ↗</a>
+                    <a class="project-link" href="https://github.com/viny4/orbica" target="_blank">source ↗</a>
+                </div>
+
+                <p>
+                    An encyclopedia of every rocket and satellite launched since 1957, with live
+                    orbit tracking. Timeline → agency → rocket → 3D model → satellites it launched
+                    → real-time 3D orbit, navigable as one connected graph.
+                </p>
+
+                <p>
+                    Go API on Fiber and pgx streams live SGP4-propagated satellite positions over
+                    WebSocket to a React Three Fiber globe. Historical launch data is normalised
+                    into PostgreSQL with organisation-first and year-first access paths.
+                </p>
+
+                <div class="project-stack">
+                    Next.js · React Three Fiber · Go · Fiber · PostgreSQL · WebSockets · Cloudflare Pages
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3>Nexora</h3>
+                    <a class="project-link" href="https://github.com/viny4/nexora-saas-platform" target="_blank">source ↗</a>
+                </div>
+
+                <p>
+                    Multi-tenant SaaS billing and workflow platform built to exercise advanced
+                    PostgreSQL. Tenant isolation enforced at the database layer through Row Level
+                    Security rather than application code.
+                </p>
+
+                <p>
+                    Billing runs as atomic credit/debit operations under SERIALIZABLE isolation
+                    with advisory locks to prevent double-spend under concurrency. Audit and
+                    activity logs are partitioned; materialized views and GIN indexes back the
+                    reporting paths; LISTEN/NOTIFY drives real-time transaction processing.
+                    Deployed with streaming replication, PgBouncer pooling, and Prometheus
+                    and Grafana instrumentation.
+                </p>
+
+                <div class="project-stack">
+                    NestJS · TypeScript · Prisma · PostgreSQL 16 · Redis · PgBouncer · Prometheus · Grafana
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3>Backend Masterclass</h3>
+                    <a class="project-link" href="https://github.com/viny4/Backend-Masterclass" target="_blank">source ↗</a>
+                </div>
+
+                <p>
+                    A production-shaped backend pairing Django REST Framework for business logic
+                    with FastAPI for real-time workloads — JWT auth over a multi-role user system,
+                    a blog engine with search and pagination, and Celery-backed asynchronous
+                    processing. The FastAPI service handles WebSocket multi-user chat and video
+                    streaming with HTTP Range support.
+                </p>
+
+                <div class="project-stack">
+                    Django REST Framework · FastAPI · Celery · PostgreSQL · WebSockets · Docker
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3>Movie Knowledge Graph</h3>
+                    <a class="project-link" href="https://github.com/viny4/movie-knowledge-graph" target="_blank">source ↗</a>
+                </div>
+
+                <p>
+                    A graph-native API where films, actors, directors, genres and studios are
+                    nodes joined by relationships instead of rows joined by foreign keys —
+                    recommendation and discovery queries traverse the graph rather than assembling
+                    multi-table joins.
+                </p>
+
+                <div class="project-stack">
+                    Neo4j · Cypher · Node.js · TypeScript · Express · Zod
+                </div>
+            </div>
+
+            <div class="project">
+                <div class="project-header">
+                    <h3>Panebox</h3>
+                    <a class="project-link" href="https://github.com/viny4/panebox" target="_blank">source ↗</a>
+                </div>
+
+                <p>
+                    A desktop deck for the web apps that stay open all day — ChatGPT, Claude,
+                    Gemini, Perplexity, WhatsApp and around fifty more — each running in its own
+                    isolated session inside a single window. Per-service session isolation means
+                    two accounts of the same tool run side by side without logging out.
+                </p>
+
+                <div class="project-stack">
+                    JavaScript · Electron · Chromium session partitioning
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section>
+
         <h2>Interests</h2>
 
         <p>
