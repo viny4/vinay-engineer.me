@@ -1,615 +1,607 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Vinayagam | Backend Engineer</title>
-
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vinayagam · Backend Engineer</title>
+<meta name="description" content="Vinayagam, backend engineer in Chennai, India. Experience, production systems and projects, drawn as an engineering sheet.">
+<meta name="author" content="Vinayagam">
+<link rel="canonical" href="https://vinay-engineer.me/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vinay-engineer.me/">
+<meta property="og:title" content="Vinayagam · Backend Engineer">
+<meta property="og:description" content="Backend engineer in Chennai, India. Experience, production systems and projects, drawn as an engineering sheet.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#f3f1ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#123d68" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f04800'/%3E%3Cpath d='M17 15h8l7 26 7-26h8L36 50h-8Z' fill='%23fff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=Barlow+Condensed:wght@500;600;700&family=B612+Mono:wght@400;700&display=swap">
+<script>
+  try { var t = localStorage.getItem('sheet'); if (t === 'paper' || t === 'blueprint') document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Vinayagam",
+  "jobTitle": "Backend Engineer",
+  "url": "https://vinay-engineer.me/",
+  "email": "mailto:vinayagam.python@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN" },
+  "worksFor": { "@type": "Organization", "name": "Trames" },
+  "sameAs": ["https://github.com/viny4", "https://www.linkedin.com/in/vinjr"]
+}
+</script>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root {
+  --paper: #f3f1ea; --paper-2: #e9e6dc; --ink: #1c1c1a; --ink-2: #3a3934; --muted: #66645b;
+  --rule: rgba(28, 28, 26, .62); --hair: rgba(28, 28, 26, .2);
+  --grid-1: rgba(28, 28, 26, .032); --grid-2: rgba(28, 28, 26, .07);
+  --accent: #f04800; --accent-text: #b83800; --accent-tint: rgba(240, 72, 0, .12); --on-accent: #ffffff;
+  --shade-l: 5%; --shade-r: 11%;
+  --cond: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --sans: Barlow, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "B612 Mono", ui-monospace, Menlo, Consolas, monospace;
+  --m-out: 10px; --m-in: 30px; --m-top: 56px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="paper"]) {
+    --paper: #123d68; --paper-2: rgba(255, 255, 255, .05); --ink: #f1f6fc; --ink-2: #d6e2ef; --muted: #a7bdd5;
+    --rule: rgba(241, 246, 252, .62); --hair: rgba(241, 246, 252, .2);
+    --grid-1: rgba(255, 255, 255, .045); --grid-2: rgba(255, 255, 255, .095);
+    --accent: #ffc94d; --accent-text: #ffd36e; --accent-tint: rgba(255, 201, 77, .16); --on-accent: #10263f;
+    --shade-l: 6%; --shade-r: 13%;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="blueprint"] {
+  --paper: #123d68; --paper-2: rgba(255, 255, 255, .05); --ink: #f1f6fc; --ink-2: #d6e2ef; --muted: #a7bdd5;
+  --rule: rgba(241, 246, 252, .62); --hair: rgba(241, 246, 252, .2);
+  --grid-1: rgba(255, 255, 255, .045); --grid-2: rgba(255, 255, 255, .095);
+  --accent: #ffc94d; --accent-text: #ffd36e; --accent-tint: rgba(255, 201, 77, .16); --on-accent: #10263f;
+  --shade-l: 6%; --shade-r: 13%;
+  color-scheme: dark;
 }
 
-:root{
-    --text:#111;
-    --muted:#666;
-    --border:#e5e5e5;
-    --bg:#ffffff;
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: calc(var(--m-top) + 24px); }
+body {
+  margin: 0; color: var(--ink-2); font: 400 17px/1.6 var(--sans);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(var(--grid-2) 1px, transparent 1px), linear-gradient(90deg, var(--grid-2) 1px, transparent 1px),
+    linear-gradient(var(--grid-1) 1px, transparent 1px), linear-gradient(90deg, var(--grid-1) 1px, transparent 1px);
+  background-size: 50px 50px, 50px 50px, 10px 10px, 10px 10px;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color .35s ease, color .35s ease;
 }
+::selection { background: var(--accent); color: var(--on-accent); }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: fixed; left: 40px; top: -60px; z-index: 100; padding: 10px 14px; background: var(--ink); color: var(--paper); font: 600 14px var(--cond); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+.skip:focus { top: 64px; }
 
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
+/* ── The sheet border ── */
+.band { position: fixed; z-index: 40; background: var(--paper); transition: background-color .35s ease; }
+.band-top { top: 0; left: 0; right: 0; height: var(--m-top); }
+.band-bottom { bottom: 0; left: 0; right: 0; height: var(--m-in); }
+.band-left { top: 0; bottom: 0; left: 0; width: var(--m-in); }
+.band-right { top: 0; bottom: 0; right: 0; width: var(--m-in); }
+.border-out, .border-in { position: fixed; z-index: 41; pointer-events: none; }
+.border-out { inset: var(--m-out); border: 1.5px solid var(--ink); }
+.border-in { top: var(--m-top); left: var(--m-in); right: var(--m-in); bottom: var(--m-in); border: 1px solid var(--rule); }
+.zones { position: absolute; display: flex; font: 400 9.5px/1 var(--mono); color: var(--muted); }
+.band-left .zones, .band-right .zones { flex-direction: column; top: var(--m-top); bottom: var(--m-in); left: var(--m-out); right: 0; }
+.band-bottom .zones { left: var(--m-in); right: var(--m-in); top: 0; bottom: var(--m-out); }
+.zones span { flex: 1; display: grid; place-items: center; position: relative; }
+.band-left .zones span + span::before, .band-right .zones span + span::before { content: ""; position: absolute; top: 0; left: 4px; right: 4px; height: 1px; background: var(--hair); }
+.band-bottom .zones span + span::before { content: ""; position: absolute; left: 0; top: 4px; bottom: 4px; width: 1px; background: var(--hair); }
+
+.bar { position: absolute; left: var(--m-in); right: var(--m-in); top: var(--m-out); bottom: 0; display: flex; align-items: center; gap: 18px; padding: 0 2px; }
+.ref { display: flex; align-items: center; gap: 12px; text-decoration: none; font: 400 11.5px/1 var(--mono); letter-spacing: .04em; color: var(--ink-2); white-space: nowrap; overflow: hidden; }
+.ref b { font-weight: 700; padding: 5px 7px; border: 1px solid var(--rule); color: var(--ink); }
+.nav { margin-left: auto; display: flex; }
+.nav a { position: relative; padding: 8px 10px; text-decoration: none; font: 600 13px/1 var(--cond); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); transition: color .15s; }
+.nav a:hover, .nav a[aria-current="true"] { color: var(--ink); }
+.nav a[aria-current="true"]::after { content: ""; position: absolute; left: 10px; right: 10px; bottom: 2px; height: 2px; background: var(--accent); }
+.print { display: flex; border: 1px solid var(--rule); flex: none; }
+.print button { border: 0; background: none; cursor: pointer; padding: 7px 10px; font: 600 11.5px/1 var(--cond); letter-spacing: .14em; color: var(--muted); }
+.print button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* ── Layout ── */
+.page { max-width: 1260px; margin: 0 auto; padding: calc(var(--m-top) + 44px) calc(var(--m-in) + clamp(16px, 4vw, 52px)) calc(var(--m-in) + 40px); }
+.label { font: 600 12px/1.2 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+/* ── Sheet 1: general arrangement ── */
+.ga { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 28px 64px; align-items: start; }
+.ga-intro { grid-column: 1; grid-row: 2; }
+.ga-bom { grid-column: 1; grid-row: 3; }
+.ga .fig { grid-column: 2; grid-row: 2 / span 2; }
+.ga-title { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 40px; }
+.name { display: inline-block; }
+.dim { position: relative; display: flex; align-items: center; gap: 0; margin: 0 0 14px; color: var(--ink-2); }
+.dim i { flex: 1; height: 1px; background: var(--rule); }
+.dim b { padding: 0 14px; font: 700 12.5px/1 var(--mono); letter-spacing: .16em; white-space: nowrap; }
+.dim::before, .dim::after { content: ""; width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+.dim::before { border-right: 10px solid var(--rule); }
+.dim::after { border-left: 10px solid var(--rule); }
+.dim s { position: absolute; top: -8px; height: 26px; width: 1px; background: var(--rule); text-decoration: none; }
+.dim s:first-of-type { left: 0; } .dim s:last-of-type { right: 0; }
+h1 { margin: 0; color: var(--ink); font: 700 clamp(78px, 13.4vw, 214px)/.8 var(--cond); letter-spacing: -.004em; text-transform: uppercase; }
+.where { margin: 0 0 4px; text-align: right; font: 600 14px/1.5 var(--cond); letter-spacing: .14em; color: var(--muted); }
+.where strong { display: block; font-weight: 700; color: var(--ink-2); }
+.lede { margin: 6px 0 16px; font: 500 21px/1.5 var(--sans); color: var(--ink); }
+.lede-2 { margin: 0 0 28px; font-size: 16px; color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 18px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); font: 600 15px/1 var(--cond); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background-color .15s, color .15s, border-color .15s; }
+.btn:hover { background: var(--ink); color: var(--paper); }
+.btn-solid { background: var(--ink); color: var(--paper); }
+.btn-solid:hover { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn svg { width: 14px; height: 14px; }
+.stamp { display: inline-block; margin: 26px 0 0 4px; padding: 9px 16px 10px; border: 2.5px solid var(--accent); outline: 1px solid var(--accent); outline-offset: 3px; color: var(--accent); transform: rotate(-5deg); text-align: center; text-transform: uppercase; }
+.stamp b { display: block; font: 700 30px/1 var(--cond); letter-spacing: .08em; }
+.stamp span { display: block; margin-top: 4px; font: 600 11.5px/1 var(--cond); letter-spacing: .22em; }
+
+.fig { margin: 0; position: relative; }
+.fig svg { display: block; width: 100%; height: auto; }
+.fig figcaption { display: flex; justify-content: space-between; gap: 16px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--hair); font: 400 11.5px/1.5 var(--mono); color: var(--muted); }
+.fig figcaption b { color: var(--ink-2); font-weight: 700; }
+
+.iso .face { stroke: var(--ink); stroke-width: 1.1; stroke-linejoin: round; transition: fill .25s, stroke .25s; }
+.iso .face.t { fill: var(--paper); }
+.iso .face.l { fill: color-mix(in srgb, var(--ink) var(--shade-l), var(--paper)); }
+.iso .face.r { fill: color-mix(in srgb, var(--ink) var(--shade-r), var(--paper)); }
+.iso .hatch { fill: url(#hatch); stroke: none; pointer-events: none; }
+.iso .detail { fill: none; stroke: var(--ink); stroke-width: .8; stroke-opacity: .75; }
+.iso .axis { fill: none; stroke: var(--rule); stroke-width: .9; stroke-dasharray: 16 4 2 4; }
+.iso .flow { fill: none; stroke: var(--accent); stroke-width: 1.8; }
+.iso .flow-label { font: 700 10px var(--mono); letter-spacing: .14em; fill: var(--accent-text); }
+.iso .engrave { font-family: var(--cond); font-weight: 600; letter-spacing: .18em; fill: var(--muted); }
+.iso .leader { fill: none; stroke: var(--rule); stroke-width: .9; }
+.iso .anchor { fill: var(--ink); }
+.iso .ball { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; transition: fill .2s, stroke .2s; }
+.iso .ball-n { font: 700 11px var(--mono); text-anchor: middle; fill: var(--ink); }
+.iso .bname { font: 600 12.5px var(--cond); letter-spacing: .12em; fill: var(--ink-2); }
+.iso .part, .iso .callout { cursor: default; }
+.iso .part { transform: none; transition: transform 1.25s cubic-bezier(.16, .84, .24, 1) var(--d); }
+.iso .callouts { opacity: 1; transition: opacity .8s ease 1s; }
+.fig.pre .part { transform: translateY(var(--c)); transition: none; }
+.fig.pre .callouts { opacity: 0; transition: none; }
+.iso .part.hot .face { fill: color-mix(in srgb, var(--accent) 22%, var(--paper)); stroke: var(--accent); }
+.iso .callout.hot .ball { fill: var(--accent); stroke: var(--accent); }
+.iso .callout.hot .ball-n { fill: var(--on-accent); }
+.iso .callout.hot .bname { fill: var(--accent-text); }
+.iso .callout.hot .leader { stroke: var(--accent); }
+
+.bom { width: 100%; margin-top: 12px; border-collapse: collapse; border: 1.5px solid var(--ink); font-size: 15px; }
+.bom caption { caption-side: top; text-align: left; padding: 0 0 10px; }
+.bom th { padding: 9px 12px; background: var(--paper-2); border-bottom: 1.5px solid var(--ink); text-align: left; font: 600 11.5px/1 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.bom td { padding: 9px 12px; border-top: 1px solid var(--hair); vertical-align: top; transition: background-color .2s; }
+.bom td:first-child { width: 52px; }
+.bom .no { display: grid; place-items: center; width: 24px; height: 24px; border: 1.2px solid var(--ink); border-radius: 50%; font: 700 11px/1 var(--mono); color: var(--ink); transition: background-color .2s, color .2s, border-color .2s; }
+.bom .pn { font: 600 15px/1.45 var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
+.bom tr.hot td { background: var(--accent-tint); }
+.bom tr.hot .no { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.bom tfoot td { border-top: 1.5px solid var(--ink); background: var(--paper-2); }
+
+/* ── Sheets 2-4 ── */
+.sheet { margin-top: 150px; }
+.view { display: flex; align-items: center; gap: 18px; margin-bottom: 44px; }
+.bubble { display: grid; place-items: center; width: 54px; height: 54px; flex: none; border: 1.5px solid var(--ink); border-radius: 50%; font: 700 22px/1 var(--cond); color: var(--ink); }
+.view h2 { position: relative; display: inline-block; margin: 0; padding-bottom: 6px; border-bottom: 3px solid var(--ink); color: var(--ink); font: 700 clamp(38px, 5.4vw, 60px)/1 var(--cond); letter-spacing: .01em; text-transform: uppercase; }
+.view h2::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 1px; background: var(--ink); }
+.view p { margin: 18px 0 0; font: 400 11.5px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+
+table.revs, table.idx { width: 100%; border-collapse: collapse; border: 1.5px solid var(--ink); }
+.revs th, .idx th { padding: 10px 14px; background: var(--paper-2); border-bottom: 1.5px solid var(--ink); text-align: left; font: 600 11.5px/1 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.revs td, .idx td { padding: 20px 14px; border-top: 1px solid var(--hair); vertical-align: top; }
+.revs td.rev { width: 70px; }
+.revs td.when { width: 190px; font: 400 13px/1.6 var(--mono); color: var(--ink-2); white-space: nowrap; }
+.delta { width: 30px; height: 27px; display: block; }
+.delta path { fill: none; stroke: var(--ink); stroke-width: 1.4; stroke-linejoin: round; }
+.delta text { font: 700 12px var(--mono); text-anchor: middle; fill: var(--ink); }
+.revs tr.current .delta path { fill: var(--accent); stroke: var(--accent); }
+.revs tr.current .delta text { fill: var(--on-accent); }
+.revs tr.current td.when { color: var(--accent-text); font-weight: 700; }
+.revs h3, .idx h3 { margin: 0; color: var(--ink); font: 700 24px/1.15 var(--cond); letter-spacing: .02em; text-transform: uppercase; }
+.revs .role { margin: 4px 0 10px; font: 500 15px/1.4 var(--sans); color: var(--muted); }
+.revs p { margin: 0; max-width: 66ch; }
+.revs ul { margin: 14px 0 0; padding: 0; list-style: none; max-width: 66ch; }
+.revs li { position: relative; padding-left: 26px; margin-top: 8px; }
+.revs li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 12px; height: 1.5px; background: var(--ink); }
+.revs li::after { content: ""; position: absolute; left: 11px; top: 10px; border-left: 5px solid var(--ink); border-top: 4px solid transparent; border-bottom: 4px solid transparent; }
+
+.detail { border: 1.5px solid var(--ink); margin-bottom: 32px; background: color-mix(in srgb, var(--paper) 82%, transparent); }
+.detail-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 14px 18px; border-bottom: 1px solid var(--rule); }
+.tag { display: grid; grid-template-rows: 1fr 1fr; width: 50px; height: 50px; flex: none; border: 1.5px solid var(--ink); border-radius: 50%; overflow: hidden; text-align: center; }
+.tag b { align-self: end; padding-bottom: 1px; border-bottom: 1px solid var(--ink); font: 700 17px/1.1 var(--cond); color: var(--ink); }
+.tag span { padding-top: 3px; font: 400 9.5px/1 var(--mono); color: var(--muted); }
+.detail h3 { margin: 0; color: var(--ink); font: 700 26px/1.1 var(--cond); letter-spacing: .02em; text-transform: uppercase; }
+.detail-head .meta { font: 400 12px/1.4 var(--mono); color: var(--muted); }
+.ext { font: 500 14.5px/1.4 var(--sans); letter-spacing: .01em; color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 1px; white-space: nowrap; transition: color .15s, border-color .15s; }
+.ext::after { content: " \2197"; }
+.ext:hover { color: var(--accent-text); border-color: var(--accent); }
+.detail-head .ext { margin-left: auto; }
+.detail-body { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); }
+.schematic { margin: 0; padding: 18px; border-right: 1px solid var(--hair); overflow-x: auto; }
+.sch { display: block; width: 100%; height: auto; min-width: 540px; }
+.pan { display: none; position: sticky; left: 0; margin-top: 10px; font: 600 11px/1 var(--cond); letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.sch .sb { fill: var(--paper); stroke: var(--ink); stroke-width: 1.2; }
+.sch .sb.hot { fill: var(--accent-tint); stroke: var(--accent); }
+.sch .zone { fill: none; stroke: var(--rule); stroke-dasharray: 6 5; }
+.sch .sl { font: 600 12px var(--cond); letter-spacing: .1em; text-anchor: middle; fill: var(--ink); }
+.sch .ss { font: 400 9.5px var(--mono); text-anchor: middle; fill: var(--muted); }
+.sch .sa { fill: none; stroke: var(--ink); stroke-width: 1.1; }
+.sch .sa.hot { stroke: var(--accent); stroke-width: 1.5; }
+.sch .sa.dash { stroke-dasharray: 5 4; }
+.sch .sn { font: 400 9.5px var(--mono); fill: var(--muted); }
+.sch .sn.hot { fill: var(--accent-text); font-weight: 700; }
+.ah { fill: var(--ink); }
+.ah-acc { fill: var(--accent); }
+.hatch-line { stroke: var(--ink); stroke-opacity: .32; stroke-width: .8; }
+.notes { padding: 18px 22px 22px 18px; }
+.notes .label { display: block; margin-bottom: 12px; }
+.notes ol { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+.notes li { counter-increment: n; position: relative; padding-left: 34px; margin-bottom: 10px; font-size: 15.5px; line-height: 1.55; }
+.notes li::before { content: counter(n) "."; position: absolute; left: 0; top: 1px; font: 700 13px/1.6 var(--mono); color: var(--accent-text); }
+
+.idx td.dwg { width: 76px; font: 700 13px/1.9 var(--mono); color: var(--ink-2); white-space: nowrap; }
+.idx td.g { width: 52px; padding-right: 0; }
+.glyph { display: block; width: 30px; height: 30px; fill: none; stroke: var(--ink); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; }
+.glyph .dot { fill: var(--accent); stroke: none; }
+.glyph .dotf { fill: var(--accent-tint); stroke: var(--accent); }
+.idx h3 { font-size: 22px; }
+.idx p { margin: 6px 0 0; max-width: 64ch; font-size: 15.5px; }
+.idx td.st { width: 92px; }
+.st-live, .st-repo { display: inline-block; padding: 4px 7px; font: 700 10.5px/1 var(--mono); letter-spacing: .08em; border: 1px solid var(--rule); color: var(--muted); }
+.st-live { border-color: var(--accent); color: var(--accent-text); }
+.idx td.ln { width: 150px; text-align: right; }
+.idx td.ln .ext { display: inline-block; margin: 0 0 6px 10px; }
+
+/* ── Title block ── */
+.tb-wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 760px); gap: 40px; align-items: end; margin-top: 150px; }
+.tb-note { margin: 0; font: 400 12px/1.7 var(--mono); color: var(--muted); }
+.tb { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 2px solid var(--ink); }
+.tb > div { background: var(--paper); padding: 11px 14px 13px; min-width: 0; transition: background-color .35s ease; }
+.tb .label { display: block; margin-bottom: 8px; font-size: 10.5px; }
+.tb .wide { grid-column: span 6; }
+.tb .half { grid-column: span 3; }
+.tb .third { grid-column: span 2; }
+.tb .sixth { grid-column: span 1; }
+.mail { display: inline-block; color: var(--ink); text-decoration: none; overflow-wrap: anywhere; font: 700 clamp(28px, 4.2vw, 48px)/1.05 var(--cond); letter-spacing: .01em; }
+.mail:hover { color: var(--accent-text); }
+.mail-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; }
+.copy { height: 36px; padding: 0 14px; font-size: 13px; }
+.tb .v { font: 500 16px/1.4 var(--sans); color: var(--ink); }
+.tb .v a { text-decoration: none; border-bottom: 1px solid var(--rule); }
+.tb .v a:hover { color: var(--accent-text); border-color: var(--accent); }
+.tb .big { font: 700 22px/1 var(--cond); color: var(--ink); letter-spacing: .04em; }
+.foot { display: flex; justify-content: space-between; gap: 16px; margin-top: 28px; font: 400 11.5px/1.5 var(--mono); color: var(--muted); }
+
+@media (max-width: 1100px) {
+  .ga { grid-template-columns: 1fr; }
+  .ga-intro, .ga-bom, .ga .fig { grid-column: 1; grid-row: auto; }
+  .fig { max-width: 720px; }
+  .detail-body { grid-template-columns: 1fr; }
+  .schematic { border-right: 0; border-bottom: 1px solid var(--hair); }
+  .tb-wrap { grid-template-columns: 1fr; }
 }
-
-.container{
-    width:min(820px, calc(100% - 48px));
-    margin:auto;
-    padding:80px 0;
+@media (max-width: 760px) {
+  :root { --m-out: 6px; --m-in: 12px; --m-top: 54px; }
+  .zones, .nav, .ref span { display: none; }
+  .print { margin-left: auto; }
+  .page { padding-top: calc(var(--m-top) + 28px); }
+  .where { text-align: left; }
+  .lede { font-size: 19px; }
+  .sheet, .tb-wrap { margin-top: 104px; }
+  .iso .bname { font-size: 16px; }
+  .iso .ball-n { font-size: 13px; }
+  table.revs, table.idx, .revs tbody, .idx tbody, .revs tr, .idx tr, .revs td, .idx td { display: block; width: auto !important; }
+  .revs thead, .idx thead { display: none; }
+  .revs tr, .idx tr { position: relative; padding: 18px 16px; border-top: 1px solid var(--hair); }
+  .revs tr:first-child, .idx tr:first-child { border-top: 0; }
+  .revs td, .idx td { padding: 0; border: 0; }
+  .revs td.rev { position: absolute; right: 16px; top: 18px; }
+  .revs td.when { margin-bottom: 8px; }
+  .idx td.dwg, .idx td.g { display: inline-block; vertical-align: middle; margin: 0 10px 8px 0; }
+  .idx td.st { margin-top: 10px; }
+  .idx td.ln { text-align: left; margin-top: 10px; }
+  .idx td.ln .ext { margin: 0 14px 0 0; }
+  .pan { display: inline-block; }
+  .tb .half, .tb .third { grid-column: span 6; }
+  .tb .sixth { grid-column: span 3; }
 }
-
-section{
-    margin-top:90px;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
 }
-
-h2{
-    font-size:1rem;
-    font-weight:600;
-    margin-bottom:24px;
-    letter-spacing:0.02em;
-}
-
-.hero{
-    margin-bottom:80px;
-}
-
-.name{
-    font-size:3rem;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-.role{
-    color:var(--muted);
-    font-size:1rem;
-    margin-bottom:40px;
-}
-
-.intro{
-    max-width:700px;
-}
-
-.intro p{
-    margin-bottom:20px;
-    font-size:1.08rem;
-    color:#222;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:20px;
-    margin-top:50px;
-}
-
-.stat{
-    border:1px solid var(--border);
-    padding:22px;
-    border-radius:10px;
-}
-
-.stat-number{
-    font-size:1.6rem;
-    font-weight:700;
-}
-
-.stat-label{
-    color:var(--muted);
-    font-size:.95rem;
-}
-
-.stat-context{
-    color:#999;
-    font-size:.82rem;
-    margin-top:4px;
-    line-height:1.4;
-}
-
-.tech-stack{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-}
-
-.tech-stack span{
-    border:1px solid var(--border);
-    padding:8px 14px;
-    border-radius:8px;
-    font-size:.95rem;
-}
-
-.experience-item{
-    margin-bottom:40px;
-}
-
-.company{
-    font-weight:600;
-    margin-bottom:4px;
-}
-
-.duration{
-    color:var(--muted);
-    margin-bottom:12px;
-    font-size:.95rem;
-}
-
-.experience-item p{
-    color:#333;
-    margin-bottom:8px;
-}
-
-.projects{
-    display:grid;
-    gap:24px;
-}
-
-.project{
-    border:1px solid var(--border);
-    border-radius:12px;
-    padding:24px;
-}
-
-.project-header{
-    display:flex;
-    align-items:baseline;
-    gap:14px;
-    margin-bottom:10px;
-    flex-wrap:wrap;
-}
-
-.project h3{
-    font-size:1.1rem;
-}
-
-.project-link{
-    color:var(--muted);
-    text-decoration:none;
-    font-size:.85rem;
-    border-bottom:1px solid var(--border);
-    padding-bottom:1px;
-    transition:.2s;
-}
-
-.project-link:hover{
-    color:var(--text);
-    border-color:var(--text);
-}
-
-.project p{
-    color:#444;
-    margin-bottom:8px;
-}
-
-.project p:last-child{
-    margin-bottom:0;
-}
-
-.project-stack{
-    color:#999;
-    font-size:.82rem;
-    margin-top:10px;
-}
-
-.links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
-
-.links a{
-    color:var(--text);
-    text-decoration:none;
-    border-bottom:1px solid var(--text);
-    padding-bottom:2px;
-    transition:.2s;
-}
-
-.links a:hover{
-    opacity:.5;
-}
-
-.cta{
-    margin-bottom:24px;
-    font-size:1.05rem;
-    color:#222;
-}
-
-.footer{
-    margin-top:100px;
-    color:var(--muted);
-    font-size:.95rem;
-}
-
-@media(max-width:768px){
-
-    .container{
-        width:min(100% - 32px);
-        padding:50px 0;
-    }
-
-    .name{
-        font-size:2.2rem;
-    }
-
-    .stats{
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
 </style>
 </head>
 <body>
-
-<div class="container">
-
-    <section class="hero">
-
-        <h1 class="name">Vinayagam</h1>
-
-        <div class="role">
-            Backend Engineer · Chennai, India
-        </div>
-
-        <div class="intro">
-
-            <p>
-                I build scalable backend systems, APIs, cloud infrastructure,
-                and real-time applications.
-            </p>
-
-            <p>
-                Over the last 2+ years, I've designed and shipped production
-                software across civic technology, fintech, SaaS communication
-                platforms, and AI-powered systems serving more than 200,000 users.
-            </p>
-
-            <p>
-                My work focuses on Python, Django, PostgreSQL, Redis, AWS,
-                TypeScript, and Node.js. I enjoy building reliable systems,
-                designing event-driven architectures, and solving complex
-                backend engineering challenges.
-            </p>
-
-            <p>
-                Currently working as a Backend Engineer at Trames,
-                building logistics and freight management systems that
-                process real-time operational data at scale.
-            </p>
-
-        </div>
-
-        <div class="stats">
-
-            <div class="stat">
-                <div class="stat-number">8+</div>
-                <div class="stat-label">Production Systems</div>
-                <div class="stat-context">Shipped across civic tech, SaaS, and fintech</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-number">200K+</div>
-                <div class="stat-label">Users Served</div>
-                <div class="stat-context">Registered users across deployed platforms</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-number">200%</div>
-                <div class="stat-label">API Performance Gain</div>
-                <div class="stat-context">Via Redis caching with signal-based invalidation</div>
-            </div>
-
-            <div class="stat">
-                <div class="stat-number">60%</div>
-                <div class="stat-label">Workload Reduction</div>
-                <div class="stat-context">Automated notification pipelines replacing manual ops</div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2>Tech Stack</h2>
-
-        <div class="tech-stack">
-            <span>Python</span>
-            <span>Django</span>
-            <span>Django REST Framework</span>
-            <span>TypeScript</span>
-            <span>Node.js</span>
-            <span>PostgreSQL</span>
-            <span>Redis</span>
-            <span>AWS</span>
-            <span>Docker</span>
-            <span>Linux</span>
-            <span>Celery</span>
-            <span>WebSockets</span>
-            <span>REST APIs</span>
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2>Experience</h2>
-
-        <div class="experience-item">
-
-            <div class="company">Trames</div>
-
-            <div class="duration">
-                Backend Engineer · Feb 2026 – Present · Singapore (Remote)
-            </div>
-
-            <p>
-                Building backend services in TypeScript and Node.js for a logistics and
-                freight management platform handling real-time shipment tracking and
-                operational automation.
-            </p>
-
-        </div>
-
-        <div class="experience-item">
-
-            <div class="company">Thaagam Foundation</div>
-
-            <div class="duration">
-                Python Django Developer · Oct 2023 – Oct 2025 · Chennai, India
-            </div>
-
-            <p>
-                Architected and deployed 8 production Django backend systems across
-                government civic platforms, NGO operations, and e-commerce applications.
-            </p>
-
-            <p>
-                Delivered a 200% API performance improvement by implementing Redis caching
-                with Django signal-based cache invalidation, eliminating redundant database
-                queries on high-read endpoints. Reduced manual notification workloads by 60%
-                by engineering automated pipelines over WhatsApp Business API, AWS SES, and SNS.
-            </p>
-
-            <p>
-                Designed webhook processing architectures for real-time payment events from
-                Razorpay and PayU with idempotency keys and signature verification for
-                exactly-once processing guarantees. Built real-time messaging dashboards
-                using Django Channels, WebSockets, and Redis Pub/Sub. Managed AWS infrastructure
-                (EC2, S3, IAM, Route53) supporting 200,000+ users at 99%+ uptime.
-            </p>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2>Featured Projects</h2>
-
-        <div class="projects">
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Commai</h3>
-                    <a class="project-link" href="https://commai.m7corporation.com/" target="_blank">commai.m7corporation.com ↗</a>
-                </div>
-
-                <p>
-                    Multi-tenant SaaS backend unifying WhatsApp, Instagram, Facebook Messenger,
-                    and Email into a single business communication platform — one dashboard,
-                    four real-time channels, one unified conversation store.
-                </p>
-
-                <p>
-                    Designed a webhook-driven ingestion architecture: channel-specific endpoints
-                    validate payload signatures, normalise events into a unified schema, and
-                    enqueue in Redis — returning 200 OK immediately to prevent provider retries
-                    under load. Celery workers persist threaded conversations per tenant and
-                    trigger AI-powered automated replies.
-                </p>
-
-                <div class="project-stack">
-                    Django · DRF · PostgreSQL · Redis · Celery · WhatsApp Business API · Instagram Graph API · AWS · Docker · Nginx
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>AI Image Analysis Platform</h3>
-                    <a class="project-link" href="https://imageanalysis.gccservices.in" target="_blank">imageanalysis.gccservices.in ↗</a>
-                </div>
-
-                <p>
-                    AI-powered civic verification system built for Greater Chennai Corporation —
-                    validates before-and-after complaint resolution images to detect fraudulent
-                    submissions. Integrated OpenAI Vision API into an async Celery pipeline;
-                    Redis caching eliminates redundant API calls on frequently re-checked image
-                    signatures.
-                </p>
-
-                <div class="project-stack">
-                    Django · OpenAI Vision API · PostgreSQL · Redis · AWS EC2 · S3
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Donation Management Platform</h3>
-                    <a class="project-link" href="https://thaagam.org" target="_blank">thaagam.org ↗</a>
-                </div>
-
-                <p>
-                    Full donation lifecycle backend — donor management, multi-gateway payment
-                    processing (Razorpay + PayU), automated 80G tax receipt generation, and
-                    finance reconciliation dashboards. Reconciliation time reduced from days to
-                    under 5 minutes with zero manual receipt generation; full compliance audit
-                    trail maintained in PostgreSQL.
-                </p>
-
-                <div class="project-stack">
-                    Django · DRF · PostgreSQL · Redis · Razorpay · PayU · AWS SES · WhatsApp API
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2>Open Source</h2>
-
-        <div class="projects">
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Orbica</h3>
-                    <a class="project-link" href="https://orbica.space" target="_blank">orbica.space ↗</a>
-                    <a class="project-link" href="https://github.com/viny4/orbica" target="_blank">source ↗</a>
-                </div>
-
-                <p>
-                    An encyclopedia of every rocket and satellite launched since 1957, with live
-                    orbit tracking. Timeline → agency → rocket → 3D model → satellites it launched
-                    → real-time 3D orbit, navigable as one connected graph.
-                </p>
-
-                <p>
-                    Go API on Fiber and pgx streams live SGP4-propagated satellite positions over
-                    WebSocket to a React Three Fiber globe. Historical launch data is normalised
-                    into PostgreSQL with organisation-first and year-first access paths.
-                </p>
-
-                <div class="project-stack">
-                    Next.js · React Three Fiber · Go · Fiber · PostgreSQL · WebSockets · Cloudflare Pages
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Nexora</h3>
-                    <a class="project-link" href="https://github.com/viny4/nexora-saas-platform" target="_blank">source ↗</a>
-                </div>
-
-                <p>
-                    Multi-tenant SaaS billing and workflow platform built to exercise advanced
-                    PostgreSQL. Tenant isolation enforced at the database layer through Row Level
-                    Security rather than application code.
-                </p>
-
-                <p>
-                    Billing runs as atomic credit/debit operations under SERIALIZABLE isolation
-                    with advisory locks to prevent double-spend under concurrency. Audit and
-                    activity logs are partitioned; materialized views and GIN indexes back the
-                    reporting paths; LISTEN/NOTIFY drives real-time transaction processing.
-                    Deployed with streaming replication, PgBouncer pooling, and Prometheus
-                    and Grafana instrumentation.
-                </p>
-
-                <div class="project-stack">
-                    NestJS · TypeScript · Prisma · PostgreSQL 16 · Redis · PgBouncer · Prometheus · Grafana
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Backend Masterclass</h3>
-                    <a class="project-link" href="https://github.com/viny4/Backend-Masterclass" target="_blank">source ↗</a>
-                </div>
-
-                <p>
-                    A production-shaped backend pairing Django REST Framework for business logic
-                    with FastAPI for real-time workloads — JWT auth over a multi-role user system,
-                    a blog engine with search and pagination, and Celery-backed asynchronous
-                    processing. The FastAPI service handles WebSocket multi-user chat and video
-                    streaming with HTTP Range support.
-                </p>
-
-                <div class="project-stack">
-                    Django REST Framework · FastAPI · Celery · PostgreSQL · WebSockets · Docker
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Movie Knowledge Graph</h3>
-                    <a class="project-link" href="https://github.com/viny4/movie-knowledge-graph" target="_blank">source ↗</a>
-                </div>
-
-                <p>
-                    A graph-native API where films, actors, directors, genres and studios are
-                    nodes joined by relationships instead of rows joined by foreign keys —
-                    recommendation and discovery queries traverse the graph rather than assembling
-                    multi-table joins.
-                </p>
-
-                <div class="project-stack">
-                    Neo4j · Cypher · Node.js · TypeScript · Express · Zod
-                </div>
-            </div>
-
-            <div class="project">
-                <div class="project-header">
-                    <h3>Panebox</h3>
-                    <a class="project-link" href="https://github.com/viny4/panebox" target="_blank">source ↗</a>
-                </div>
-
-                <p>
-                    A desktop deck for the web apps that stay open all day — ChatGPT, Claude,
-                    Gemini, Perplexity, WhatsApp and around fifty more — each running in its own
-                    isolated session inside a single window. Per-service session isolation means
-                    two accounts of the same tool run side by side without logging out.
-                </p>
-
-                <div class="project-stack">
-                    JavaScript · Electron · Chromium session partitioning
-                </div>
-            </div>
-
-        </div>
-
-    </section>
-
-    <section>
-
-        <h2>Interests</h2>
-
-        <p>
-            Distributed systems, infrastructure engineering,
-            cloud architecture, machine learning, large-scale backend
-            systems, space exploration, and history.
-        </p>
-
-    </section>
-
-    <section>
-
-        <h2>Contact</h2>
-
-        <p class="cta">
-            I'm open to full-time backend engineering roles, product-focused teams,
-            and early-stage startups. If you're building something that needs
-            reliable systems at scale, I'd like to hear about it.
-        </p>
-
-        <div class="links">
-
-            <a href="https://github.com/viny4" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/vinjr" target="_blank">LinkedIn</a>
-            <a href="mailto:vinayagam.python@gmail.com">Email</a>
-            <a href="/resume.pdf" target="_blank">Resume</a>
-
-        </div>
-
-    </section>
-
-    <div class="footer">
-        © 2026 Vinayagam | Built with HTML & CSS
+<a class="skip" href="#main">Skip to content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah" d="M0 1.5 10 5 0 8.5Z"/></marker>
+    <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="ah-acc" d="M0 1.5 10 5 0 8.5Z"/></marker>
+    <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hatch-line" x1="0" y1="0" x2="0" y2="5"/></pattern>
+  </defs>
+</svg>
+
+<div class="band band-left" aria-hidden="true"><div class="zones"><span>F</span><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div></div>
+<div class="band band-right" aria-hidden="true"><div class="zones"><span>F</span><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span></div></div>
+<div class="band band-bottom" aria-hidden="true"><div class="zones"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div></div>
+<header class="band band-top">
+  <div class="bar">
+    <a class="ref" href="#top"><b>VE-001</b><span id="sheet-now">SHEET 1 / 4 · GENERAL ARRANGEMENT</span></a>
+    <nav class="nav" aria-label="Sheets">
+      <a href="#top">Stack</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="print" role="group" aria-label="Theme">
+      <button type="button" data-set="paper" aria-pressed="false">PAPER</button><button type="button" data-set="blueprint" aria-pressed="false">BLUEPRINT</button>
+    </div>
+  </div>
+</header>
+<div class="border-out" aria-hidden="true"></div>
+<div class="border-in" aria-hidden="true"></div>
+
+<main class="page" id="main">
+
+  <section class="ga" id="top" data-sheet="1" data-title="GENERAL ARRANGEMENT" aria-label="Introduction and stack">
+    <div class="ga-title">
+      <div class="name">
+        <p class="dim"><s></s><i></i><b>BACKEND ENGINEER</b><i></i><s></s></p>
+        <h1>Vinayagam</h1>
+      </div>
+      <p class="where"><strong>CHENNAI, INDIA</strong>IST (UTC+5:30)</p>
     </div>
 
-</div>
+    <div class="ga-intro">
+      <p class="lede">I like backend problems where being exactly right matters: a payment that must not be counted twice, a webhook that arrives a second time, a cache that must not serve stale data.</p>
+      <p class="lede-2">This site is drawn like an engineering sheet. The parts list is my stack, the revision history is my career, and the details are production systems I built.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="/assets/resume/Vinayagam_CV.pdf" target="_blank" rel="noopener">Résumé · PDF
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 1.5v9M3 7l4 4 4-4M2 12.5h10"/></svg></a>
+        <a class="btn" href="#contact">Contact
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 3l8 8M11 4.5V11H4.5"/></svg></a>
+      </div>
+      <p class="stamp"><b>Available</b><span>for backend roles</span></p>
+    </div>
 
+    <figure class="fig" id="fig1">
+      <svg class="iso" viewBox="-190.7 -556 541.9 672" role="img" aria-labelledby="fig1-t fig1-d">
+          <title id="fig1-t">Fig. 1, exploded view of the stack</title>
+          <desc id="fig1-d">Seven parts stacked on one axis: edge, API with an integrations block, cache, jobs, data, and the platform underneath. Numbers match the parts list.</desc>
+          <path class="axis" d="M0 -542L0 56"/>
+          <g class="part" data-item="6" style="--c:0px;--d:0s"><path class="face l" d="M-176.7 -24L17.3 88L17.3 102L-176.7 -10Z"/><path class="face r" d="M17.3 88L176.7 -4L176.7 10L17.3 102Z"/><path class="hatch" d="M17.3 88L176.7 -4L176.7 10L17.3 102Z"/><path class="face t" d="M17.3 88L176.7 -4L-17.3 -116L-176.7 -24Z"/><path class="detail" d="M-11.7 -94.8L-12.8 -94.2L-14 -93.8L-15.3 -93.6L-16.6 -93.4L-18 -93.4L-19.4 -93.6L-20.7 -93.8L-21.9 -94.2L-22.9 -94.8L-23.8 -95.4L-24.5 -96.1L-25 -96.8L-25.3 -97.6L-25.3 -98.4L-25 -99.2L-24.5 -99.9L-23.8 -100.6L-22.9 -101.2L-21.9 -101.8L-20.7 -102.2L-19.4 -102.4L-18 -102.6L-16.6 -102.6L-15.3 -102.4L-14 -102.2L-12.8 -101.8L-11.7 -101.2L-10.8 -100.6L-10.1 -99.9L-9.6 -99.2L-9.4 -98.4L-9.4 -97.6L-9.6 -96.8L-10.1 -96.1L-10.8 -95.4L-11.7 -94.8Z"/><path class="detail" d="M-15.1 -96.7L-15.5 -96.5L-16 -96.3L-16.5 -96.2L-17 -96.2L-17.6 -96.2L-18.1 -96.2L-18.7 -96.3L-19.1 -96.5L-19.6 -96.7L-19.9 -96.9L-20.2 -97.2L-20.4 -97.5L-20.5 -97.8L-20.5 -98.2L-20.4 -98.5L-20.2 -98.8L-19.9 -99.1L-19.6 -99.3L-19.1 -99.5L-18.7 -99.7L-18.1 -99.8L-17.6 -99.8L-17 -99.8L-16.5 -99.8L-16 -99.7L-15.5 -99.5L-15.1 -99.3L-14.7 -99.1L-14.4 -98.8L-14.2 -98.5L-14.1 -98.2L-14.1 -97.8L-14.2 -97.5L-14.4 -97.2L-14.7 -96.9L-15.1 -96.7Z"/><path class="detail" d="M-139.9 -20.8L-140.9 -20.2L-142.1 -19.8L-143.4 -19.6L-144.8 -19.4L-146.2 -19.4L-147.6 -19.6L-148.9 -19.8L-150.1 -20.2L-151.1 -20.8L-152 -21.4L-152.7 -22.1L-153.2 -22.8L-153.4 -23.6L-153.4 -24.4L-153.2 -25.2L-152.7 -25.9L-152 -26.6L-151.1 -27.2L-150.1 -27.8L-148.9 -28.2L-147.6 -28.4L-146.2 -28.6L-144.8 -28.6L-143.4 -28.4L-142.1 -28.2L-140.9 -27.8L-139.9 -27.2L-139 -26.6L-138.3 -25.9L-137.8 -25.2L-137.6 -24.4L-137.6 -23.6L-137.8 -22.8L-138.3 -22.1L-139 -21.4L-139.9 -20.8Z"/><path class="detail" d="M-143.2 -22.7L-143.7 -22.5L-144.1 -22.3L-144.7 -22.2L-145.2 -22.2L-145.8 -22.2L-146.3 -22.2L-146.8 -22.3L-147.3 -22.5L-147.7 -22.7L-148.1 -22.9L-148.4 -23.2L-148.6 -23.5L-148.7 -23.8L-148.7 -24.2L-148.6 -24.5L-148.4 -24.8L-148.1 -25.1L-147.7 -25.3L-147.3 -25.5L-146.8 -25.7L-146.3 -25.8L-145.8 -25.8L-145.2 -25.8L-144.7 -25.8L-144.1 -25.7L-143.7 -25.5L-143.2 -25.3L-142.9 -25.1L-142.6 -24.8L-142.4 -24.5L-142.3 -24.2L-142.3 -23.8L-142.4 -23.5L-142.6 -23.2L-142.9 -22.9L-143.2 -22.7Z"/><path class="detail" d="M151.1 -0.8L150.1 -0.2L148.9 0.2L147.6 0.4L146.2 0.6L144.8 0.6L143.4 0.4L142.1 0.2L140.9 -0.2L139.9 -0.8L139 -1.4L138.3 -2.1L137.8 -2.8L137.6 -3.6L137.6 -4.4L137.8 -5.2L138.3 -5.9L139 -6.6L139.9 -7.2L140.9 -7.8L142.1 -8.2L143.4 -8.4L144.8 -8.6L146.2 -8.6L147.6 -8.4L148.9 -8.2L150.1 -7.8L151.1 -7.2L152 -6.6L152.7 -5.9L153.2 -5.2L153.4 -4.4L153.4 -3.6L153.2 -2.8L152.7 -2.1L152 -1.4L151.1 -0.8Z"/><path class="detail" d="M147.7 -2.7L147.3 -2.5L146.8 -2.3L146.3 -2.2L145.8 -2.2L145.2 -2.2L144.7 -2.2L144.1 -2.3L143.7 -2.5L143.2 -2.7L142.9 -2.9L142.6 -3.2L142.4 -3.5L142.3 -3.8L142.3 -4.2L142.4 -4.5L142.6 -4.8L142.9 -5.1L143.2 -5.3L143.7 -5.5L144.1 -5.7L144.7 -5.8L145.2 -5.8L145.8 -5.8L146.3 -5.8L146.8 -5.7L147.3 -5.5L147.7 -5.3L148.1 -5.1L148.4 -4.8L148.6 -4.5L148.7 -4.2L148.7 -3.8L148.6 -3.5L148.4 -3.2L148.1 -2.9L147.7 -2.7Z"/><path class="detail" d="M22.9 73.2L21.9 73.8L20.7 74.2L19.4 74.4L18 74.6L16.6 74.6L15.3 74.4L14 74.2L12.8 73.8L11.7 73.2L10.8 72.6L10.1 71.9L9.6 71.2L9.4 70.4L9.4 69.6L9.6 68.8L10.1 68.1L10.8 67.4L11.7 66.8L12.8 66.2L14 65.8L15.3 65.6L16.6 65.4L18 65.4L19.4 65.6L20.7 65.8L21.9 66.2L22.9 66.8L23.8 67.4L24.5 68.1L25 68.8L25.3 69.6L25.3 70.4L25 71.2L24.5 71.9L23.8 72.6L22.9 73.2Z"/><path class="detail" d="M19.6 71.3L19.1 71.5L18.7 71.7L18.1 71.8L17.6 71.8L17 71.8L16.5 71.8L16 71.7L15.5 71.5L15.1 71.3L14.7 71.1L14.4 70.8L14.2 70.5L14.1 70.2L14.1 69.8L14.2 69.5L14.4 69.2L14.7 68.9L15.1 68.7L15.5 68.5L16 68.3L16.5 68.2L17 68.2L17.6 68.2L18.1 68.2L18.7 68.3L19.1 68.5L19.6 68.7L19.9 68.9L20.2 69.2L20.4 69.5L20.5 69.8L20.5 70.2L20.4 70.5L20.2 70.8L19.9 71.1L19.6 71.3Z"/><text class="engrave" style="font-size:9px" transform="matrix(0.8660 0.5 0 1 -166.3 -7.5)">AWS · DOCKER · LINUX</text></g><g class="part" data-item="5" style="--c:58px;--d:0.05s"><path class="face l" d="M0 -36.6L-2.4 -36.7L-4.8 -36.8L-7.2 -36.9L-9.6 -37.1L-11.9 -37.3L-14.3 -37.6L-16.6 -38L-18.9 -38.4L-21.2 -38.8L-23.4 -39.3L-25.6 -39.9L-27.8 -40.5L-29.9 -41.2L-32 -41.9L-34 -42.6L-36 -43.4L-37.9 -44.2L-39.8 -45.1L-41.6 -46L-43.3 -47L-45 -48L-46.6 -49L-48.1 -50.1L-49.5 -51.2L-50.9 -52.4L-52.2 -53.5L-53.4 -54.7L-54.6 -55.9L-55.6 -57.2L-56.6 -58.5L-57.5 -59.8L-58.2 -61.1L-58.9 -62.4L-59.5 -63.7L-60.1 -65.1L-60.5 -66.5L-60.8 -67.8L-61 -69.2L-61.2 -70.6L-61.2 -72L-61.2 -112L-61.2 -110.6L-61 -109.2L-60.8 -107.8L-60.5 -106.5L-60.1 -105.1L-59.5 -103.7L-58.9 -102.4L-58.2 -101.1L-57.5 -99.8L-56.6 -98.5L-55.6 -97.2L-54.6 -95.9L-53.4 -94.7L-52.2 -93.5L-50.9 -92.4L-49.5 -91.2L-48.1 -90.1L-46.6 -89L-45 -88L-43.3 -87L-41.6 -86L-39.8 -85.1L-37.9 -84.2L-36 -83.4L-34 -82.6L-32 -81.9L-29.9 -81.2L-27.8 -80.5L-25.6 -79.9L-23.4 -79.3L-21.2 -78.8L-18.9 -78.4L-16.6 -78L-14.3 -77.6L-11.9 -77.3L-9.6 -77.1L-7.2 -76.9L-4.8 -76.8L-2.4 -76.7L0 -76.6Z"/><path class="face r" d="M61.2 -72L61.2 -70.6L61 -69.2L60.8 -67.8L60.5 -66.5L60.1 -65.1L59.5 -63.7L58.9 -62.4L58.2 -61.1L57.5 -59.8L56.6 -58.5L55.6 -57.2L54.6 -55.9L53.4 -54.7L52.2 -53.5L50.9 -52.4L49.5 -51.2L48.1 -50.1L46.6 -49L45 -48L43.3 -47L41.6 -46L39.8 -45.1L37.9 -44.2L36 -43.4L34 -42.6L32 -41.9L29.9 -41.2L27.8 -40.5L25.6 -39.9L23.4 -39.3L21.2 -38.8L18.9 -38.4L16.6 -38L14.3 -37.6L11.9 -37.3L9.6 -37.1L7.2 -36.9L4.8 -36.8L2.4 -36.7L0 -36.6L0 -76.6L2.4 -76.7L4.8 -76.8L7.2 -76.9L9.6 -77.1L11.9 -77.3L14.3 -77.6L16.6 -78L18.9 -78.4L21.2 -78.8L23.4 -79.3L25.6 -79.9L27.8 -80.5L29.9 -81.2L32 -81.9L34 -82.6L36 -83.4L37.9 -84.2L39.8 -85.1L41.6 -86L43.3 -87L45 -88L46.6 -89L48.1 -90.1L49.5 -91.2L50.9 -92.4L52.2 -93.5L53.4 -94.7L54.6 -95.9L55.6 -97.2L56.6 -98.5L57.5 -99.8L58.2 -101.1L58.9 -102.4L59.5 -103.7L60.1 -105.1L60.5 -106.5L60.8 -107.8L61 -109.2L61.2 -110.6L61.2 -112Z"/><path class="detail" d="M61.2 -85.3L61 -82.6L60.5 -79.8L59.5 -77.1L58.2 -74.4L56.6 -71.8L54.6 -69.3L52.2 -66.9L49.5 -64.6L46.6 -62.4L43.3 -60.3L39.8 -58.4L36 -56.7L32 -55.2L27.8 -53.8L23.4 -52.7L18.9 -51.7L14.3 -51L9.6 -50.4L4.8 -50.1L0 -50L-4.8 -50.1L-9.6 -50.4L-14.3 -51L-18.9 -51.7L-23.4 -52.7L-27.8 -53.8L-32 -55.2L-36 -56.7L-39.8 -58.4L-43.3 -60.3L-46.6 -62.4L-49.5 -64.6L-52.2 -66.9L-54.6 -69.3L-56.6 -71.8L-58.2 -74.4L-59.5 -77.1L-60.5 -79.8L-61 -82.6L-61.2 -85.3"/><path class="detail" d="M61.2 -98.7L61 -95.9L60.5 -93.1L59.5 -90.4L58.2 -87.7L56.6 -85.1L54.6 -82.6L52.2 -80.2L49.5 -77.9L46.6 -75.7L43.3 -73.7L39.8 -71.8L36 -70.1L32 -68.5L27.8 -67.2L23.4 -66L18.9 -65L14.3 -64.3L9.6 -63.7L4.8 -63.4L0 -63.3L-4.8 -63.4L-9.6 -63.7L-14.3 -64.3L-18.9 -65L-23.4 -66L-27.8 -67.2L-32 -68.5L-36 -70.1L-39.8 -71.8L-43.3 -73.7L-46.6 -75.7L-49.5 -77.9L-52.2 -80.2L-54.6 -82.6L-56.6 -85.1L-58.2 -87.7L-59.5 -90.4L-60.5 -93.1L-61 -95.9L-61.2 -98.7"/><path class="face t" d="M43.3 -87L38.8 -84.7L34 -82.6L28.9 -80.8L23.4 -79.3L17.8 -78.2L11.9 -77.3L6 -76.8L0 -76.6L-6 -76.8L-11.9 -77.3L-17.8 -78.2L-23.4 -79.3L-28.9 -80.8L-34 -82.6L-38.8 -84.7L-43.3 -87L-47.3 -89.6L-50.9 -92.4L-54 -95.3L-56.6 -98.5L-58.6 -101.7L-60.1 -105.1L-60.9 -108.5L-61.2 -112L-60.9 -115.5L-60.1 -118.9L-58.6 -122.3L-56.6 -125.5L-54 -128.7L-50.9 -131.6L-47.3 -134.4L-43.3 -137L-38.8 -139.3L-34 -141.4L-28.9 -143.2L-23.4 -144.7L-17.8 -145.8L-11.9 -146.7L-6 -147.2L0 -147.4L6 -147.2L11.9 -146.7L17.8 -145.8L23.4 -144.7L28.9 -143.2L34 -141.4L38.8 -139.3L43.3 -137L47.3 -134.4L50.9 -131.6L54 -128.7L56.6 -125.5L58.6 -122.3L60.1 -118.9L60.9 -115.5L61.2 -112L60.9 -108.5L60.1 -105.1L58.6 -101.7L56.6 -98.5L54 -95.3L50.9 -92.4L47.3 -89.6L43.3 -87Z"/><path class="detail" d="M-7.8 -116.5L7.8 -107.5M7.8 -116.5L-7.8 -107.5"/></g><g class="part" data-item="4" style="--c:116px;--d:0.1s"><path class="face l" d="M-135.1 -192L13.9 -106L13.9 -92L-135.1 -178Z"/><path class="face r" d="M13.9 -106L135.1 -176L135.1 -162L13.9 -92Z"/><path class="face t" d="M13.9 -106L135.1 -176L-13.9 -262L-135.1 -192Z"/><path class="face l" d="M-53.7 -222L-34.6 -211L-34.6 -193L-53.7 -204Z"/><path class="face r" d="M-34.6 -211L-15.6 -222L-15.6 -204L-34.6 -193Z"/><path class="face t" d="M-34.6 -211L-15.6 -222L-34.6 -233L-53.7 -222Z"/><path class="face l" d="M-19.1 -202L0 -191L0 -173L-19.1 -184Z"/><path class="face r" d="M0 -191L19.1 -202L19.1 -184L0 -173Z"/><path class="face t" d="M0 -191L19.1 -202L0 -213L-19.1 -202Z"/><path class="face l" d="M15.6 -182L34.6 -171L34.6 -153L15.6 -164Z"/><path class="face r" d="M34.6 -171L53.7 -182L53.7 -164L34.6 -153Z"/><path class="face t" d="M34.6 -171L53.7 -182L34.6 -193L15.6 -182Z"/></g><g class="part" data-item="3" style="--c:174px;--d:0.15s"><path class="face l" d="M-124.7 -282L13.9 -202L13.9 -188L-124.7 -268Z"/><path class="face r" d="M13.9 -202L124.7 -266L124.7 -252L13.9 -188Z"/><path class="face t" d="M13.9 -202L124.7 -266L-13.9 -346L-124.7 -282Z"/><path class="detail" d="M12.1 -321L-81.4 -267M46.8 -301L-46.8 -247M81.4 -281L-12.1 -227M-39.8 -319L77.9 -251M-77.9 -297L39.8 -229"/></g><g class="part" data-item="2" style="--c:232px;--d:0.2s"><path class="face l" d="M-150.7 -361L15.6 -265L15.6 -245L-150.7 -341Z"/><path class="face r" d="M15.6 -265L150.7 -343L150.7 -323L15.6 -245Z"/><path class="face t" d="M15.6 -265L150.7 -343L-15.6 -439L-150.7 -361Z"/><path class="detail" d="M135.1 -320L122.1 -312.5L122.1 -320.5L135.1 -328Z"/><path class="detail" d="M114.3 -308L101.3 -300.5L101.3 -308.5L114.3 -316Z"/><path class="detail" d="M93.5 -296L80.5 -288.5L80.5 -296.5L93.5 -304Z"/><path class="detail" d="M72.7 -284L59.8 -276.5L59.8 -284.5L72.7 -292Z"/><path class="detail" d="M52 -272L39 -264.5L39 -272.5L52 -280Z"/><path class="detail" d="M-7.8 -356.5L7.8 -347.5M7.8 -356.5L-7.8 -347.5"/></g><g class="part" data-item="7" style="--c:232px;--d:0.2s"><path class="detail" d="M83.1 -294L114.3 -276"/><circle class="detail" cx="83.1" cy="-294" r="2.4"/><path class="face l" d="M100.5 -278L135.1 -258L135.1 -238L100.5 -258Z"/><path class="face r" d="M135.1 -258L162.8 -274L162.8 -254L135.1 -238Z"/><path class="face t" d="M135.1 -258L162.8 -274L128.2 -294L100.5 -278Z"/></g><g class="part" data-item="1" style="--c:290px;--d:0.25s"><path class="face l" d="M-109.1 -427L12.1 -357L12.1 -347L-109.1 -417Z"/><path class="face r" d="M12.1 -357L109.1 -413L109.1 -403L12.1 -347Z"/><path class="face t" d="M12.1 -357L109.1 -413L-12.1 -483L-109.1 -427Z"/><path class="detail" d="M-7.8 -424.5L7.8 -415.5M7.8 -424.5L-7.8 -415.5"/><path class="flow" d="M0 -514L0 -424" marker-end="url(#ah-acc)"/><text class="flow-label" x="10" y="-502">REQUESTS</text></g>
+          <g class="callouts"><g class="callout" data-item="1"><path class="leader" d="M76.2 -389L214 -389"/><circle class="anchor" cx="76.2" cy="-389" r="2.2"/><circle class="ball" cx="226" cy="-389" r="12"/><text class="ball-n" x="226" y="-385">1</text><text class="bname" x="246" y="-384.5">EDGE</text></g><g class="callout" data-item="2"><path class="leader" d="M124.7 -318L214 -318"/><circle class="anchor" cx="124.7" cy="-318" r="2.2"/><circle class="ball" cx="226" cy="-318" r="12"/><text class="ball-n" x="226" y="-314">2</text><text class="bname" x="246" y="-313.5">API</text></g><g class="callout" data-item="7"><path class="leader" d="M149 -256L214 -256"/><circle class="anchor" cx="149" cy="-256" r="2.2"/><circle class="ball" cx="226" cy="-256" r="12"/><text class="ball-n" x="226" y="-252">7</text><text class="bname" x="246" y="-251.5">INTEGRATIONS</text></g><g class="callout" data-item="3"><path class="leader" d="M98.7 -244L214 -225"/><circle class="anchor" cx="98.7" cy="-244" r="2.2"/><circle class="ball" cx="226" cy="-225" r="12"/><text class="ball-n" x="226" y="-221">3</text><text class="bname" x="246" y="-220.5">CACHE</text></g><g class="callout" data-item="4"><path class="leader" d="M103.9 -151L214 -151"/><circle class="anchor" cx="103.9" cy="-151" r="2.2"/><circle class="ball" cx="226" cy="-151" r="12"/><text class="ball-n" x="226" y="-147">4</text><text class="bname" x="246" y="-146.5">JOBS</text></g><g class="callout" data-item="5"><path class="leader" d="M61.2 -92L214 -92"/><circle class="anchor" cx="61.2" cy="-92" r="2.2"/><circle class="ball" cx="226" cy="-92" r="12"/><text class="ball-n" x="226" y="-88">5</text><text class="bname" x="246" y="-87.5">DATA</text></g><g class="callout" data-item="6"><path class="leader" d="M140.3 24L214 24"/><circle class="anchor" cx="140.3" cy="24" r="2.2"/><circle class="ball" cx="226" cy="24" r="12"/><text class="ball-n" x="226" y="28">6</text><text class="bname" x="246" y="28.5">PLATFORM</text></g></g>
+        </svg>
+      <figcaption><span><b>FIG. 1</b> Exploded view of the stack I work with. Hover a part.</span><span>ISOMETRIC · NTS</span></figcaption>
+    </figure>
+    <script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.getElementById('fig1').classList.add('pre');</script>
+
+    <div class="ga-bom">
+      <table class="bom">
+        <caption class="label">Parts list</caption>
+        <thead><tr><th scope="col">Item</th><th scope="col">Part</th><th scope="col">Specification</th></tr></thead>
+        <tbody>
+          <tr data-item="1"><td><span class="no">1</span></td><td class="pn">Edge</td><td>Nginx, Cloudflare</td></tr>
+          <tr data-item="2"><td><span class="no">2</span></td><td class="pn">API</td><td>Django, Django REST Framework, FastAPI, Node.js, Express</td></tr>
+          <tr data-item="3"><td><span class="no">3</span></td><td class="pn">Cache</td><td>Redis</td></tr>
+          <tr data-item="4"><td><span class="no">4</span></td><td class="pn">Jobs</td><td>Celery, Redis Pub/Sub, Django Channels, WebSockets</td></tr>
+          <tr data-item="5"><td><span class="no">5</span></td><td class="pn">Data</td><td>PostgreSQL, MySQL, Neo4j</td></tr>
+          <tr data-item="6"><td><span class="no">6</span></td><td class="pn">Platform</td><td>AWS (EC2, S3, IAM, Route 53, SES, SNS), Docker, Linux, GitHub Actions</td></tr>
+          <tr data-item="7"><td><span class="no">7</span></td><td class="pn">Integrations</td><td>WhatsApp Business API, Meta Graph API, Razorpay, PayU, OpenAI API</td></tr>
+        </tbody>
+        <tfoot><tr><td></td><td class="pn">Material</td><td>Python, TypeScript, JavaScript, Go, SQL</td></tr></tfoot>
+      </table>
+    </div>
+  </section>
+
+  <section class="sheet" id="experience" data-sheet="2" data-title="REVISION HISTORY" aria-labelledby="h-exp">
+    <div class="view"><span class="bubble">2</span><div><h2 id="h-exp">Experience</h2><p>Revision history · newest first</p></div></div>
+    <table class="revs">
+      <caption class="sr-only">Experience and education, newest first</caption>
+      <thead><tr><th scope="col">Rev</th><th scope="col">Date</th><th scope="col">Description</th></tr></thead>
+      <tbody>
+        <tr class="current">
+          <td class="rev"><svg class="delta" viewBox="0 0 30 27" aria-hidden="true"><path d="M15 2.5 28 25H2Z"/><text x="15" y="21.5">D</text></svg></td><td class="when">Feb 2026 – now</td>
+          <td><h3>Trames</h3><p class="role">Backend Engineer · Singapore, remote</p>
+            <p>TypeScript and Node.js services for a logistics and freight platform: shipment tracking, logistics events and freight data, and integrations with carrier and customs systems.</p></td>
+        </tr>
+        <tr>
+          <td class="rev"><svg class="delta" viewBox="0 0 30 27" aria-hidden="true"><path d="M15 2.5 28 25H2Z"/><text x="15" y="21.5">C</text></svg></td><td class="when">2024 – 2026</td>
+          <td><h3>University of Madras</h3><p class="role">Master of Computer Applications</p><p>Studying alongside work; in progress.</p></td>
+        </tr>
+        <tr>
+          <td class="rev"><svg class="delta" viewBox="0 0 30 27" aria-hidden="true"><path d="M15 2.5 28 25H2Z"/><text x="15" y="21.5">B</text></svg></td><td class="when">Oct 2023 – Oct 2025</td>
+          <td><h3>Thaagam Foundation</h3><p class="role">Python Django Developer</p>
+            <p>Built and ran 8 production Django backends for government civic platforms, NGO operations and e-commerce, with more than 200,000 registered users between them.</p>
+            <ul>
+              <li>Redis caching with signal-based invalidation on high-read endpoints improved API performance by 200%.</li>
+              <li>Notifications automated over the WhatsApp Business API, AWS SES and SNS cut manual notification work by 60%.</li>
+              <li>Real-time dashboards for field teams with Django Channels, WebSockets and Redis Pub/Sub.</li>
+              <li>Authentication, role-based access control and partner APIs for mobile clients and third-party providers.</li>
+              <li>Ran the AWS setup: EC2, S3, IAM and Route 53.</li>
+            </ul></td>
+        </tr>
+        <tr>
+          <td class="rev"><svg class="delta" viewBox="0 0 30 27" aria-hidden="true"><path d="M15 2.5 28 25H2Z"/><text x="15" y="21.5">A</text></svg></td><td class="when">2017 – 2020</td>
+          <td><h3>Thiru A. Govindasamy Government Arts College</h3><p class="role">Bachelor of Computer Science</p></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="sheet" id="work" data-sheet="3" data-title="DETAILS" aria-labelledby="h-work">
+    <div class="view"><span class="bubble">3</span><div><h2 id="h-work">Production work</h2><p>Details A–C · systems in production</p></div></div>
+
+    <article class="detail">
+      <header class="detail-head"><span class="tag"><b>A</b><span>3</span></span><h3>Commai</h3><span class="meta">2025 · multi-tenant inbox</span>
+        <a class="ext" href="https://commai.m7corporation.com/" target="_blank" rel="noopener">commai.m7corporation.com</a></header>
+      <div class="detail-body">
+        <figure class="schematic"><svg class="sch" viewBox="0 0 640 236" role="img" aria-label="Schematic: providers send webhooks; the endpoint verifies the signature, normalises the event, queues it in Redis and returns 200 at once; Celery workers store conversations in PostgreSQL per tenant and draft AI replies."><rect class="sb" x="8" y="22" width="104" height="28"/><text class="sl" x="60.0" y="40.5">WHATSAPP</text><rect class="sb" x="8" y="58" width="104" height="28"/><text class="sl" x="60.0" y="76.5">INSTAGRAM</text><rect class="sb" x="8" y="94" width="104" height="28"/><text class="sl" x="60.0" y="112.5">MESSENGER</text><rect class="sb" x="8" y="130" width="104" height="28"/><text class="sl" x="60.0" y="148.5">EMAIL</text><path class="sa" d="M112 36H124M112 72H124M112 108H124M112 144H124M124 36V144"/><path class="sa" d="M124 90H154" marker-end="url(#ah)"/><rect class="sb" x="158" y="62" width="104" height="56"/><text class="sl" x="210.0" y="88.0">WEBHOOK</text><text class="ss" x="210.0" y="103.0">verify signature</text><path class="sa" d="M262 90H290" marker-end="url(#ah)"/><rect class="sb" x="294" y="62" width="96" height="56"/><text class="sl" x="342.0" y="88.0">NORMALISE</text><text class="ss" x="342.0" y="103.0">one format</text><path class="sa" d="M390 90H418" marker-end="url(#ah)"/><rect class="sb" x="422" y="62" width="86" height="56"/><text class="sl" x="465.0" y="88.0">REDIS</text><text class="ss" x="465.0" y="103.0">queue</text><path class="sa" d="M508 90H536" marker-end="url(#ah)"/><rect class="sb" x="540" y="62" width="92" height="56"/><text class="sl" x="586.0" y="88.0">CELERY</text><text class="ss" x="586.0" y="103.0">workers</text><path class="sa" d="M586 62V42" marker-end="url(#ah)"/><rect class="sb" x="540" y="10" width="92" height="30"/><text class="sl" x="586.0" y="29.5">AI REPLY</text><path class="sa" d="M586 118V146" marker-end="url(#ah)"/><path class="sb" d="M540.0 157V205A46.0 7 0 0 0 632.0 205V157Z"/><ellipse class="sb" cx="586" cy="157" rx="46.0" ry="7"/><text class="sl" x="586" y="182.5">POSTGRES</text><text class="ss" x="586" y="197.5">per tenant</text><path class="sa hot dash" d="M210 118V198H60V162" marker-end="url(#ah-acc)"/><text class="sn hot" x="135" y="215" text-anchor="middle">200 OK returned at once</text></svg><figcaption class="pan">Drag to pan →</figcaption></figure>
+        <div class="notes"><span class="label">Notes</span><ol>
+          <li>A business’s WhatsApp, Instagram, Facebook Messenger and email conversations in one place, for many tenants.</li>
+          <li>Each channel has its own webhook endpoint. It checks the provider’s signature, converts the event to one shared format, queues it in Redis and returns 200 straight away, so providers don’t retry under load.</li>
+          <li>Celery workers store threaded conversations per tenant and generate AI replies.</li>
+          <li>Adding a channel means writing one webhook handler. Nothing after it changes.</li>
+        </ol></div>
+      </div>
+    </article>
+
+    <article class="detail">
+      <header class="detail-head"><span class="tag"><b>B</b><span>3</span></span><h3>Civic image verification</h3><span class="meta">2025 · Greater Chennai Corporation</span>
+        <a class="ext" href="https://imageanalysis.gccservices.in" target="_blank" rel="noopener">imageanalysis.gccservices.in</a></header>
+      <div class="detail-body">
+        <figure class="schematic"><svg class="sch" viewBox="0 0 640 236" role="img" aria-label="Schematic: photos go to a Celery task; Redis is checked by image signature; on a miss the OpenAI Vision API checks the image and the result is stored; the submission is flagged or passed."><rect class="zone" x="150" y="6" width="484" height="222"/><text class="sn" x="162" y="22" text-anchor="start">EC2</text><rect class="sb" x="8" y="70" width="104" height="56"/><text class="sl" x="60.0" y="96.0">PHOTOS</text><text class="ss" x="60.0" y="111.0">before / after</text><path class="sa" d="M60 126V146" marker-end="url(#ah)"/><path class="sb" d="M14.0 157V201A46.0 7 0 0 0 106.0 201V157Z"/><ellipse class="sb" cx="60" cy="157" rx="46.0" ry="7"/><text class="sl" x="60" y="180.5">S3</text><text class="ss" x="60" y="195.5">images</text><path class="sa" d="M112 98H164" marker-end="url(#ah)"/><rect class="sb" x="168" y="70" width="100" height="56"/><text class="sl" x="218.0" y="96.0">CELERY TASK</text><text class="ss" x="218.0" y="111.0">async</text><path class="sa" d="M268 98H296" marker-end="url(#ah)"/><path class="sb hot" d="M300.0 73V123A46.0 7 0 0 0 392.0 123V73Z"/><ellipse class="sb hot" cx="346" cy="73" rx="46.0" ry="7"/><text class="sl" x="346" y="99.5">REDIS</text><text class="ss" x="346" y="114.5">by signature</text><path class="sa" d="M392 98H422" marker-end="url(#ah)"/><text class="sn" x="407" y="90" text-anchor="middle">miss</text><rect class="sb" x="426" y="70" width="100" height="56"/><text class="sl" x="476.0" y="96.0">OPENAI VISION</text><text class="ss" x="476.0" y="111.0">check image</text><path class="sa" d="M526 98H550" marker-end="url(#ah)"/><rect class="sb" x="554" y="70" width="72" height="56"/><text class="sl" x="590.0" y="96.0">FLAG</text><text class="ss" x="590.0" y="111.0">or pass</text><path class="sa hot dash" d="M346 66V40H590V66" marker-end="url(#ah-acc)"/><text class="sn hot" x="468" y="32" text-anchor="middle">hit: no API call</text><path class="sa" d="M476 126V172H352V134" marker-end="url(#ah)"/><text class="sn" x="414" y="188" text-anchor="middle">store result</text></svg><figcaption class="pan">Drag to pan →</figcaption></figure>
+        <div class="notes"><span class="label">Notes</span><ol>
+          <li>Checks the before-and-after photos submitted when a civic complaint is marked resolved, and flags fraudulent ones.</li>
+          <li>A Celery task sends each image to the OpenAI Vision API.</li>
+          <li>Results are cached in Redis by image signature, so checking the same image again costs no API call.</li>
+          <li>Runs on EC2, with the images in S3.</li>
+        </ol></div>
+      </div>
+    </article>
+
+    <article class="detail">
+      <header class="detail-head"><span class="tag"><b>C</b><span>3</span></span><h3>Donation platform</h3><span class="meta">2024 · Thaagam Foundation</span>
+        <a class="ext" href="https://thaagam.org" target="_blank" rel="noopener">thaagam.org</a></header>
+      <div class="detail-body">
+        <figure class="schematic"><svg class="sch" viewBox="0 0 640 236" role="img" aria-label="Schematic: gateway webhooks are signature-checked; an idempotency key decides whether the event was seen; new events are recorded in PostgreSQL and trigger an 80G receipt by email and WhatsApp."><rect class="sb" x="8" y="70" width="100" height="56"/><text class="sl" x="58.0" y="96.0">GATEWAYS</text><text class="ss" x="58.0" y="111.0">Razorpay · PayU</text><path class="sa" d="M108 98H126" marker-end="url(#ah)"/><rect class="sb" x="130" y="70" width="92" height="56"/><text class="sl" x="176.0" y="96.0">VERIFY</text><text class="ss" x="176.0" y="111.0">signature</text><path class="sa" d="M222 98H238" marker-end="url(#ah)"/><path class="sb hot" d="M312 54.0L384.0 98L312 142.0L240.0 98Z"/><text class="sl" x="312" y="96">SEEN?</text><text class="ss" x="312" y="110">idempotency key</text><path class="sa hot" d="M312 54V38" marker-end="url(#ah-acc)"/><text class="sn hot" x="322" y="50" text-anchor="start">yes</text><rect class="sb hot" x="272" y="6" width="80" height="30"/><text class="sl" x="312.0" y="25.5">IGNORE</text><path class="sa" d="M384 98H402" marker-end="url(#ah)"/><text class="sn" x="392" y="90" text-anchor="middle">no</text><rect class="sb" x="406" y="70" width="88" height="56"/><text class="sl" x="450.0" y="96.0">RECORD</text><text class="ss" x="450.0" y="111.0">payment</text><path class="sa" d="M450 126V150" marker-end="url(#ah)"/><path class="sb" d="M404.0 161V205A46.0 7 0 0 0 496.0 205V161Z"/><ellipse class="sb" cx="450" cy="161" rx="46.0" ry="7"/><text class="sl" x="450" y="190.5">POSTGRES</text><path class="sa" d="M494 98H510" marker-end="url(#ah)"/><rect class="sb" x="514" y="70" width="120" height="56"/><text class="sl" x="574.0" y="96.0">80G RECEIPT</text><text class="ss" x="574.0" y="111.0">automatic</text><path class="sa" d="M540 126V164" marker-end="url(#ah)"/><rect class="sb" x="514" y="168" width="52" height="28"/><text class="sl" x="540.0" y="186.5">EMAIL</text><path class="sa" d="M602 126V164" marker-end="url(#ah)"/><rect class="sb" x="570" y="168" width="64" height="28"/><text class="sl" x="602.0" y="186.5">WHATSAPP</text></svg><figcaption class="pan">Drag to pan →</figcaption></figure>
+        <div class="notes"><span class="label">Notes</span><ol>
+          <li>Donor records, Razorpay and PayU payments, automatic 80G tax receipts and reconciliation dashboards for the finance team.</li>
+          <li>Payment webhooks are signature-checked and idempotent, so a retried event is never processed twice.</li>
+          <li>Receipts go out by email and WhatsApp as soon as a payment is confirmed.</li>
+          <li>Reconciliation that used to take days now takes under five minutes.</li>
+        </ol></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="sheet" id="projects" data-sheet="4" data-title="DRAWING INDEX" aria-labelledby="h-proj">
+    <div class="view"><span class="bubble">4</span><div><h2 id="h-proj">Projects</h2><p>Drawing index · things I built on my own</p></div></div>
+    <table class="idx">
+      <caption class="sr-only">Personal projects</caption>
+      <thead><tr><th scope="col">Dwg</th><th scope="col"><span class="sr-only">Mark</span></th><th scope="col">Title</th><th scope="col">Status</th><th scope="col" style="text-align:right">Links</th></tr></thead>
+      <tbody>
+        <tr><td class="dwg">P-01</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="14" cy="14" r="4"/><ellipse cx="14" cy="14" rx="12" ry="5" transform="rotate(-20 14 14)"/><circle class="dot" cx="24.6" cy="10.4" r="1.8"/></svg></td>
+          <td><h3>Orbica</h3><p>Every rocket and satellite launched since 1957, with live orbit tracking. A Go service (Fiber, pgx) propagates positions with SGP4 and streams them over WebSockets to a React Three Fiber globe; launch history lives in PostgreSQL.</p></td>
+          <td class="st"><span class="st-live">LIVE</span></td>
+          <td class="ln"><a class="ext" href="https://orbica.space" target="_blank" rel="noopener">orbica.space</a><a class="ext" href="https://github.com/viny4/orbica" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-02</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><path d="M3 24.5H25"/><rect x="5" y="8" width="4.5" height="16.5"/><rect x="10.5" y="5" width="4.5" height="19.5"/><rect class="dotf" x="17.5" y="9" width="4.5" height="15.5" transform="rotate(14 20 24.5)"/></svg></td>
+          <td><h3>Engineering Shelf</h3><p>A reading site for my engineering books. A GitHub Action catalogues each PDF pushed to the repo, skips duplicates by content hash, groups editions and redeploys to Cloudflare Pages.</p></td>
+          <td class="st"><span class="st-live">LIVE</span></td>
+          <td class="ln"><a class="ext" href="https://engineering-shelf.pages.dev" target="_blank" rel="noopener">Site</a></td></tr>
+        <tr><td class="dwg">P-03</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><rect x="2.5" y="8" width="9" height="12"/><rect x="16.5" y="8" width="9" height="12"/><path d="M11.5 12H16.5M16.5 16H11.5"/></svg></td>
+          <td><h3>Backend Masterclass</h3><p>Django REST Framework for business logic and FastAPI for real-time work: JWT with multiple roles, Celery jobs, WebSocket chat and video streaming over HTTP Range.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/Backend-Masterclass" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-04</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><path d="M6 7 14 14 22 6M14 14 8 22M14 14 21 21M22 6 21 21"/><circle cx="6" cy="7" r="2.2"/><circle cx="22" cy="6" r="2.2"/><circle cx="8" cy="22" r="2.2"/><circle cx="21" cy="21" r="2.2"/><circle class="dot" cx="14" cy="14" r="2.6"/></svg></td>
+          <td><h3>Movie Knowledge Graph</h3><p>Films, actors, directors and studios as a Neo4j graph, so discovery queries are traversals instead of joins. TypeScript and Express.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/movie-knowledge-graph" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-05</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="5" width="22" height="18"/><path d="M3 9.5H25M11 9.5V23M11 16H25"/></svg></td>
+          <td><h3>Panebox</h3><p>An Electron app that keeps ChatGPT, Claude, Gemini, WhatsApp and about 50 more web apps in one window, each in its own isolated session.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/panebox" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-06</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><rect x="2" y="11" width="2.6" height="6"/><rect class="dotf" x="5" y="11" width="2.6" height="6"/><rect x="8" y="11" width="2.6" height="6"/><rect x="11" y="11" width="2.6" height="6"/><rect class="dotf" x="14" y="11" width="2.6" height="6"/><rect x="17" y="11" width="2.6" height="6"/><rect class="dotf" x="20" y="11" width="2.6" height="6"/><rect x="23" y="11" width="2.6" height="6"/></svg></td>
+          <td><h3>Bloom filter demo</h3><p>“Is this username taken?” over millions of rows, answered without touching Postgres in about 80% of lookups. FastAPI and React.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/bloom-filter-demo" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-07</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><rect x="6.5" y="12.5" width="15" height="11"/><path d="M9.5 12.5V9a4.5 4.5 0 0 1 9 0v3.5"/><circle class="dot" cx="14" cy="18" r="1.6"/></svg></td>
+          <td><h3>Two-phase locking</h3><p>Interactive visualisations of the lost-update anomaly and how two-phase locking prevents it.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/2-phase-locking" target="_blank" rel="noopener">Source</a></td></tr>
+        <tr><td class="dwg">P-08</td><td class="g"><svg class="glyph" viewBox="0 0 28 28" aria-hidden="true"><circle cx="8" cy="6" r="2.3"/><circle cx="8" cy="22" r="2.3"/><circle class="dot" cx="20" cy="11" r="2.3"/><path d="M8 8.3V19.7M20 13.3c0 5-12 2.5-12 6.4"/></svg></td>
+          <td><h3>Git sync notifier</h3><p>A VS Code extension that tells you when your branch is behind upstream and merges only when you click.</p></td>
+          <td class="st"><span class="st-repo">REPO</span></td>
+          <td class="ln"><a class="ext" href="https://github.com/viny4/git-sync-notifier" target="_blank" rel="noopener">Source</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="tb-wrap" id="contact" data-sheet="4" data-title="TITLE BLOCK" aria-labelledby="h-contact">
+    <p class="tb-note">GENERAL NOTES<br>1. Email is the quickest way to reach me.<br>2. All dimensions in milliseconds.</p>
+    <div class="tb">
+      <div class="wide">
+        <h2 class="label" id="h-contact">Contact</h2>
+        <div class="mail-row">
+          <a class="mail" href="mailto:vinayagam.python@gmail.com">vinayagam.python@gmail.com</a>
+          <button class="btn copy" type="button" id="copy" data-email="vinayagam.python@gmail.com" hidden>Copy</button>
+        </div>
+      </div>
+      <div class="half"><span class="label">GitHub</span><span class="v"><a href="https://github.com/viny4" target="_blank" rel="noopener">github.com/viny4 ↗</a></span></div>
+      <div class="half"><span class="label">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/in/vinjr" target="_blank" rel="noopener">linkedin.com/in/vinjr ↗</a></span></div>
+      <div class="third"><span class="label">Drawing</span><span class="big">VE-001</span></div>
+      <div class="third"><span class="label">Updated</span><span class="big">OCT 2026</span></div>
+      <div class="sixth"><span class="label">Scale</span><span class="big">NTS</span></div>
+      <div class="sixth"><span class="label">Rev</span><span class="big">D</span></div>
+    </div>
+  </section>
+
+  <footer class="foot"><span>© <span id="year">2026</span> Vinayagam</span><span>Drawn in HTML, CSS and SVG</span></footer>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var dark = matchMedia('(prefers-color-scheme: dark)');
+  var buttons = document.querySelectorAll('.print button');
+  function theme() { return root.dataset.theme || (dark.matches ? 'blueprint' : 'paper'); }
+  function sync() { buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.set === theme())); }); }
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      root.dataset.theme = b.dataset.set;
+      try { localStorage.setItem('sheet', b.dataset.set); } catch (e) {}
+      sync();
+    });
+  });
+  if (dark.addEventListener) dark.addEventListener('change', sync);
+  sync();
+
+  var now = document.getElementById('sheet-now');
+  var links = document.querySelectorAll('.nav a');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        now.textContent = 'SHEET ' + e.target.dataset.sheet + ' / 4 · ' + e.target.dataset.title;
+        links.forEach(function (a) { a.setAttribute('aria-current', String(a.getAttribute('href') === '#' + e.target.id)); });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    document.querySelectorAll('[data-sheet]').forEach(function (s) { io.observe(s); });
+  }
+
+  var fig = document.getElementById('fig1');
+  if (fig.classList.contains('pre')) {
+    var go = function () { setTimeout(function () { fig.classList.remove('pre'); }, 250); };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(go); else go();
+  }
+  function mark(item, on) {
+    document.querySelectorAll('[data-item="' + item + '"]').forEach(function (el) { el.classList.toggle('hot', on); });
+  }
+  document.querySelectorAll('[data-item]').forEach(function (el) {
+    el.addEventListener('mouseenter', function () { mark(el.dataset.item, true); });
+    el.addEventListener('mouseleave', function () { mark(el.dataset.item, false); });
+  });
+
+  var copy = document.getElementById('copy');
+  if (navigator.clipboard && window.isSecureContext) {
+    copy.hidden = false;
+    copy.addEventListener('click', function () {
+      navigator.clipboard.writeText(copy.dataset.email).then(function () {
+        copy.textContent = 'Copied';
+        setTimeout(function () { copy.textContent = 'Copy'; }, 1600);
+      });
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
